@@ -1,0 +1,464 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Administrar | AutomaNexus" description="Panel de administración" noindex={true}>
+  <Nav />
+
+  <main>
+    <section class="py-12 lg:py-20">
+      <div class="container-mx max-w-5xl">
+        <!-- Login gate -->
+        <div id="login-gate" class="reveal card max-w-md mx-auto">
+          <div class="text-center mb-6">
+            <span class="text-4xl block mb-3">🔐</span>
+            <h1 class="text-2xl font-bold">Panel de Administración</h1>
+            <p class="text-text-secondary text-sm mt-2">Ingresa la contraseña para acceder</p>
+          </div>
+          <input id="admin-password" type="password" placeholder="Contraseña"
+                 class="w-full px-4 py-3 rounded-xl bg-bg-tertiary border border-white/10 text-white placeholder-text-muted focus:outline-none focus:border-accent-primary transition-colors mb-4 text-center"
+                 onkeydown="if(event.key==='Enter') document.getElementById('admin-login-btn').click()" />
+          <button id="admin-login-btn" class="btn-primary w-full justify-center">Entrar</button>
+          <p id="login-error" class="text-accent-danger text-sm mt-3 text-center hidden">Contraseña incorrecta</p>
+        </div>
+
+        <!-- Admin panel -->
+        <div id="admin-panel" class="hidden">
+          <!-- Header -->
+          <div class="flex items-center justify-between mb-6">
+            <h1 class="text-2xl font-bold">⚙️ Administrar</h1>
+            <button id="admin-logout" class="text-sm text-text-muted hover:text-white transition-colors">Cerrar sesión</button>
+          </div>
+
+          <!-- Tabs -->
+          <div class="flex gap-2 mb-6 border-b border-white/5 pb-1">
+            <button id="tab-config" class="tab-btn px-5 py-2.5 rounded-lg font-semibold text-sm transition-all bg-accent-primary text-white">
+              ⚙️ Configuración
+            </button>
+            <button id="tab-crm" class="tab-btn px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-text-secondary hover:text-white">
+              📊 CRM <span id="leads-count" class="ml-1 px-2 py-0.5 rounded-full bg-white/10 text-xs hidden">0</span>
+            </button>
+          </div>
+
+          <!-- ==================== TAB: CONFIG ==================== -->
+          <div id="panel-config" class="space-y-6">
+            <div class="card space-y-5">
+              <h2 class="font-bold text-lg flex items-center gap-2">📞 Contacto</h2>
+
+              <div>
+                <label class="block text-sm font-medium text-text-secondary mb-2">Número de WhatsApp (con código de país, sin +)</label>
+                <input id="cfg-whatsapp" type="text" placeholder="521234567890"
+                       class="admin-input w-full px-4 py-3 rounded-xl bg-bg-tertiary border border-white/10 text-white placeholder-text-muted focus:outline-none focus:border-accent-primary transition-colors" />
+                <p class="text-xs text-text-muted mt-1">Ej: 52 para México, 34 para España. Sin espacios ni símbolos.</p>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-text-secondary mb-2">Mensaje de WhatsApp pre-llenado</label>
+                <textarea id="cfg-wa-message" rows="2" placeholder="Hola, quiero información..."
+                          class="admin-input w-full px-4 py-3 rounded-xl bg-bg-tertiary border border-white/10 text-white placeholder-text-muted focus:outline-none focus:border-accent-primary transition-colors resize-none"></textarea>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-text-secondary mb-2">Email de contacto</label>
+                <input id="cfg-email" type="email" placeholder="hola@automanex.us"
+                       class="admin-input w-full px-4 py-3 rounded-xl bg-bg-tertiary border border-white/10 text-white placeholder-text-muted focus:outline-none focus:border-accent-primary transition-colors" />
+              </div>
+            </div>
+
+            <div class="card space-y-5">
+              <h2 class="font-bold text-lg flex items-center gap-2">🏷️ Marca</h2>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-text-secondary mb-2">Nombre de la marca</label>
+                  <input id="cfg-brand" type="text" placeholder="AutomaNexus"
+                         class="admin-input w-full px-4 py-3 rounded-xl bg-bg-tertiary border border-white/10 text-white placeholder-text-muted focus:outline-none focus:border-accent-primary transition-colors" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-text-secondary mb-2">Ciudad principal</label>
+                  <input id="cfg-city" type="text" placeholder="México"
+                         class="admin-input w-full px-4 py-3 rounded-xl bg-bg-tertiary border border-white/10 text-white placeholder-text-muted focus:outline-none focus:border-accent-primary transition-colors" />
+                </div>
+              </div>
+            </div>
+
+            <div class="card space-y-5">
+              <h2 class="font-bold text-lg flex items-center gap-2">💰 Precios (USD)</h2>
+
+              <div class="grid grid-cols-3 gap-3">
+                <div class="text-center">
+                  <p class="text-sm font-semibold text-text-secondary mb-3">Presencia</p>
+                  <input id="cfg-presencia-setup" type="number" placeholder="99" class="admin-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-center text-sm focus:outline-none focus:border-accent-primary transition-colors mb-2" />
+                  <input id="cfg-presencia-monthly" type="number" placeholder="25" class="admin-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-center text-sm focus:outline-none focus:border-accent-primary transition-colors" />
+                  <p class="text-xs text-text-muted mt-2">Setup / Mensual</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-sm font-semibold text-accent-primary mb-3">Profesional ⭐</p>
+                  <input id="cfg-profesional-setup" type="number" placeholder="199" class="admin-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-center text-sm focus:outline-none focus:border-accent-primary transition-colors mb-2" />
+                  <input id="cfg-profesional-monthly" type="number" placeholder="50" class="admin-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-center text-sm focus:outline-none focus:border-accent-primary transition-colors" />
+                  <p class="text-xs text-text-muted mt-2">Setup / Mensual</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-sm font-semibold text-text-secondary mb-3">Premium</p>
+                  <input id="cfg-premium-setup" type="number" placeholder="399" class="admin-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-center text-sm focus:outline-none focus:border-accent-primary transition-colors mb-2" />
+                  <input id="cfg-premium-monthly" type="number" placeholder="80" class="admin-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-center text-sm focus:outline-none focus:border-accent-primary transition-colors" />
+                  <p class="text-xs text-text-muted mt-2">Setup / Mensual</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 pt-2">
+                <input id="cfg-show-prices" type="checkbox" class="w-5 h-5 rounded accent-accent-primary" />
+                <label for="cfg-show-prices" class="text-sm text-text-secondary cursor-pointer">Mostrar precios públicamente en la web</label>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <button id="config-save" class="btn-primary flex-1 justify-center">💾 Guardar cambios</button>
+              <button id="config-reload" class="btn-secondary">↻ Recargar de la DB</button>
+            </div>
+            <div id="config-status" class="text-center text-sm hidden"></div>
+          </div>
+
+          <!-- ==================== TAB: CRM ==================== -->
+          <div id="panel-crm" class="hidden space-y-4">
+            <!-- Stats -->
+            <div id="crm-stats" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3"></div>
+
+            <!-- Add lead form -->
+            <div class="card">
+              <button id="toggle-add-lead" class="w-full flex items-center justify-between font-semibold">
+                <span class="flex items-center gap-2">➕ Añadir lead manualmente</span>
+                <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="add-lead-form" class="hidden mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <input id="lead-nicho" type="text" placeholder="Nicho (dentista, abogado...)" class="crm-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-sm focus:outline-none focus:border-accent-primary" />
+                <input id="lead-ciudad" type="text" placeholder="Ciudad" class="crm-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-sm focus:outline-none focus:border-accent-primary" />
+                <input id="lead-negocio" type="text" placeholder="Nombre del negocio" class="crm-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-sm focus:outline-none focus:border-accent-primary" />
+                <input id="lead-telefono" type="text" placeholder="Teléfono" class="crm-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-sm focus:outline-none focus:border-accent-primary" />
+                <input id="lead-rating" type="number" step="0.1" placeholder="Rating (0-5)" class="crm-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-sm focus:outline-none focus:border-accent-primary" />
+                <input id="lead-reviews" type="number" placeholder="N° reseñas" class="crm-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-sm focus:outline-none focus:border-accent-primary" />
+                <div class="sm:col-span-2 lg:col-span-3">
+                  <textarea id="lead-notas" rows="2" placeholder="Notas..." class="crm-input w-full px-3 py-2.5 rounded-lg bg-bg-tertiary border border-white/10 text-white text-sm focus:outline-none focus:border-accent-primary resize-none"></textarea>
+                </div>
+                <button id="lead-create" class="btn-primary text-sm justify-center">➕ Crear lead</button>
+              </div>
+            </div>
+
+            <!-- Leads table -->
+            <div class="card overflow-x-auto">
+              <div id="leads-list" class="space-y-2 min-w-[700px]">
+                <p class="text-text-muted text-center py-8">Cargando leads...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script is:inline>
+    const ADMIN_PASSWORD = 'automanexus2026';
+    const API_BASE = '/api';
+    let adminKey = '';
+
+    // ===== AUTH =====
+    function checkAuth() {
+      if (sessionStorage.getItem('an_admin_auth') === '1') {
+        adminKey = ADMIN_PASSWORD;
+        showPanel();
+      }
+    }
+
+    function showPanel() {
+      document.getElementById('login-gate')?.classList.add('hidden');
+      document.getElementById('admin-panel')?.classList.remove('hidden');
+      loadConfig();
+      loadLeads();
+    }
+
+    document.getElementById('admin-login-btn')?.addEventListener('click', () => {
+      const pw = document.getElementById('admin-password').value;
+      if (pw === ADMIN_PASSWORD) {
+        sessionStorage.setItem('an_admin_auth', '1');
+        adminKey = pw;
+        showPanel();
+      } else {
+        const err = document.getElementById('login-error');
+        err?.classList.remove('hidden');
+        setTimeout(() => err?.classList.add('hidden'), 3000);
+      }
+    });
+
+    document.getElementById('admin-logout')?.addEventListener('click', () => {
+      sessionStorage.removeItem('an_admin_auth');
+      location.reload();
+    });
+
+    // ===== TABS =====
+    const tabConfig = document.getElementById('tab-config');
+    const tabCrm = document.getElementById('tab-crm');
+    const panelConfig = document.getElementById('panel-config');
+    const panelCrm = document.getElementById('panel-crm');
+
+    function switchTab(tab) {
+      if (tab === 'config') {
+        tabConfig.className = 'tab-btn px-5 py-2.5 rounded-lg font-semibold text-sm transition-all bg-accent-primary text-white';
+        tabCrm.className = 'tab-btn px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-text-secondary hover:text-white';
+        panelConfig.classList.remove('hidden');
+        panelCrm.classList.add('hidden');
+      } else {
+        tabCrm.className = 'tab-btn px-5 py-2.5 rounded-lg font-semibold text-sm transition-all bg-accent-primary text-white';
+        tabConfig.className = 'tab-btn px-5 py-2.5 rounded-lg font-semibold text-sm transition-all text-text-secondary hover:text-white';
+        panelCrm.classList.remove('hidden');
+        panelConfig.classList.add('hidden');
+        loadLeads();
+      }
+    }
+
+    tabConfig?.addEventListener('click', () => switchTab('config'));
+    tabCrm?.addEventListener('click', () => switchTab('crm'));
+
+    // ===== CONFIG =====
+    async function loadConfig() {
+      try {
+        const res = await fetch(`${API_BASE}/config`);
+        const data = await res.json();
+        if (data.success && data.config) {
+          const c = data.config;
+          document.getElementById('cfg-whatsapp').value = c.whatsapp || '';
+          document.getElementById('cfg-wa-message').value = c.whatsappMessage || '';
+          document.getElementById('cfg-email').value = c.email || '';
+          document.getElementById('cfg-brand').value = c.brandName || '';
+          document.getElementById('cfg-city').value = c.city || '';
+          document.getElementById('cfg-show-prices').checked = c.showPrices !== false;
+          document.getElementById('cfg-presencia-setup').value = c.prices?.presencia?.setup ?? 99;
+          document.getElementById('cfg-presencia-monthly').value = c.prices?.presencia?.monthly ?? 25;
+          document.getElementById('cfg-profesional-setup').value = c.prices?.profesional?.setup ?? 199;
+          document.getElementById('cfg-profesional-monthly').value = c.prices?.profesional?.monthly ?? 50;
+          document.getElementById('cfg-premium-setup').value = c.prices?.premium?.setup ?? 399;
+          document.getElementById('cfg-premium-monthly').value = c.prices?.premium?.monthly ?? 80;
+        }
+      } catch(e) {
+        showStatus('Error al cargar config: ' + e.message, 'error');
+      }
+    }
+
+    async function saveConfig() {
+      const config = {
+        whatsapp: document.getElementById('cfg-whatsapp').value,
+        whatsappMessage: document.getElementById('cfg-wa-message').value,
+        email: document.getElementById('cfg-email').value,
+        brandName: document.getElementById('cfg-brand').value,
+        city: document.getElementById('cfg-city').value,
+        showPrices: document.getElementById('cfg-show-prices').checked,
+        prices: {
+          presencia: {
+            setup: parseInt(document.getElementById('cfg-presencia-setup').value) || 99,
+            monthly: parseInt(document.getElementById('cfg-presencia-monthly').value) || 25,
+          },
+          profesional: {
+            setup: parseInt(document.getElementById('cfg-profesional-setup').value) || 199,
+            monthly: parseInt(document.getElementById('cfg-profesional-monthly').value) || 50,
+          },
+          premium: {
+            setup: parseInt(document.getElementById('cfg-premium-setup').value) || 399,
+            monthly: parseInt(document.getElementById('cfg-premium-monthly').value) || 80,
+          },
+        }
+      };
+
+      try {
+        const res = await fetch(`${API_BASE}/config`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json', 'X-Admin-Key': adminKey },
+          body: JSON.stringify(config),
+        });
+        const data = await res.json();
+        if (data.success) {
+          showStatus('✅ Guardado en la base de datos', 'success');
+        } else {
+          showStatus('Error: ' + (data.error || 'desconocido'), 'error');
+        }
+      } catch(e) {
+        showStatus('Error: ' + e.message, 'error');
+      }
+    }
+
+    function showStatus(msg, type) {
+      const el = document.getElementById('config-status');
+      el.textContent = msg;
+      el.className = 'text-center text-sm ' + (type === 'success' ? 'text-accent-success' : type === 'error' ? 'text-accent-danger' : 'text-text-secondary');
+      el.classList.remove('hidden');
+      setTimeout(() => el.classList.add('hidden'), 4000);
+    }
+
+    document.getElementById('config-save')?.addEventListener('click', saveConfig);
+    document.getElementById('config-reload')?.addEventListener('click', loadConfig);
+
+    // ===== CRM / LEADS =====
+    let allLeads = [];
+
+    const ESTADOS = {
+      'nuevo': { label: 'Nuevo', color: 'bg-blue-500/20 text-blue-400' },
+      'contactado': { label: 'Contactado', color: 'bg-yellow-500/20 text-yellow-400' },
+      'respondio': { label: 'Respondió', color: 'bg-cyan-500/20 text-cyan-400' },
+      'demo_enviada': { label: 'Demo enviada', color: 'bg-purple-500/20 text-purple-400' },
+      'negociando': { label: 'Negociando', color: 'bg-orange-500/20 text-orange-400' },
+      'cliente': { label: 'Cliente', color: 'bg-green-500/20 text-green-400' },
+      'rechazo': { label: 'Rechazó', color: 'bg-red-500/20 text-red-400' },
+      'sin_respuesta': { label: 'Sin respuesta', color: 'bg-gray-500/20 text-gray-400' },
+    };
+
+    async function loadLeads() {
+      try {
+        const res = await fetch(`${API_BASE}/leads`, { headers: { 'X-Admin-Key': adminKey } });
+        const data = await res.json();
+        if (data.success) {
+          allLeads = data.leads || [];
+          renderLeads();
+          renderStats();
+        }
+      } catch(e) {
+        document.getElementById('leads-list').innerHTML = '<p class="text-accent-danger text-center py-8">Error al cargar leads</p>';
+      }
+    }
+
+    function renderStats() {
+      const stats = {};
+      allLeads.forEach(l => { stats[l.estado] = (stats[l.estado] || 0) + 1; });
+
+      const total = allLeads.length;
+      const clientes = stats['cliente'] || 0;
+      const activos = (stats['nuevo']||0) + (stats['contactado']||0) + (stats['respondio']||0) + (stats['demo_enviada']||0) + (stats['negociando']||0);
+
+      const statsEl = document.getElementById('crm-stats');
+      statsEl.innerHTML = `
+        <div class="card !p-4 text-center">
+          <p class="text-2xl font-black">${total}</p>
+          <p class="text-xs text-text-muted">Total leads</p>
+        </div>
+        <div class="card !p-4 text-center">
+          <p class="text-2xl font-black text-yellow-400">${activos}</p>
+          <p class="text-xs text-text-muted">En pipeline</p>
+        </div>
+        <div class="card !p-4 text-center">
+          <p class="text-2xl font-black text-green-400">${clientes}</p>
+          <p class="text-xs text-text-muted">Clientes</p>
+        </div>
+        <div class="card !p-4 text-center">
+          <p class="text-2xl font-black text-accent-primary">${total > 0 ? ((clientes/total)*100).toFixed(0) : 0}%</p>
+          <p class="text-xs text-text-muted">Conversión</p>
+        </div>
+      `;
+
+      const countEl = document.getElementById('leads-count');
+      if (total > 0) {
+        countEl.textContent = total;
+        countEl.classList.remove('hidden');
+      }
+    }
+
+    function renderLeads() {
+      const list = document.getElementById('leads-list');
+      if (allLeads.length === 0) {
+        list.innerHTML = '<p class="text-text-muted text-center py-8">Sin leads todavía. Los leads del scraper aparecerán aquí.</p>';
+        return;
+      }
+
+      list.innerHTML = allLeads.map(l => {
+        const estado = ESTADOS[l.estado] || ESTADOS['nuevo'];
+        const estadoOptions = Object.entries(ESTADOS).map(([k, v]) =>
+          `<option value="${k}" ${k === l.estado ? 'selected' : ''}>${v.label}</option>`
+        ).join('');
+
+        return `
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-bg-tertiary hover:bg-bg-tertiary/80 transition-colors">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-semibold text-sm truncate">${l.negocio || 'Sin nombre'}</span>
+                ${l.rating > 0 ? `<span class="text-xs text-yellow-400 flex-shrink-0">★ ${l.rating}</span>` : ''}
+              </div>
+              <div class="flex items-center gap-2 text-xs text-text-muted">
+                <span>${l.nicho || '—'}</span>
+                <span>·</span>
+                <span>${l.ciudad || '—'}</span>
+                <span>·</span>
+                <span>${l.telefono || '—'}</span>
+                ${l.notas ? `<span class="text-text-muted truncate">· ${l.notas}</span>` : ''}
+              </div>
+            </div>
+            <select onchange="updateLeadEstado(${l.id}, this.value)" class="text-xs px-3 py-1.5 rounded-lg ${estado.color} border-0 focus:outline-none cursor-pointer">
+              ${estadoOptions}
+            </select>
+            <button onclick="deleteLead(${l.id})" class="text-text-muted hover:text-accent-danger transition-colors p-1" title="Eliminar">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function updateLeadEstado(id, estado) {
+      try {
+        await fetch(`${API_BASE}/leads/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json', 'X-Admin-Key': adminKey },
+          body: JSON.stringify({ estado }),
+        });
+        loadLeads();
+      } catch(e) {}
+    }
+
+    async function deleteLead(id) {
+      if (!confirm('¿Eliminar este lead?')) return;
+      try {
+        await fetch(`${API_BASE}/leads/${id}`, {
+          method: 'DELETE',
+          headers: { 'X-Admin-Key': adminKey },
+        });
+        loadLeads();
+      } catch(e) {}
+    }
+
+    window.updateLeadEstado = updateLeadEstado;
+    window.deleteLead = deleteLead;
+
+    // Add lead form
+    document.getElementById('toggle-add-lead')?.addEventListener('click', () => {
+      const form = document.getElementById('add-lead-form');
+      form.classList.toggle('hidden');
+    });
+
+    document.getElementById('lead-create')?.addEventListener('click', async () => {
+      const lead = {
+        nicho: document.getElementById('lead-nicho').value,
+        ciudad: document.getElementById('lead-ciudad').value,
+        negocio: document.getElementById('lead-negocio').value,
+        telefono: document.getElementById('lead-telefono').value,
+        rating: parseFloat(document.getElementById('lead-rating').value) || 0,
+        reviews_count: parseInt(document.getElementById('lead-reviews').value) || 0,
+        notas: document.getElementById('lead-notas').value,
+      };
+
+      try {
+        const res = await fetch(`${API_BASE}/leads`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-Admin-Key': adminKey },
+          body: JSON.stringify(lead),
+        });
+        const data = await res.json();
+        if (data.success) {
+          document.querySelectorAll('.crm-input').forEach(el => el.value = '');
+          loadLeads();
+        }
+      } catch(e) {}
+    });
+
+    // Init
+    checkAuth();
+  </script>
+</BaseLayout>

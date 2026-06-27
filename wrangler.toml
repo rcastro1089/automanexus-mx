@@ -1,0 +1,8 @@
+name = "automanexus-mx"
+compatibility_date = "2025-06-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "automanexus-mx-db"
+database_id = "f595f732-7709-4356-83c7-51c69fb7a02e"
