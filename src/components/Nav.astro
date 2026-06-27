@@ -12,7 +12,7 @@ const nichos = [
 ];
 ---
 
-<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" data-nav>
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/[0.04]" data-nav>
   <div class="container-mx">
     <div class="flex items-center justify-between h-16 lg:h-20 transition-all" data-nav-inner>
       <!-- Logo -->
@@ -74,12 +74,11 @@ const nichos = [
 <script is:inline>
   // Nav scroll effect
   const nav = document.querySelector('[data-nav]');
-  const navInner = document.querySelector('[data-nav-inner]');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      nav?.classList.add('glass', 'border-b', 'border-white/5');
+      nav?.classList.add('nav-scrolled', 'border-b', 'border-white/5');
     } else {
-      nav?.classList.remove('glass', 'border-b', 'border-white/5');
+      nav?.classList.remove('nav-scrolled', 'border-b', 'border-white/5');
     }
   });
 

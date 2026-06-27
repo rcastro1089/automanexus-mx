@@ -3,195 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hogares Premium | Inmobiliaria en Querétaro, Juriquilla</title>
-<meta name="description" content="Hogares Premium en Juriquilla, Querétaro. Venta de casas, renta de departamentos, terrenos, avalúos y administración. Lic. Alejandra Ruiz.">
+<title>Hogares Premium | Bienes Raíces en Querétaro · Venta, Renta y Asesoría</title>
+<meta name="description" content="Inmobiliaria premium en Querétaro, Qro. Venta de casas, renta de departamentos, terrenos y asesoría personalizada. Lic. Alejandra Ruiz, 12 años de experiencia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --green:#1f4d3a;
-    --green-dark:#14392b;
-    --green-light:#2d6e54;
-    --gold:#c9a44c;
-    --gold-light:#e0c378;
-    --ink:#243329;
-    --muted:#6b7d72;
-    --bg:#f5f7f4;
-    --cream:#faf8f1;
-    --line:#e2e8e1;
-    --white:#fff;
+    --bg:#f6f4ee;
+    --paper:#fdfcf8;
+    --ink:#1a2620;
+    --green:#2c4a3a;
+    --green-deep:#1a3027;
+    --gold:#b89968;
+    --gold-deep:#8a7048;
+    --muted:#6a6f68;
+    --line:rgba(26,38,32,.1);
+    --serif:'Playfair Display','Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;padding-top:38px}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;padding-top:38px;-webkit-font-smoothing:antialiased}
   a{text-decoration:none;color:inherit}
-  .serif{font-family:'Playfair Display',Georgia,serif}
+  img{max-width:100%;display:block}
+  .container{max-width:1200px;margin:0 auto;padding:0 28px}
 
-  .demo-banner{position:fixed;top:0;left:0;right:0;height:38px;background:#0d2418;color:#cdd9c8;
-    display:flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;font-weight:500;z-index:1000;padding:0 12px;text-align:center}
-  .demo-banner a{color:var(--gold-light);text-decoration:underline;font-weight:600}
-  .demo-badge{background:var(--gold);color:#0d2418;border-radius:4px;padding:1px 7px;font-weight:700;letter-spacing:.5px;font-size:11px}
+  .demo-banner{position:fixed;top:0;left:0;right:0;height:38px;background:var(--green-deep);color:#e8e4d8;display:flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;font-weight:500;z-index:1000;padding:0 12px;text-align:center;letter-spacing:.3px}
+  .demo-banner a{color:var(--gold);text-decoration:underline;font-weight:600}
+  .demo-badge{background:var(--gold);color:var(--green-deep);border-radius:3px;padding:1px 7px;font-weight:700;letter-spacing:.5px;font-size:10.5px;text-transform:uppercase}
 
-  .container{max-width:1180px;margin:0 auto;padding:0 22px}
+  header.site{background:rgba(246,244,238,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);position:sticky;top:38px;z-index:900}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand-mark{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:500;font-size:24px;color:var(--green-deep);background:var(--paper);letter-spacing:-1px}
+  .brand-text strong{display:block;font-family:var(--serif);font-size:22px;font-weight:500;color:var(--green-deep);letter-spacing:-.3px;line-height:1.1}
+  .brand-text span{display:block;font-size:10.5px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:2px}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink);transition:color .2s;letter-spacing:.3px}
+  .nav-links a:hover{color:var(--gold-deep)}
+  .btn{display:inline-block;background:var(--green-deep);color:var(--bg);padding:13px 26px;font-family:var(--serif);font-size:16px;font-weight:500;letter-spacing:.3px;transition:.25s;cursor:pointer;border:1.5px solid var(--green-deep)}
+  .btn:hover{background:transparent;color:var(--green-deep)}
+  .btn-gold{background:var(--gold);border-color:var(--gold);color:var(--green-deep)}
+  .btn-gold:hover{background:transparent;color:var(--gold-deep);border-color:var(--gold-deep)}
+  .btn-outline{background:transparent;color:var(--green-deep);border:1.5px solid var(--green-deep);padding:12px 24px}
+  .btn-outline:hover{background:var(--green-deep);color:var(--bg)}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--green-deep);font-size:22px}
 
-  header.site{background:rgba(31,77,58,.97);backdrop-filter:blur(8px);position:sticky;top:38px;z-index:900;box-shadow:0 2px 20px rgba(13,36,24,.15)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-  .brand{display:flex;align-items:center;gap:12px;color:#fff}
-  .brand .logo{width:44px;height:44px;border-radius:8px;border:1.5px solid var(--gold);color:var(--gold);
-    display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:800}
-  .brand .txt{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;letter-spacing:.3px}
-  .brand small{display:block;font-size:9.5px;color:var(--gold-light);font-weight:500;letter-spacing:2.5px;text-transform:uppercase;margin-top:-2px}
-  .nav-links{display:flex;gap:28px;align-items:center}
-  .nav-links a{font-size:14px;font-weight:500;color:#cdd9c8;transition:color .2s}
-  .nav-links a:hover{color:var(--gold-light)}
-  .btn{display:inline-block;background:var(--gold);color:var(--green-dark);padding:12px 26px;border-radius:6px;font-weight:700;font-size:14px;transition:.2s;cursor:pointer;border:none;letter-spacing:.3px}
-  .btn:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 6px 18px rgba(201,164,76,.35)}
-  .btn-green{background:var(--green);color:#fff}
-  .btn-green:hover{background:var(--green-dark);box-shadow:0 6px 18px rgba(31,77,58,.35)}
-  .btn-outline{background:transparent;color:var(--gold-light);border:1.5px solid var(--gold)}
-  .btn-outline:hover{background:var(--gold);color:var(--green-dark)}
-  .menu-toggle{display:none;background:none;border:none;font-size:24px;color:#fff;cursor:pointer}
+  /* Search bar */
+  .search-bar{background:var(--green-deep);padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .search-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:10px;align-items:end}
+  .search-field label{display:block;font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .search-field input,.search-field select{width:100%;padding:11px 14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:var(--bg);font-family:var(--sans);font-size:14px;outline:none}
+  .search-field input::placeholder{color:rgba(253,252,248,.5)}
+  .search-field select option{color:var(--ink);background:var(--paper)}
+  .search-bar button{background:var(--gold);color:var(--green-deep);border:none;padding:12px 28px;font-family:var(--serif);font-size:15px;font-weight:500;cursor:pointer;letter-spacing:.3px;transition:background .2s}
+  .search-bar button:hover{background:#d4b078}
 
-  /* Hero */
-  .hero{background:linear-gradient(rgba(13,36,24,.78),rgba(13,36,24,.65)),
-    linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;padding:96px 0;position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;right:-100px;top:-80px;width:420px;height:420px;
-    border:2px solid rgba(201,164,76,.12);border-radius:50%}
-  .hero::before{content:"";position:absolute;left:-120px;bottom:-140px;width:340px;height:340px;
-    border:2px solid rgba(201,164,76,.08);border-radius:50%}
-  .hero-content{max-width:680px;position:relative;z-index:1}
-  .hero .eyebrow{color:var(--gold-light);font-size:13px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:16px;display:block}
-  .hero h1{font-family:'Playfair Display',serif;font-size:52px;line-height:1.1;font-weight:800;margin-bottom:22px;letter-spacing:-.5px}
-  .hero h1 em{font-style:italic;color:var(--gold-light)}
-  .hero p.lead{font-size:18px;color:#d4ddd6;margin-bottom:32px;max-width:560px;font-weight:300}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-search{margin-top:42px;background:rgba(255,255,255,.08);border:1px solid rgba(201,164,76,.3);border-radius:10px;
-    padding:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;backdrop-filter:blur(6px);max-width:680px}
-  .hero-search .field{flex:1;min-width:140px}
-  .hero-search label{font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:6px;font-weight:600}
-  .hero-search select,.hero-search input{width:100%;padding:11px 13px;border-radius:6px;border:1px solid rgba(255,255,255,.2);
-    background:rgba(255,255,255,.1);color:#fff;font-family:inherit;font-size:14px}
-  .hero-search select option{color:var(--ink)}
-  .hero-trust{display:flex;gap:40px;margin-top:44px;flex-wrap:wrap;border-top:1px solid rgba(201,164,76,.2);padding-top:30px;position:relative;z-index:1}
-  .stat strong{display:block;font-family:'Playfair Display',serif;font-size:32px;color:var(--gold-light);font-weight:800}
-  .stat span{font-size:13px;color:#aebcb2}
+  .hero{padding:100px 0 90px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero::before{content:'';position:absolute;top:30%;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(184,153,104,.08) 0%,transparent 60%);pointer-events:none}
+  .hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+  .hero-eyebrow .line{width:54px;height:1px;background:var(--gold)}
+  .hero-eyebrow span{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep)}
+  .hero h1{font-family:var(--serif);font-size:clamp(40px,6vw,72px);line-height:1.04;font-weight:400;color:var(--green-deep);letter-spacing:-1.5px;margin-bottom:32px;max-width:920px}
+  .hero h1 em{font-style:italic;color:var(--gold-deep);font-weight:400}
+  .hero-sub{font-size:18px;color:var(--muted);max-width:640px;line-height:1.65;margin-bottom:42px}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:80px;padding-top:48px;border-top:1px solid var(--line)}
+  .stat-num{font-family:var(--serif);font-size:46px;font-weight:400;color:var(--green-deep);line-height:1;letter-spacing:-1.5px}
+  .stat-num span{color:var(--gold-deep)}
+  .stat-label{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:10px}
 
-  section{padding:80px 0}
-  .section-head{text-align:center;max-width:660px;margin:0 auto 52px}
-  .section-head .eyebrow{color:var(--gold);font-weight:700;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px;display:block}
-  .section-head h2{font-family:'Playfair Display',serif;font-size:38px;font-weight:800;letter-spacing:-.5px;margin-bottom:14px}
-  .section-head p{color:var(--muted);font-size:16px}
+  section{padding:110px 0;border-bottom:1px solid var(--line)}
+  .section-head{text-align:center;margin-bottom:72px}
+  .section-head .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px}
+  .section-head h2{font-family:var(--serif);font-size:clamp(32px,4.5vw,52px);line-height:1.05;font-weight:400;color:var(--green-deep);letter-spacing:-1px;margin-bottom:18px}
+  .section-head h2 em{font-style:italic;color:var(--gold-deep)}
+  .section-head p{color:var(--muted);font-size:17px;max-width:620px;margin:0 auto;line-height:1.6}
 
-  /* Listings */
-  .listings{background:var(--white)}
-  .filter-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:38px;flex-wrap:wrap}
-  .filter-tabs button{padding:9px 22px;border-radius:30px;border:1.5px solid var(--line);background:#fff;
-    font-family:inherit;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;transition:.2s}
-  .filter-tabs button.active,.filter-tabs button:hover{background:var(--green);color:#fff;border-color:var(--green)}
-  .props-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-  .prop{background:var(--bg);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.25s}
-  .prop:hover{transform:translateY(-6px);box-shadow:0 22px 50px -22px rgba(31,77,58,.35)}
-  .prop-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative}
-  .prop:nth-child(1) .prop-img{background:linear-gradient(135deg,#3d6b54,#1f4d3a)}
-  .prop:nth-child(2) .prop-img{background:linear-gradient(135deg,#5a7d68,#2d6e54)}
-  .prop:nth-child(3) .prop-img{background:linear-gradient(135deg,#43605324,var(--gold))}
-  .prop-tag{position:absolute;top:14px;left:14px;background:var(--gold);color:var(--green-dark);
-    padding:5px 14px;border-radius:20px;font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
-  .prop-body{padding:24px}
-  .prop-price{font-family:'Playfair Display',serif;font-size:25px;font-weight:800;color:var(--green);margin-bottom:6px}
-  .prop-price small{font-size:13px;color:var(--muted);font-weight:400}
-  .prop-body h3{font-size:17px;margin-bottom:8px;font-weight:600}
-  .prop-loc{font-size:13.5px;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:6px}
-  .prop-feats{display:flex;gap:16px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;flex-wrap:wrap}
-  .prop-feats span{display:flex;align-items:center;gap:5px}
+  /* Properties */
+  .properties{background:var(--paper)}
+  .properties-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line)}
+  .property{padding:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:all .3s;position:relative;background:var(--paper)}
+  .property:nth-child(3n){border-right:none}
+  .property:nth-last-child(-n+3){border-bottom:none}
+  .property:hover{box-shadow:0 0 30px rgba(26,38,32,.08)}
+  .property-img{position:relative;aspect-ratio:4/3;overflow:hidden}
+  .property-img-1{background:linear-gradient(135deg,#d4c0a8 0%,#8a7048 100%)}
+  .property-img-2{background:linear-gradient(135deg,#c8d4c0 0%,#2c4a3a 100%)}
+  .property-img-3{background:linear-gradient(135deg,#e8d4d0 0%,#8a7048 100%)}
+  .property-tag{position:absolute;top:18px;left:18px;background:var(--green-deep);color:var(--gold);padding:6px 14px;font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+  .property-tag.venta{background:var(--gold);color:var(--green-deep)}
+  .property-body{padding:30px 32px 36px}
+  .property h3{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--green-deep);margin-bottom:8px;letter-spacing:-.3px}
+  .property-loc{color:var(--muted);font-size:13.5px;margin-bottom:18px;display:flex;align-items:center;gap:6px}
+  .property-specs{display:flex;gap:18px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:18px}
+  .spec{font-size:13px;color:var(--ink);display:flex;align-items:center;gap:6px;font-weight:500}
+  .spec .ico{color:var(--gold-deep);font-family:var(--serif);font-size:18px}
+  .property-price{font-family:var(--serif);font-size:30px;font-weight:500;color:var(--green-deep);letter-spacing:-1px;margin-bottom:6px}
+  .property-price small{font-size:13px;color:var(--muted);font-family:var(--sans);font-weight:400;letter-spacing:normal;margin-left:4px}
+  .property-link{display:inline-block;margin-top:14px;font-size:12px;font-weight:600;color:var(--green-deep);letter-spacing:1.5px;text-transform:uppercase;transition:gap .2s}
+  .property-link:hover{color:var(--gold-deep)}
 
   /* Services */
-  .services{background:var(--cream)}
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .svc-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px;transition:.2s}
-  .svc-card:hover{transform:translateY(-4px);box-shadow:0 14px 38px -18px rgba(31,77,58,.3);border-color:var(--green-light)}
-  .svc-icon{width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,var(--green),var(--gold));
-    display:flex;align-items:center;justify-content:center;font-size:25px;margin-bottom:16px}
-  .svc-card h3{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:8px;font-weight:700}
-  .svc-card p{font-size:14.5px;color:var(--muted)}
+  .services{background:var(--bg)}
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);background:var(--paper)}
+  .service{padding:48px 32px;border-right:1px solid var(--line);transition:all .3s;position:relative;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
+  .service:last-child{border-right:none}
+  .service:hover{background:var(--bg)}
+  .service-icon{font-family:var(--serif);font-size:34px;color:var(--gold-deep);margin-bottom:18px;display:block}
+  .service h3{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--green-deep);margin-bottom:12px;letter-spacing:-.3px}
+  .service p{color:var(--muted);font-size:14px;line-height:1.6}
 
-  /* About agent */
-  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
-  .agent-card{background:linear-gradient(160deg,var(--green),var(--green-dark));border-radius:16px;padding:38px;color:#fff;text-align:center;border:1px solid rgba(201,164,76,.3);position:relative;overflow:hidden}
-  .agent-card::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border:2px solid var(--gold);border-radius:50%;opacity:.15}
-  .agent-avatar{width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.15);border:3px solid rgba(201,164,76,.5);
-    margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:58px}
-  .agent-card h3{font-family:'Playfair Display',serif;font-size:25px;margin-bottom:3px;font-weight:700}
-  .agent-card .role{color:var(--gold-light);font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
-  .agent-creds{display:grid;gap:9px;font-size:13px;opacity:.9;border-top:1px solid rgba(201,164,76,.2);padding-top:16px;list-style:none}
-  .agent-creds li{display:flex;gap:8px;align-items:center}
-  .agent-creds li::before{content:"★";color:var(--gold-light)}
-  .about-text h2{font-family:'Playfair Display',serif;font-size:37px;font-weight:800;margin-bottom:16px;letter-spacing:-.5px}
-  .about-text p{color:var(--muted);margin-bottom:16px;font-size:15.5px}
-  .quote{border-left:3px solid var(--gold);padding:8px 0 8px 22px;margin:24px 0;font-family:'Playfair Display',serif;
-    font-style:italic;font-size:19px;color:var(--green-dark)}
-  .checklist{list-style:none;display:grid;gap:10px;margin-top:14px}
-  .checklist li{display:flex;align-items:flex-start;gap:10px;font-size:14.8px;font-weight:500}
-  .checklist li::before{content:"✓";color:var(--green);font-weight:800;margin-top:2px}
+  .about{background:var(--paper)}
+  .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+  .about-photo{position:relative;aspect-ratio:3/4;background:linear-gradient(135deg,#c8d4c0,#2c4a3a);overflow:hidden}
+  .about-photo::after{content:'LIC.';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:84px;color:rgba(255,255,255,.18);font-weight:400;letter-spacing:6px}
+  .about-photo .badge{position:absolute;bottom:24px;left:24px;background:var(--paper);padding:14px 22px;border:1px solid var(--line);max-width:280px}
+  .about-photo .badge strong{display:block;font-family:var(--serif);font-size:18px;color:var(--green-deep);font-weight:500}
+  .about-photo .badge span{font-size:12px;color:var(--muted);letter-spacing:.5px}
+  .about-content .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px}
+  .about-content h2{font-family:var(--serif);font-size:clamp(32px,4.2vw,48px);line-height:1.1;font-weight:400;color:var(--green-deep);letter-spacing:-1px;margin-bottom:24px}
+  .about-content h2 em{font-style:italic;color:var(--gold-deep)}
+  .about-content p{color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:18px}
+  .credentials{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px;padding-top:36px;border-top:1px solid var(--line)}
+  .cred{display:flex;align-items:flex-start;gap:14px}
+  .cred-icon{width:38px;height:38px;background:var(--bg);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--serif);color:var(--gold-deep);font-size:18px;flex-shrink:0}
+  .cred strong{display:block;font-size:14px;color:var(--green-deep);font-weight:600;margin-bottom:2px}
+  .cred span{font-size:13px;color:var(--muted)}
 
-  /* CTA */
-  .cta-bar{background:var(--green-dark);color:#fff;text-align:center;padding:68px 0;position:relative;overflow:hidden}
-  .cta-bar::before{content:"";position:absolute;right:10%;top:-60px;width:240px;height:240px;border:1.5px solid rgba(201,164,76,.12);border-radius:50%}
-  .cta-bar h2{font-family:'Playfair Display',serif;font-size:36px;margin-bottom:12px;font-weight:700;position:relative}
-  .cta-bar p{color:#cdd9c8;font-size:16px;margin-bottom:28px;font-weight:300;position:relative}
-  .cta-bar .btn{position:relative}
+  .process{background:var(--bg)}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .step{padding:42px 32px;border-right:1px solid var(--line)}
+  .step:last-child{border-right:none}
+  .step-num{font-family:var(--serif);font-size:54px;font-weight:400;color:var(--gold);line-height:1;margin-bottom:24px;display:block;letter-spacing:-2px}
+  .step h3{font-family:var(--serif);font-size:22px;color:var(--green-deep);margin-bottom:10px;font-weight:500;letter-spacing:-.3px}
+  .step p{color:var(--muted);font-size:14px;line-height:1.6}
 
-  /* Contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-  .contact-info h2{font-family:'Playfair Display',serif;font-size:35px;margin-bottom:16px;font-weight:800}
-  .contact-info p{color:var(--muted);margin-bottom:26px}
-  .info-item{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
-  .info-item .ico{width:46px;height:46px;border-radius:10px;background:var(--cream);border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-  .info-item h4{font-size:15px;margin-bottom:2px;color:var(--green);font-weight:600}
-  .info-item p{font-size:14.5px;color:var(--muted);margin:0}
-  form{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:32px}
-  form label{font-size:13px;font-weight:600;display:block;margin-bottom:6px;color:var(--ink)}
-  form input,form select,form textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:8px;
-    font-family:inherit;font-size:14.5px;margin-bottom:16px;background:#fff;color:var(--ink)}
-  form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--green)}
-  form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  form .btn{width:100%}
+  .testimonials{background:var(--paper)}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line)}
+  .test{padding:48px 40px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;min-height:340px}
+  .test:nth-child(3n){border-right:none}
+  .test:nth-last-child(-n+3){border-bottom:none}
+  .test-quote{font-family:var(--serif);font-size:22px;line-height:1.4;color:var(--green-deep);font-weight:400;font-style:italic;margin-bottom:32px;letter-spacing:-.2px}
+  .test-quote::before{content:'"';font-size:60px;color:var(--gold);font-family:var(--serif);line-height:0;display:block;height:24px;margin-bottom:6px;font-style:normal}
+  .test-author{border-top:1px solid var(--line);padding-top:20px}
+  .test-author strong{display:block;font-size:14px;font-weight:600;color:var(--green-deep)}
+  .test-author span{font-size:12.5px;color:var(--muted)}
 
-  footer{background:#0d2418;color:#8ba092;padding:58px 0 24px}
-  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:36px}
-  .foot-brand{font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:10px;font-weight:700}
-  footer h4{color:#fff;font-size:14px;margin-bottom:14px;letter-spacing:1px;text-transform:uppercase}
-  footer ul{list-style:none;display:grid;gap:8px;font-size:14px}
-  footer a:hover{color:var(--gold-light)}
-  .copyright{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;text-align:center;font-size:13px;opacity:.7}
+  .faq{background:var(--paper)}
+  .faq-list{max-width:880px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-q{width:100%;background:none;border:none;text-align:left;padding:28px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;font-family:var(--serif);font-size:21px;color:var(--green-deep);font-weight:500}
+  .faq-q .ico{width:32px;height:32px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--gold-deep);transition:.3s;flex-shrink:0;font-family:var(--sans)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s}
+  .faq-a p{padding:0 0 28px;color:var(--muted);font-size:15.5px;line-height:1.7;max-width:740px}
+  .faq-item.open .faq-a{max-height:300px}
+  .faq-item.open .faq-q .ico{transform:rotate(45deg);background:var(--green-deep);color:var(--bg);border-color:var(--green-deep)}
 
-  .whatsapp{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25d366;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.5);z-index:950;transition:.2s}
-  .whatsapp:hover{transform:scale(1.08)}
-  .whatsapp svg{width:32px;height:32px;fill:#fff}
+  .contact{background:var(--green-deep);color:var(--bg);border-bottom:none}
+  .contact .section-head h2{color:var(--bg)}
+  .contact .section-head h2 em{color:var(--gold)}
+  .contact .section-head p{color:rgba(246,244,238,.65)}
+  .contact .section-head .eyebrow{color:var(--gold)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start}
+  .contact-info{color:rgba(246,244,238,.8);font-size:15.5px;line-height:1.8}
+  .contact-info h3{font-family:var(--serif);font-size:28px;color:var(--bg);font-weight:500;margin-bottom:24px;letter-spacing:-.5px}
+  .contact-info .item{display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(246,244,238,.1)}
+  .contact-info .item .ico{width:42px;height:42px;border:1px solid rgba(246,244,238,.15);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--serif);font-size:18px;flex-shrink:0}
+  .contact-info .item strong{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:6px}
+  .contact-info .item span{font-size:15.5px;color:var(--bg);font-weight:500}
+  .contact-form{background:var(--paper);color:var(--ink);padding:48px 44px}
+  .contact-form h3{font-family:var(--serif);font-size:28px;font-weight:500;margin-bottom:8px;color:var(--green-deep);letter-spacing:-.5px}
+  .contact-form p{color:var(--muted);font-size:14.5px;margin-bottom:32px}
+  .field{margin-bottom:20px}
+  .field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--green-deep);margin-bottom:8px}
+  .field input,.field select,.field textarea{width:100%;padding:13px 16px;border:1px solid var(--line);background:var(--bg);font-family:var(--sans);font-size:15px;color:var(--ink);outline:none}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+  .field textarea{min-height:120px;resize:vertical;font-family:var(--sans)}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .contact-form button{width:100%;background:var(--green-deep);color:var(--bg);border:none;padding:16px;font-family:var(--serif);font-size:17px;font-weight:500;letter-spacing:.3px;cursor:pointer;transition:background .2s}
+  .contact-form button:hover{background:var(--gold);color:var(--green-deep)}
 
-  @media(max-width:940px){
-    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-    .props-grid{grid-template-columns:repeat(2,1fr)}
-    .svc-grid{grid-template-columns:repeat(2,1fr)}
-    .foot-grid{grid-template-columns:1fr 1fr}
-    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--green);flex-direction:column;
-      padding:20px;gap:14px;border-top:1px solid rgba(201,164,76,.2)}
+  footer{background:var(--green-deep);color:rgba(246,244,238,.5);padding:80px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+  .foot h4{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+  .foot ul{list-style:none}
+  .foot ul li{margin-bottom:11px;font-size:14px}
+  .foot ul li a{transition:color .2s}
+  .foot ul li a:hover{color:var(--bg)}
+  .foot-brand p{font-size:14px;line-height:1.7;max-width:340px;margin-top:14px}
+  .foot-bottom{padding-top:30px;border-top:1px solid rgba(246,244,238,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-size:13px}
+
+  .whatsapp-float{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.3);z-index:999;transition:transform .2s}
+  .whatsapp-float:hover{transform:scale(1.05)}
+  .whatsapp-float svg{width:32px;height:32px;fill:#fff}
+
+  @media(max-width:1024px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;padding:24px 28px;gap:18px;border-bottom:1px solid var(--line);align-items:flex-start}
     .nav-links.open{display:flex}
     .menu-toggle{display:block}
-    .hero h1{font-size:38px}
-    .hero{padding:60px 0}
-    section{padding:58px 0}
+    .search-grid{grid-template-columns:1fr 1fr;gap:8px}
+    .search-bar button{grid-column:span 2;width:100%}
+    .properties-grid,.services-grid,.test-grid,.process-grid{grid-template-columns:1fr}
+    .property,.service,.test,.step{border-right:none;border-bottom:1px solid var(--line)}
+    .about-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:40px}
+    .hero-stats{grid-template-columns:repeat(2,1fr);gap:32px}
+    .field-row{grid-template-columns:1fr}
+    section{padding:80px 0}
+    .hero{padding:80px 0 60px}
   }
   @media(max-width:560px){
-    .props-grid,.svc-grid{grid-template-columns:1fr}
-    .foot-grid{grid-template-columns:1fr}
-    form .row{grid-template-columns:1fr}
-    .hero h1{font-size:31px}
-    .hero-search{flex-direction:column}
-    .hero-search .field{width:100%}
+    .container{padding:0 20px}
+    .search-grid{grid-template-columns:1fr}
+    .search-bar button{grid-column:span 1}
+    .foot-grid{grid-template-columns:1fr;gap:36px}
+    .hero-stats{grid-template-columns:1fr 1fr;gap:20px}
+    .stat-num{font-size:36px}
+    .credentials{grid-template-columns:1fr}
+    .contact-form{padding:32px 24px}
   }
 </style>
 </head>
@@ -199,270 +230,442 @@
 
 <div class="demo-banner">
   <span class="demo-badge">DEMO</span>
-  <span>Esta es una página de demostración de <a href="https://automanexus.mx" target="_blank" rel="noopener">AutomaNexus</a></span>
+  Esta es una página de demostración de <a href="https://mx.automanex.us" target="_blank">AutomaNexus</a> · La real se entrega en 5 días con tu marca
 </div>
 
 <header class="site">
   <div class="container nav">
     <a href="#" class="brand">
-      <span class="logo">HP</span>
-      <span class="txt">Hogares Premium<small>Bienes Raíces</small></span>
+      <span class="brand-mark">H</span>
+      <span class="brand-text"><strong>Hogares Premium</strong><span>Bienes Raíces</span></span>
     </a>
-    <nav class="nav-links" id="nav">
+    <nav class="nav-links" id="navLinks">
       <a href="#propiedades">Propiedades</a>
       <a href="#servicios">Servicios</a>
-      <a href="#asesora">Asesora</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="#contacto">Contacto</a>
-      <a href="#contacto" class="btn">Agendar visita</a>
     </nav>
-    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a href="https://wa.me/524425678901?text=Hola%2C%20me%20interesa%20conocer%20propiedades%20disponibles%20en%20Quer%C3%A9taro." class="btn btn-gold" style="padding:11px 22px;font-size:15px">Asesoría Gratuita</a>
+      <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    </div>
   </div>
 </header>
 
+<div class="search-bar">
+  <div class="container">
+    <div class="search-grid">
+      <div class="search-field"><label>Operación</label><select><option>Compra</option><option>Renta</option><option>Vender mi propiedad</option></select></div>
+      <div class="search-field"><label>Tipo</label><select><option>Casa</option><option>Departamento</option><option>Terreno</option><option>Local comercial</option><option>Oficina</option></select></div>
+      <div class="search-field"><label>Zona</label><select><option>Juriquilla</option><option>El Refugio</option><option>Milenio III</option><option>Centro</option><option>Querétaro Norte</option></select></div>
+      <div class="search-field"><label>Presupuesto</label><select><option>Hasta $2M</option><option>$2M - $5M</option><option>$5M - $10M</option><option>$10M+</option></select></div>
+      <button>Buscar</button>
+    </div>
+  </div>
+</div>
+
 <section class="hero">
-  <div class="container hero-content">
-    <span class="eyebrow">Inmobiliaria en Juriquilla, Querétaro</span>
-    <h1>Encuentra el <em>hogar de tus sueños</em> en Querétaro</h1>
-    <p class="lead">Casas, departamentos y terrenos premium en las mejores zonas de Querétaro. Asesoría experta, avalúos certificados y un servicio de primer nivel.</p>
+  <div class="container">
+    <div class="hero-eyebrow">
+      <span class="line"></span>
+      <span>Inmobiliaria · Querétaro, Qro · 12 años en el mercado</span>
+    </div>
+    <h1>Tu próximo <em>hogar</em> está más cerca de lo que crees.</h1>
+    <p class="hero-sub">Asesoría inmobiliaria personalizada en Querétaro. Más de 850 propiedades vendidas en las mejores zonas: Juriquilla, El Refugio, Milenio III y Centro Sur.</p>
     <div class="hero-cta">
-      <a href="#propiedades" class="btn">Ver propiedades</a>
-      <a href="tel:+52442****8901" class="btn btn-outline">📞 442 567 8901</a>
+      <a href="https://wa.me/524425678901?text=Hola%2C%20me%20interesa%20conocer%20propiedades%20disponibles%20en%20Quer%C3%A9taro." class="btn">Asesoría Personalizada</a>
+      <a href="#propiedades" class="btn btn-outline">Ver Propiedades</a>
     </div>
-    <div class="hero-search">
-      <div class="field">
-        <label>Operación</label>
-        <select><option>Venta</option><option>Renta</option></select>
-      </div>
-      <div class="field">
-        <label>Tipo</label>
-        <select><option>Casa</option><option>Departamento</option><option>Terreno</option></select>
-      </div>
-      <div class="field">
-        <label>Rango</label>
-        <select><option>Cualquiera</option><option>$1M – $5M</option><option>$5M – $10M</option><option>+ $10M</option></select>
-      </div>
-      <button class="btn" style="height:44px">Buscar</button>
-    </div>
-    <div class="hero-trust">
-      <div class="stat"><strong>+12</strong><span>años en el mercado</span></div>
-      <div class="stat"><strong>+850</strong><span>propiedades vendidas</span></div>
-      <div class="stat"><strong>4.9★</strong><span>clientes satisfechos</span></div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">850<span>+</span></div><div class="stat-label">Propiedades vendidas</div></div>
+      <div class="stat"><div class="stat-num">12</div><div class="stat-label">Años en el mercado</div></div>
+      <div class="stat"><div class="stat-num">$2.4<span>B</span></div><div class="stat-label">En operaciones cerradas</div></div>
+      <div class="stat"><div class="stat-num">98<span>%</span></div><div class="stat-label">Clientes satisfechos</div></div>
     </div>
   </div>
 </section>
 
-<section class="listings" id="propiedades">
+<section id="propiedades" class="properties">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Propiedades destacadas</span>
-      <h2>Selección exclusiva en Querétaro</h2>
-      <p>Las mejores oportunidades inmobiliarias en Juriquilla y zonas aledañas.</p>
+      <p class="eyebrow">Propiedades Destacadas</p>
+      <h2>Las <em>mejores opciones</em> del mes</h2>
+      <p>Selección curada de nuestra asesora. Todas con documentación en regla y listos para escriturar.</p>
     </div>
-    <div class="filter-tabs">
-      <button class="active">Todas</button>
-      <button>Casas</button>
-      <button>Departamentos</button>
-      <button>Terrenos</button>
-    </div>
-    <div class="props-grid">
-      <div class="prop">
-        <div class="prop-img"><span class="prop-tag">Venta</span>🏡</div>
-        <div class="prop-body">
-          <div class="prop-price">$8,450,000 <small>MXN</small></div>
-          <h3>Casa de lujo en Juriquilla</h3>
-          <div class="prop-loc">📍 Juriquilla, Querétaro</div>
-          <div class="prop-feats">
-            <span>🛏 4 recámaras</span>
-            <span>🛁 4.5 baños</span>
-            <span>📐 420 m²</span>
-          </div>
+    <div class="properties-grid">
+      <article class="property">
+        <div class="property-img property-img-1">
+          <span class="property-tag venta">En Venta</span>
         </div>
-      </div>
-      <div class="prop">
-        <div class="prop-img"><span class="prop-tag">Renta</span>🏢</div>
-        <div class="prop-body">
-          <div class="prop-price">$28,000 <small>/ mes</small></div>
-          <h3>Departamento amueblado</h3>
-          <div class="prop-loc">📍 Centro Sur, Querétaro</div>
-          <div class="prop-feats">
-            <span>🛏 2 recámaras</span>
-            <span>🛁 2 baños</span>
-            <span>📐 110 m²</span>
+        <div class="property-body">
+          <h3>Casa en Juriquilla</h3>
+          <p class="property-loc">📍 Circuito Juriquilla, Juriquilla</p>
+          <div class="property-specs">
+            <span class="spec"><span class="ico">⌂</span>3 rec</span>
+            <span class="spec"><span class="ico">▣</span>240 m²</span>
+            <span class="spec"><span class="ico">⊕</span>2 baños</span>
+            <span class="spec"><span class="ico">⊟</span>2 estac</span>
           </div>
+          <div class="property-price">$8,450,000<small>MXN</small></div>
+          <p style="color:var(--muted);font-size:13.5px;line-height:1.6;margin-top:10px">Casa de 2 niveles con jardín privado, cocina integral y roof garden. Fraccionamiento con vigilancia 24/7.</p>
+          <a href="https://wa.me/524425678901?text=Hola%2C%20me%20interesa%20la%20casa%20en%20Juriquilla%20de%20%248%2C450%2C000" class="property-link">Ver detalles →</a>
         </div>
-      </div>
-      <div class="prop">
-        <div class="prop-img"><span class="prop-tag">Venta</span>🌳</div>
-        <div class="prop-body">
-          <div class="prop-price">$3,200,000 <small>MXN</small></div>
-          <h3>Terreno residencial</h3>
-          <div class="prop-loc">📍 El Pueblito, Querétaro</div>
-          <div class="prop-feats">
-            <span>📐 600 m²</span>
-            <span>💧 Servicios</span>
-            <span>🛣 Frente amplio</span>
+      </article>
+      <article class="property">
+        <div class="property-img property-img-2">
+          <span class="property-tag">En Renta</span>
+        </div>
+        <div class="property-body">
+          <h3>Depto en Milenio III</h3>
+          <p class="property-loc">📍 Torre Allegra, Milenio III</p>
+          <div class="property-specs">
+            <span class="spec"><span class="ico">⌂</span>2 rec</span>
+            <span class="spec"><span class="ico">▣</span>110 m²</span>
+            <span class="spec"><span class="ico">⊕</span>2 baños</span>
+            <span class="spec"><span class="ico">⊟</span>2 estac</span>
           </div>
+          <div class="property-price">$28,000<small>/mes MXN</small></div>
+          <p style="color:var(--muted);font-size:13.5px;line-height:1.6;margin-top:10px">Departamento amueblado de lujo, piso 18, vista panorámica. Amenidades: gym, alberca, salón de eventos.</p>
+          <a href="https://wa.me/524425678901?text=Hola%2C%20me%20interesa%20el%20departamento%20en%20Milenio%20III%20de%20%2428%2C000" class="property-link">Ver detalles →</a>
         </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:42px">
-      <a href="#contacto" class="btn btn-green">Ver todas las propiedades</a>
+      </article>
+      <article class="property">
+        <div class="property-img property-img-3">
+          <span class="property-tag venta">En Venta</span>
+        </div>
+        <div class="property-body">
+          <h3>Terreno en El Refugio</h3>
+          <p class="property-loc">📍 Calle Sierra del Mar, El Refugio</p>
+          <div class="property-specs">
+            <span class="spec"><span class="ico">▣</span>500 m²</span>
+            <span class="spec"><span class="ico">↑</span>15x33 m</span>
+            <span class="spec"><span class="ico">⊕</span>Servicios</span>
+          </div>
+          <div class="property-price">$3,200,000<small>MXN</small></div>
+          <p style="color:var(--muted);font-size:13.5px;line-height:1.6;margin-top:10px">Terreno en esquina con todos los servicios. Ideal para construir casa residencial en zona de alta plusvalía.</p>
+          <a href="https://wa.me/524425678901?text=Hola%2C%20me%20interesa%20el%20terreno%20en%20El%20Refugio%20de%20%243%2C200%2C000" class="property-link">Ver detalles →</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="services" id="servicios">
+<section id="servicios" class="services">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Nuestros servicios</span>
-      <h2>Soluciones inmobiliarias integrales</h2>
-      <p>Te acompañamos en cada etapa, desde la búsqueda hasta el cierre y la administración de tu propiedad.</p>
+      <p class="eyebrow">Servicios</p>
+      <h2>Más que <em>una inmobiliaria</em></h2>
+      <p>Acompañamos todo el proceso de compra, venta o renta de tu propiedad.</p>
     </div>
-    <div class="svc-grid">
-      <div class="svc-card"><div class="svc-icon">🏠</div><h3>Venta de casas</h3><p>Compraventa de propiedades residenciales con asesoría legal y financiera completa.</p></div>
-      <div class="svc-card"><div class="svc-icon">🔑</div><h3>Renta de departamentos</h3><p>Amplio catálogo de propiedades en renta, verificadas y listas para habitar.</p></div>
-      <div class="svc-card"><div class="svc-icon">🌳</div><h3>Terrenos</h3><p>Lotes y terrenos en zonas de alta plusvalía para construir o invertir.</p></div>
-      <div class="svc-card"><div class="svc-icon">📋</div><h3>Avalúos</h3><p>Avalúos certificados para conocer el valor real de cualquier inmueble.</p></div>
-      <div class="svc-card"><div class="svc-icon">💼</div><h3>Administración</h3><p>Gestionamos tu propiedad: cobro de renta, mantenimiento y contratos.</p></div>
-      <div class="svc-card"><div class="svc-icon">📈</div><h3>Inversión</h3><p>Asesoría para inversionistas buscando plusvalía y rentabilidad segura.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="asesora">
-  <div class="container about-grid">
-    <div class="agent-card">
-      <div class="agent-avatar">👩‍💼</div>
-      <h3>Lic. Alejandra Ruiz</h3>
-      <div class="role">Asesora Inmobiliaria Certificada</div>
-      <ul class="agent-creds">
-        <li>Licenciada en Administración · UAQ</li>
-        <li>Certificada AMPI</li>
-        <li>+12 años de experiencia</li>
-        <li>Especialista en zona Juriquilla</li>
-      </ul>
-    </div>
-    <div class="about-text">
-      <span class="eyebrow" style="color:var(--gold);font-weight:700;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;display:block;margin-bottom:12px">Tu asesora de confianza</span>
-      <h2>Experiencia que hace la diferencia</h2>
-      <p>La Lic. Alejandra Ruiz ha ayudado a cientos de familias a encontrar el hogar ideal en Querétaro. Su conocimiento profundo del mercado local y su trato honesto la convierten en la asesora indicada para tu próxima operación inmobiliaria.</p>
-      <div class="quote">"Encontrar el hogar perfecto no es solo una transacción, es realizar un sueño."</div>
-      <ul class="checklist">
-        <li>Asesoría personalizada y sin presión</li>
-        <li>Acompañamiento legal y financiero</li>
-        <li>Acceso a propiedades exclusivas</li>
-        <li>Negociación experta a tu favor</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="cta-bar">
-  <div class="container">
-    <h2>¿Listo para tu próxima propiedad?</h2>
-    <p>Agenda una asesoría gratuita con la Lic. Ruiz y comencemos a buscar tu hogar.</p>
-    <a href="#contacto" class="btn">Agendar asesoría</a>
-  </div>
-</section>
-
-<section style="background:var(--cream)" id="contacto">
-  <div class="container contact-grid">
-    <div class="contact-info">
-      <span class="eyebrow" style="color:var(--gold);font-weight:700;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;display:block;margin-bottom:12px">Contáctanos</span>
-      <h2>Visítanos en Juriquilla</h2>
-      <p>Atendemos con cita previa para darte la atención que mereces.</p>
-      <div class="info-item"><div class="ico">📍</div><div><h4>Oficina</h4><p>Av. Constituyentes 456, Juriquilla,<br>Querétaro, Qro, 76230</p></div></div>
-      <div class="info-item"><div class="ico">📞</div><div><h4>Teléfono / WhatsApp</h4><p><a href="tel:+52442****8901">+52 442 567 8901</a></p></div></div>
-      <div class="info-item"><div class="ico">✉️</div><div><h4>Correo</h4><p>contacto@hogarespremium.mx</p></div></div>
-      <div class="info-item"><div class="ico">🕒</div><div><h4>Horario</h4><p>Lun – Vie: 9:00 – 19:00<br>Sábado: 10:00 – 14:00</p></div></div>
-    </div>
-    <form onsubmit="alert('Gracias, nos pondremos en contacto contigo.');return false">
-      <h3 class="serif" style="font-size:24px;margin-bottom:6px;font-weight:800">Solicita información</h3>
-      <p style="font-size:13.5px;color:var(--muted);margin-bottom:18px">Te contactamos el mismo día.</p>
-      <div class="row">
-        <div><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
-        <div><label>Teléfono</label><input type="tel" placeholder="Teléfono" required></div>
+    <div class="services-grid">
+      <div class="service">
+        <div>
+          <span class="service-icon">⌂</span>
+          <h3>Venta de Propiedades</h3>
+          <p>Asesoría completa para vender tu casa, departamento o terreno al mejor precio del mercado.</p>
+        </div>
       </div>
-      <label>Correo electrónico</label>
-      <input type="email" placeholder="tu@correo.com" required>
-      <div class="row">
-        <div><label>Interés</label>
-          <select>
+      <div class="service">
+        <div>
+          <span class="service-icon">⊞</span>
+          <h3>Renta Residencial</h3>
+          <p>Administración de propiedades en renta con selección de inquilinos y cobranza mensual.</p>
+        </div>
+      </div>
+      <div class="service">
+        <div>
+          <span class="service-icon">⊟</span>
+          <h3>Avalúos</h3>
+          <p>Avalúos comerciales y bancarios con perito certificado. Validez ante instituciones financieras.</p>
+        </div>
+      </div>
+      <div class="service">
+        <div>
+          <span class="service-icon">⊕</span>
+          <h3>Asesoría Legal</h3>
+          <p>Trámites notariales, escrituración, regularización y gestoría de créditos hipotecarios.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo">
+        <div class="badge">
+          <strong>Lic. Alejandra Ruiz</strong>
+          <span>Directora general · Ced. Prof. 5678234</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <p class="eyebrow">La Asesora</p>
+        <h2>Tu próxima propiedad, en las <em>mejores manos de Querétaro</em>.</h2>
+        <p>Alejandra Ruiz es licenciada en Derecho con Maestría en Gestión Inmobiliaria por la Universidad Anáhuac. Antes de fundar Hogares Premium en 2014, trabajó 7 años como asesora senior en una de las inmobiliarias más importantes de CDMX.</p>
+        <p>Ella y su equipo de 8 asesores certificados conocen cada calle y cada fraccionamiento de Querétaro. Esa experiencia local es la diferencia entre comprar "una casa" y encontrar el hogar correcto para tu familia.</p>
+        <div class="credentials">
+          <div class="cred">
+            <div class="cred-icon">★</div>
+            <div><strong>Anáhuac · Maestría</strong><span>Gestión Inmobiliaria, 2011</span></div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">★</div>
+            <div><strong>AMPI · Miembro</strong><span>Asociación Mexicana de Profesionales Inmobiliarios</span></div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">★</div>
+            <div><strong>Certificación NAR</strong><span>National Association of Realtors</span></div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">★</div>
+            <div><strong>Top 5% Querétaro</strong><span>Premio estatal AMI 2024</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Cómo Trabajamos</p>
+      <h2>Un proceso <em>transparente</em></h2>
+    </div>
+    <div class="process-grid">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h3>Asesoría Inicial</h3>
+        <p>Conversamos sobre lo que buscas: zona, presupuesto, estilo de vida. Sin compromiso.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h3>Búsqueda Curada</h3>
+        <p>Te enviamos opciones seleccionadas de nuestro portafolio. Programamos visitas solo a las que encajan.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h3>Negociación</h3>
+        <p>Negociamos el mejor precio y condiciones. Revisamos documentación legal antes de cualquier oferta.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">04</span>
+        <h3>Cierre</h3>
+        <p>Te acompañamos en notaría, gestoría del crédito (si aplica) y entrega de llaves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Testimonios</p>
+      <h2>Lo que dicen nuestros <em>clientes</em></h2>
+    </div>
+    <div class="test-grid">
+      <div class="test">
+        <div>
+          <p class="test-quote">Encontré mi casa en 2 semanas. Alejandra entendió exactamente lo que buscábamos y nos ahorró meses de búsqueda.</p>
+        </div>
+        <div class="test-author">
+          <strong>Familia Mendoza</strong>
+          <span>Compra · Casa en Juriquilla</span>
+        </div>
+      </div>
+      <div class="test">
+        <div>
+          <p class="test-quote">Administraron mi propiedad en renta por 3 años. Siempre puntuales con la renta y resolvieron cualquier issue con los inquilinos.</p>
+        </div>
+        <div class="test-author">
+          <strong>Roberto C., Inversionista</strong>
+          <span>Administración · Depto en Milenio</span>
+        </div>
+      </div>
+      <div class="test">
+        <div>
+          <p class="test-quote">Vendieron mi casa en 35 días al precio que queríamos. Me asesoraron con el fisco y todo el proceso legal.</p>
+        </div>
+        <div class="test-author">
+          <strong>Patricia L.</strong>
+          <span>Venta · Casa en El Refugio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Preguntas Frecuentes</p>
+      <h2>Dudas comunes</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">¿Cobran comisión al comprador? <span class="ico">+</span></button>
+        <div class="faq-a"><p>No. En Querétaro, la comisión inmobiliaria la paga el vendedor (generalmente 5-6% del precio de venta). El comprador no paga nada por nuestro servicio de búsqueda y asesoría.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Cuánto tarda vender una propiedad en Querétaro? <span class="ico">+</span></button>
+        <div class="faq-a"><p>Depende de la zona y precio. Propiedades bien ubicadas en Juriquilla o Milenio III se venden en 30-60 días. Zonas secundarias pueden tardar 3-6 meses. Te damos una estimación realista antes de firmar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Me ayudan a tramitar el crédito hipotecario? <span class="ico">+</span></button>
+        <div class="faq-a"><p>Sí. Tenemos alianza con brokers hipotecarios que comparan opciones en 8 bancos. Te acompañamos en todo el proceso de preaprobación, dictamen y desembolso. El servicio es sin costo para ti.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Trabajan con otras inmobiliarias para buscar propiedades? <span class="ico">+</span></button>
+        <div class="faq-a"><p>Sí. Accedemos al MLS regional con más de 12,000 propiedades activas. Si una propiedad está en otra inmobiliaria pero te interesa, te representamos en la negociación sin que tengas que pagar dos comisiones.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Contacto</p>
+      <h2>Agenda tu <em>asesoría</em></h2>
+      <p>Conversemos sobre lo que buscas. Sin compromiso, en menos de 30 minutos.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Hogares Premium</h3>
+        <div class="item">
+          <div class="ico">⌂</div>
+          <div>
+            <strong>Oficina</strong>
+            <span>Av. Constituyentes 456, Piso 2<br>Juriquilla, Querétaro, Qro 76230</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ico">☎</div>
+          <div>
+            <strong>Teléfono</strong>
+            <span>+52 442 567 8901</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ico">⏱</div>
+          <div>
+            <strong>Horarios</strong>
+            <span>Lun - Vie: 9:00 - 19:00<br>Sáb: 10:00 - 14:00</span>
+          </div>
+        </div>
+        <a href="https://wa.me/524425678901?text=Hola%2C%20me%20interesa%20conocer%20propiedades%20disponibles%20en%20Quer%C3%A9taro.%20Vi%20su%20p%C3%A1gina%20web." style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 26px;font-family:var(--serif);font-size:16px;font-weight:500;margin-top:14px">
+          WhatsApp Directo →
+        </a>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('En la demo real esto envía a WhatsApp. Esta es una demo de AutomaNexus.');">
+        <h3>Solicita tu asesoría</h3>
+        <p>Te contactamos en menos de 30 minutos.</p>
+        <div class="field-row">
+          <div class="field"><label>Nombre</label><input type="text" required></div>
+          <div class="field"><label>Teléfono</label><input type="tel" required></div>
+        </div>
+        <div class="field">
+          <label>¿Qué buscas?</label>
+          <select required>
+            <option value="">Seleccione...</option>
             <option>Comprar casa</option>
-            <option>Rentar departamento</option>
+            <option>Comprar departamento</option>
             <option>Comprar terreno</option>
+            <option>Rentar casa o depto</option>
+            <option>Vender mi propiedad</option>
             <option>Avalúo</option>
-            <option>Administración</option>
-            <option>Inversión</option>
+            <option>Otro</option>
           </select>
         </div>
-        <div><label>Presupuesto</label>
-          <select>
-            <option>Cualquiera</option>
-            <option>$1M – $5M</option>
-            <option>$5M – $10M</option>
-            <option>+ $10M</option>
-          </select>
+        <div class="field-row">
+          <div class="field"><label>Presupuesto (MXN)</label><input type="text" placeholder="Ej: 5,000,000"></div>
+          <div class="field"><label>Zona de interés</label><input type="text" placeholder="Ej: Juriquilla, Milenio"></div>
         </div>
-      </div>
-      <label>Mensaje</label>
-      <textarea rows="3" placeholder="¿Qué tipo de propiedad buscas?"></textarea>
-      <button type="submit" class="btn btn-green">Enviar solicitud</button>
-    </form>
+        <div class="field"><label>Comentarios</label><textarea placeholder="Cuéntanos más sobre lo que buscas..."></textarea></div>
+        <button type="submit">Solicitar Asesoría →</button>
+      </form>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
     <div class="foot-grid">
-      <div>
-        <div class="foot-brand">Hogares Premium</div>
-        <p>Inmobiliaria especializada en propiedades premium en Juriquilla y todo Querétaro. Bienes raíces con excelencia desde 2013.</p>
+      <div class="foot foot-brand">
+        <a href="#" class="brand">
+          <div class="brand-mark">H</div>
+          <div class="brand-text"><strong style="color:var(--bg)">Hogares Premium</strong><span style="color:var(--gold)">Bienes Raíces</span></div>
+        </a>
+        <p>Inmobiliaria especializada en Querétaro. 12 años conectando familias con sus hogares ideales en las mejores zonas de la ciudad.</p>
       </div>
-      <div>
+      <div class="foot">
         <h4>Servicios</h4>
-        <ul><li><a href="#servicios">Venta de casas</a></li><li><a href="#servicios">Renta</a></li><li><a href="#servicios">Terrenos</a></li><li><a href="#servicios">Avalúos</a></li></ul>
+        <ul>
+          <li><a href="#servicios">Venta</a></li>
+          <li><a href="#servicios">Renta</a></li>
+          <li><a href="#servicios">Avalúos</a></li>
+          <li><a href="#servicios">Asesoría legal</a></li>
+        </ul>
       </div>
-      <div>
+      <div class="foot">
+        <h4>Propiedades</h4>
+        <ul>
+          <li><a href="#propiedades">Casas</a></li>
+          <li><a href="#propiedades">Departamentos</a></li>
+          <li><a href="#propiedades">Terrenos</a></li>
+          <li><a href="#propiedades">Comerciales</a></li>
+        </ul>
+      </div>
+      <div class="foot">
         <h4>Contacto</h4>
-        <ul><li>Av. Constituyentes 456, Juriquilla</li><li>+52 442 567 8901</li><li>contacto@hogarespremium.mx</li></ul>
+        <ul>
+          <li>+52 442 567 8901</li>
+          <li>contacto@hogarespremium.mx</li>
+          <li>Av. Constituyentes 456<br>Juriquilla, Qro</li>
+        </ul>
       </div>
     </div>
-    <div class="copyright">© 2026 Hogares Premium. Todos los derechos reservados. | Página demo creada por AutomaNexus.</div>
+    <div class="foot-bottom">
+      <span>© 2026 Hogares Premium. Todos los derechos reservados.</span>
+      <span>Diseño web por <a href="https://mx.automanex.us" style="color:var(--gold)">AutomaNexus</a> · Demo</span>
+    </div>
   </div>
 </footer>
 
-<a href="https://wa.me/524425678901?text=Hola,%20me%20interesa%20conocer%20propiedades%20en%20Querétaro" class="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<a href="https://wa.me/524425678901?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20me%20interesa%20conocer%20propiedades%20disponibles." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  "name": "Hogares Premium",
-  "image": "https://hogarespremium.mx/logo.png",
-  "description": "Inmobiliaria en Juriquilla, Querétaro. Venta de casas, renta de departamentos, terrenos, avalúos y administración. Lic. Alejandra Ruiz.",
-  "@id": "https://hogarespremium.mx",
+  "name": "Hogares Premium Bienes Raíces",
+  "description": "Inmobiliaria premium en Querétaro, Qro. Venta, renta, avalúos y asesoría legal inmobiliaria.",
   "url": "https://hogarespremium.mx",
-  "telephone": "+52442****8901",
-  "priceRange": "$$$",
+  "telephone": "+52-442-567-8901",
+  "email": "contacto@hogarespremium.mx",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Av. Constituyentes 456, Juriquilla",
+    "streetAddress": "Av. Constituyentes 456, Piso 2",
     "addressLocality": "Querétaro",
-    "addressRegion": "Qro",
+    "addressRegion": "Querétaro",
     "postalCode": "76230",
     "addressCountry": "MX"
   },
-  "geo": {"@type":"GeoCoordinates","latitude":20.7028,"longitude":-100.4503},
-  "openingHoursSpecification": [
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"14:00"}
-  ],
-  "founder": {"@type":"Person","name":"Lic. Alejandra Ruiz"},
-  "areaServed": "Querétaro"
+  "openingHours": "Mo-Fr 09:00-19:00, Sa 10:00-14:00",
+  "priceRange": "$$$"
 }
 </script>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
 </body>
 </html>

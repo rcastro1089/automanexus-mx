@@ -3,418 +3,721 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jurídico Monterrey | Abogados en Monterrey, Nuevo León</title>
-<meta name="description" content="Jurídico Monterrey. Bufete jurídico en Monterrey, NL. Derecho civil, mercantil, laboral, familiar y sucesiones. Lic. Roberto Alejandro Mendoza.">
+<title>Jurídico Monterrey | Lic. Roberto Mendoza — Abogado en Monterrey, NL</title>
+<meta name="description" content="Bufete de abogados en Monterrey, NL. Derecho civil, mercantil, laboral, familiar y penal. Lic. Roberto Alejandro Mendoza, 18 años de experiencia. Consulta inicial sin costo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0d2440;
-    --navy-2:#163356;
-    --gold:#c9a227;
-    --gold-light:#e0bd4e;
-    --ink:#1a2638;
-    --muted:#62718a;
-    --bg:#f6f7f9;
-    --line:#e4e8ee;
-    --white:#fff;
+    --bg:#f9f8f5;
+    --paper:#fffefb;
+    --ink:#0a1628;
+    --navy:#1a2744;
+    --navy-deep:#0a1628;
+    --gold:#c9a961;
+    --gold-deep:#a88a47;
+    --muted:#6b6f7d;
+    --line:rgba(10,22,40,.08);
+    --serif:'Cormorant Garamond','Playfair Display',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;padding-top:38px}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;padding-top:38px;-webkit-font-smoothing:antialiased}
   a{text-decoration:none;color:inherit}
-  .serif{font-family:'Playfair Display',Georgia,serif}
+  img{max-width:100%;display:block}
+  .container{max-width:1200px;margin:0 auto;padding:0 28px}
 
-  .demo-banner{position:fixed;top:0;left:0;right:0;height:38px;background:#0a1c30;color:#d6c789;
-    display:flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;font-weight:500;z-index:1000;padding:0 12px;text-align:center}
-  .demo-banner a{color:var(--gold-light);text-decoration:underline;font-weight:600}
-  .demo-badge{background:var(--gold);color:#0a1c30;border-radius:4px;padding:1px 7px;font-weight:700;letter-spacing:.5px;font-size:11px}
+  /* Demo banner */
+  .demo-banner{position:fixed;top:0;left:0;right:0;height:38px;background:var(--navy-deep);color:#e8e6df;
+    display:flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;font-weight:500;
+    z-index:1000;padding:0 12px;text-align:center;letter-spacing:.3px}
+  .demo-banner a{color:var(--gold);text-decoration:underline;font-weight:600}
+  .demo-badge{background:var(--gold);color:var(--navy-deep);border-radius:3px;padding:1px 7px;font-weight:700;letter-spacing:.5px;font-size:10.5px;text-transform:uppercase}
 
-  .container{max-width:1160px;margin:0 auto;padding:0 22px}
-
-  header.site{background:var(--navy);position:sticky;top:38px;z-index:900;box-shadow:0 4px 20px rgba(13,36,64,.18)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-  .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700}
-  .brand .logo{width:42px;height:42px;border-radius:50%;border:2px solid var(--gold);
-    display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Playfair Display',serif;font-size:19px;font-weight:800}
-  .brand .txt{font-size:18px;letter-spacing:.3px}
-  .brand small{display:block;font-size:10.5px;color:var(--gold-light);font-weight:400;letter-spacing:2px;text-transform:uppercase;margin-top:-2px}
-  .nav-links{display:flex;gap:28px;align-items:center}
-  .nav-links a{font-size:14px;font-weight:500;color:#c7d2e0;transition:color .2s}
-  .nav-links a:hover{color:var(--gold-light)}
-  .btn{display:inline-block;background:var(--gold);color:var(--navy);padding:12px 24px;border-radius:6px;font-weight:700;font-size:14px;transition:.2s;cursor:pointer;border:none;letter-spacing:.3px}
-  .btn:hover{background:var(--gold-light);transform:translateY(-1px)}
-  .btn-outline{background:transparent;color:var(--gold-light);border:1.5px solid var(--gold)}
-  .btn-outline:hover{background:var(--gold);color:var(--navy)}
-  .menu-toggle{display:none;background:none;border:none;font-size:24px;color:#fff;cursor:pointer}
+  /* Header */
+  header.site{background:rgba(249,248,245,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);position:sticky;top:38px;z-index:900;transition:all .3s}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand-mark{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;
+    font-size:24px;color:var(--navy);background:var(--paper);letter-spacing:-1px}
+  .brand-text{line-height:1.1}
+  .brand-text strong{display:block;font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy-deep);letter-spacing:-.3px}
+  .brand-text span{display:block;font-size:10.5px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:2px}
+  .nav-links{display:flex;gap:36px;align-items:center}
+  .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink);transition:color .2s;letter-spacing:.3px}
+  .nav-links a:hover{color:var(--gold-deep)}
+  .btn{display:inline-block;background:var(--navy-deep);color:var(--bg);padding:13px 26px;
+    font-family:var(--serif);font-size:16px;font-weight:500;letter-spacing:.3px;transition:.25s;
+    cursor:pointer;border:1.5px solid var(--navy-deep)}
+  .btn:hover{background:transparent;color:var(--navy-deep)}
+  .btn-gold{background:var(--gold);border-color:var(--gold);color:var(--navy-deep)}
+  .btn-gold:hover{background:transparent;color:var(--gold-deep);border-color:var(--gold-deep)}
+  .btn-outline{background:transparent;color:var(--navy-deep);border:1.5px solid var(--navy-deep);padding:12px 24px}
+  .btn-outline:hover{background:var(--navy-deep);color:var(--bg)}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--navy-deep);font-size:22px;padding:6px}
 
   /* Hero */
-  .hero{background:linear-gradient(rgba(13,36,64,.92),rgba(13,36,64,.88)),linear-gradient(135deg,var(--navy),var(--navy-2));
-    color:#fff;padding:88px 0;position:relative;overflow:hidden}
-  .hero::after{content:"§";position:absolute;right:-40px;top:-60px;font-family:'Playfair Display',serif;font-size:480px;color:rgba(201,162,39,.06);line-height:1}
-  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;position:relative;z-index:1}
-  .hero .eyebrow{color:var(--gold-light);font-size:13px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:14px;display:block}
-  .hero h1{font-family:'Playfair Display',serif;font-size:46px;line-height:1.15;font-weight:800;margin-bottom:20px;letter-spacing:-.5px}
-  .hero h1 em{color:var(--gold-light);font-style:normal}
-  .hero p.lead{font-size:17.5px;color:#c7d2e0;margin-bottom:30px;max-width:560px}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-stats{display:flex;gap:38px;margin-top:40px;flex-wrap:wrap;border-top:1px solid rgba(201,162,39,.25);padding-top:28px}
-  .stat strong{display:block;font-family:'Playfair Display',serif;font-size:30px;color:var(--gold-light);font-weight:700}
-  .stat span{font-size:13px;color:#aeb9cc}
-  .hero-side{background:rgba(255,255,255,.06);border:1px solid rgba(201,162,39,.3);border-radius:12px;padding:32px;backdrop-filter:blur(8px)}
-  .hero-side h3{font-size:18px;margin-bottom:16px;color:#fff}
-  .hero-side ul{list-style:none;display:grid;gap:12px}
-  .hero-side li{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:#d4dce8}
-  .hero-side li::before{content:"⚖";color:var(--gold-light);font-size:16px}
+  .hero{padding:110px 0 90px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;
+    background:radial-gradient(circle,rgba(201,169,97,.06) 0%,transparent 60%);pointer-events:none}
+  .hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+  .hero-eyebrow .line{width:54px;height:1px;background:var(--gold)}
+  .hero-eyebrow span{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep)}
+  .hero h1{font-family:var(--serif);font-size:clamp(40px,6.2vw,76px);line-height:1.02;font-weight:500;
+    color:var(--navy-deep);letter-spacing:-1.5px;margin-bottom:32px;max-width:950px}
+  .hero h1 em{font-style:italic;color:var(--gold-deep);font-weight:400}
+  .hero-sub{font-size:18px;color:var(--muted);max-width:620px;line-height:1.65;margin-bottom:42px;font-weight:400}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:80px;padding-top:48px;
+    border-top:1px solid var(--line)}
+  .stat{}
+  .stat-num{font-family:var(--serif);font-size:48px;font-weight:500;color:var(--navy-deep);line-height:1;letter-spacing:-1.5px}
+  .stat-num span{color:var(--gold-deep)}
+  .stat-label{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:10px}
 
-  section{padding:78px 0}
-  .section-head{text-align:center;max-width:660px;margin:0 auto 52px}
-  .section-head .eyebrow{color:var(--gold);font-weight:700;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;display:block}
-  .section-head h2{font-family:'Playfair Display',serif;font-size:34px;font-weight:800;letter-spacing:-.5px;margin-bottom:14px}
-  .section-head p{color:var(--muted);font-size:16px}
+  /* Section base */
+  section{padding:110px 0;border-bottom:1px solid var(--line)}
+  .section-head{text-align:center;margin-bottom:72px}
+  .section-head .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px}
+  .section-head h2{font-family:var(--serif);font-size:clamp(32px,4.5vw,52px);line-height:1.05;font-weight:500;color:var(--navy-deep);letter-spacing:-1px;margin-bottom:18px}
+  .section-head p{color:var(--muted);font-size:17px;max-width:620px;margin:0 auto;line-height:1.6}
 
-  /* Areas */
-  .areas{background:var(--white)}
-  .area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-  .area{padding:34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.2s}
-  .area:hover{background:var(--navy);color:#fff}
-  .area:hover p,.area:hover .area-list li{color:#c7d2e0}
-  .area-icon{width:48px;height:48px;border-radius:8px;background:var(--navy);color:var(--gold);
-    display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;transition:.2s}
-  .area:hover .area-icon{background:var(--gold);color:var(--navy)}
-  .area h3{font-family:'Playfair Display',serif;font-size:21px;margin-bottom:8px;font-weight:700}
-  .area p{font-size:14px;color:var(--muted);margin-bottom:12px;transition:.2s}
-  .area-list{list-style:none;display:grid;gap:6px;font-size:13px;color:var(--muted);transition:.2s}
-  .area-list li::before{content:"›";color:var(--gold);font-weight:700;margin-right:6px}
+  /* Practice areas */
+  .practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);background:var(--paper)}
+  .practice{padding:48px 40px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    transition:all .3s;cursor:pointer;position:relative;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+  .practice:nth-child(3n){border-right:none}
+  .practice:nth-last-child(-n+3){border-bottom:none}
+  .practice:hover{background:var(--bg)}
+  .practice-num{font-family:var(--serif);font-size:14px;color:var(--gold-deep);font-weight:500;letter-spacing:2px;margin-bottom:24px}
+  .practice h3{font-family:var(--serif);font-size:30px;font-weight:500;color:var(--navy-deep);margin-bottom:14px;letter-spacing:-.5px;line-height:1.15}
+  .practice p{color:var(--muted);font-size:14.5px;line-height:1.6;margin-bottom:20px}
+  .practice-link{font-size:12px;font-weight:600;color:var(--navy-deep);letter-spacing:1.5px;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:8px;transition:gap .2s}
+  .practice:hover .practice-link{gap:14px;color:var(--gold-deep)}
 
   /* About */
-  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}
-  .lawyer-card{background:var(--navy);border-radius:12px;padding:40px;text-align:center;color:#fff;position:relative;overflow:hidden;border:1px solid rgba(201,162,39,.3)}
-  .lawyer-card::before{content:"";position:absolute;top:-40px;left:-40px;width:140px;height:140px;
-    border:3px solid var(--gold);border-radius:50%;opacity:.15}
-  .lawyer-avatar{width:120px;height:120px;border-radius:50%;background:var(--navy-2);border:3px solid var(--gold);
-    margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:60px}
-  .lawyer-card h3{font-family:'Playfair Display',serif;font-size:23px;color:#fff;margin-bottom:3px}
-  .lawyer-card .role{color:var(--gold-light);font-size:13.5px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
-  .lawyer-creds{display:grid;gap:9px;font-size:13px;color:#c7d2e0;text-align:left;border-top:1px solid rgba(201,162,39,.2);padding-top:16px}
-  .lawyer-creds li{display:flex;gap:8px;align-items:center}
-  .lawyer-creds li::before{content:"🎓";font-size:14px}
-  .about-text h2{font-family:'Playfair Display',serif;font-size:33px;font-weight:800;margin-bottom:16px;letter-spacing:-.5px}
-  .about-text p{color:var(--muted);margin-bottom:16px;font-size:15.5px}
-  .quote{border-left:3px solid var(--gold);padding:8px 0 8px 20px;margin:24px 0;font-family:'Playfair Display',serif;
-    font-style:italic;font-size:17px;color:var(--navy)}
-  .values{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
-  .value{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:18px}
-  .value h4{font-size:14.5px;margin-bottom:5px;color:var(--navy)}
-  .value p{font-size:13px;margin:0}
+  .about{background:var(--paper)}
+  .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+  .about-photo{position:relative;aspect-ratio:3/4;background:linear-gradient(135deg,#e8e3d3,#c9a961);
+    overflow:hidden}
+  .about-photo::after{content:'LIC.';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    font-family:var(--serif);font-size:84px;color:rgba(10,22,40,.18);font-weight:500;letter-spacing:6px}
+  .about-photo .badge{position:absolute;bottom:24px;left:24px;background:var(--paper);padding:14px 22px;
+    border:1px solid var(--line);max-width:280px}
+  .about-photo .badge strong{display:block;font-family:var(--serif);font-size:18px;color:var(--navy-deep);font-weight:600}
+  .about-photo .badge span{font-size:12px;color:var(--muted);letter-spacing:.5px}
+  .about-content .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px}
+  .about-content h2{font-family:var(--serif);font-size:clamp(34px,4.2vw,50px);line-height:1.1;font-weight:500;color:var(--navy-deep);letter-spacing:-1px;margin-bottom:24px}
+  .about-content h2 em{font-style:italic;color:var(--gold-deep)}
+  .about-content p{color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:18px}
+  .credentials{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px;padding-top:36px;border-top:1px solid var(--line)}
+  .cred{display:flex;align-items:flex-start;gap:14px}
+  .cred-icon{width:38px;height:38px;background:var(--bg);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);color:var(--gold-deep);font-size:18px;flex-shrink:0}
+  .cred strong{display:block;font-size:14px;color:var(--navy-deep);font-weight:600;margin-bottom:2px}
+  .cred span{font-size:13px;color:var(--muted)}
+
+  /* Cases */
+  .cases{background:var(--bg)}
+  .cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--line);background:var(--paper)}
+  .case{padding:42px 38px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+  .case:nth-child(2n){border-right:none}
+  .case:nth-last-child(-n+2){border-bottom:none}
+  .case-icon{width:60px;height:60px;background:var(--bg);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:28px;color:var(--gold-deep);font-weight:500}
+  .case h3{font-family:var(--serif);font-size:24px;color:var(--navy-deep);margin-bottom:8px;font-weight:500;letter-spacing:-.3px}
+  .case-tag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--gold-deep);margin-bottom:8px}
+  .case p{color:var(--muted);font-size:14.5px;line-height:1.6}
+  .case-result{font-size:13px;color:var(--navy-deep);font-weight:600;margin-top:10px;display:flex;align-items:center;gap:8px}
+  .case-result::before{content:'';width:18px;height:1px;background:var(--gold)}
 
   /* Process */
-  .process{background:var(--white)}
-  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-  .step{text-align:center;position:relative}
-  .step-num{width:60px;height:60px;border-radius:50%;background:var(--navy);color:var(--gold);
-    display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:26px;font-weight:800;margin:0 auto 16px;border:2px solid var(--gold)}
-  .step h4{font-size:16.5px;margin-bottom:7px;color:var(--navy)}
-  .step p{font-size:13.5px;color:var(--muted)}
+  .process{background:var(--paper)}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .step{padding:42px 32px;border-right:1px solid var(--line);position:relative}
+  .step:last-child{border-right:none}
+  .step-num{font-family:var(--serif);font-size:54px;font-weight:500;color:var(--gold);line-height:1;margin-bottom:24px;display:block;letter-spacing:-2px}
+  .step h3{font-family:var(--serif);font-size:22px;color:var(--navy-deep);margin-bottom:10px;font-weight:500;letter-spacing:-.3px}
+  .step p{color:var(--muted);font-size:14px;line-height:1.6}
 
-  /* CTA */
-  .cta-bar{background:var(--navy);color:#fff;text-align:center;padding:64px 0;position:relative;overflow:hidden}
-  .cta-bar::before{content:"§";position:absolute;left:20px;top:-40px;font-family:'Playfair Display',serif;font-size:300px;color:rgba(201,162,39,.05)}
-  .cta-bar h2{font-family:'Playfair Display',serif;font-size:33px;margin-bottom:12px;position:relative}
-  .cta-bar p{color:#c7d2e0;font-size:16px;margin-bottom:26px;position:relative}
-  .cta-bar .btn{position:relative}
+  /* Testimonials */
+  .testimonials{background:var(--bg)}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);background:var(--paper)}
+  .test{padding:48px 40px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    display:flex;flex-direction:column;justify-content:space-between;min-height:340px}
+  .test:nth-child(3n){border-right:none}
+  .test:nth-last-child(-n+3){border-bottom:none}
+  .test-quote{font-family:var(--serif);font-size:22px;line-height:1.4;color:var(--navy-deep);font-weight:400;
+    font-style:italic;margin-bottom:32px;letter-spacing:-.2px}
+  .test-quote::before{content:'"';font-size:60px;color:var(--gold);font-family:var(--serif);line-height:0;
+    display:block;height:24px;margin-bottom:6px;font-style:normal}
+  .test-author{border-top:1px solid var(--line);padding-top:20px}
+  .test-author strong{display:block;font-size:14px;font-weight:600;color:var(--navy-deep)}
+  .test-author span{font-size:12.5px;color:var(--muted)}
+
+  /* FAQ */
+  .faq{background:var(--paper)}
+  .faq-list{max-width:880px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--line);padding:0}
+  .faq-q{width:100%;background:none;border:none;text-align:left;padding:28px 0;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:24px;
+    font-family:var(--serif);font-size:21px;color:var(--navy-deep);font-weight:500;letter-spacing:-.2px}
+  .faq-q .ico{width:32px;height:32px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+    font-size:14px;color:var(--gold-deep);transition:transform .3s;flex-shrink:0;font-family:var(--sans)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .faq-a p{padding:0 0 28px;color:var(--muted);font-size:15.5px;line-height:1.7;max-width:740px}
+  .faq-item.open .faq-a{max-height:300px}
+  .faq-item.open .faq-q .ico{transform:rotate(45deg);background:var(--navy-deep);color:var(--bg);border-color:var(--navy-deep)}
 
   /* Contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-  .contact-info h2{font-family:'Playfair Display',serif;font-size:31px;margin-bottom:16px}
-  .info-item{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
-  .info-item .ico{width:44px;height:44px;border-radius:8px;background:var(--navy);color:var(--gold);
-    display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-  .info-item h4{font-size:15px;margin-bottom:2px;color:var(--navy)}
-  .info-item p{font-size:14.5px;color:var(--muted)}
-  form{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:32px}
-  form label{font-size:13px;font-weight:600;display:block;margin-bottom:6px;color:var(--navy)}
-  form input,form select,form textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:7px;
-    font-family:inherit;font-size:14.5px;margin-bottom:16px;background:var(--bg);color:var(--ink)}
-  form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--gold);background:#fff}
-  form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  form .btn{width:100%;background:var(--navy);color:#fff}
-  form .btn:hover{background:var(--navy-2)}
+  .contact{background:var(--navy-deep);color:var(--bg);border-bottom:none}
+  .contact .section-head h2{color:var(--bg)}
+  .contact .section-head p{color:rgba(249,248,245,.6)}
+  .contact .section-head .eyebrow{color:var(--gold)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start}
+  .contact-info{color:rgba(249,248,245,.8);font-size:15.5px;line-height:1.8}
+  .contact-info h3{font-family:var(--serif);font-size:28px;color:var(--bg);font-weight:500;margin-bottom:24px;letter-spacing:-.5px}
+  .contact-info .item{display:flex;align-items:flex-start;gap:18px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(249,248,245,.1)}
+  .contact-info .item .ico{width:42px;height:42px;border:1px solid rgba(249,248,245,.15);
+    display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--serif);font-size:18px;flex-shrink:0}
+  .contact-info .item strong{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:6px}
+  .contact-info .item span{font-size:15.5px;color:var(--bg);font-weight:500}
+  .contact-form{background:var(--paper);color:var(--ink);padding:48px 44px}
+  .contact-form h3{font-family:var(--serif);font-size:28px;font-weight:500;margin-bottom:8px;color:var(--navy-deep);letter-spacing:-.5px}
+  .contact-form p{color:var(--muted);font-size:14.5px;margin-bottom:32px}
+  .field{margin-bottom:20px}
+  .field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy-deep);margin-bottom:8px}
+  .field input,.field select,.field textarea{width:100%;padding:13px 16px;border:1px solid var(--line);
+    background:var(--bg);font-family:var(--sans);font-size:15px;color:var(--ink);transition:border-color .2s;outline:none}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+  .field textarea{min-height:120px;resize:vertical;font-family:var(--sans)}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .contact-form button{width:100%;background:var(--navy-deep);color:var(--bg);border:none;padding:16px;
+    font-family:var(--serif);font-size:17px;font-weight:500;letter-spacing:.3px;cursor:pointer;transition:background .2s}
+  .contact-form button:hover{background:var(--gold);color:var(--navy-deep)}
 
-  footer{background:#0a1c30;color:#8295ad;padding:56px 0 24px}
-  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:36px}
-  .foot-brand{font-family:'Playfair Display',serif;font-size:21px;color:#fff;margin-bottom:10px;font-weight:700}
-  footer h4{color:#fff;font-size:15px;margin-bottom:14px}
-  footer ul{list-style:none;display:grid;gap:8px;font-size:14px}
-  footer a:hover{color:var(--gold-light)}
-  .copyright{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;text-align:center;font-size:13px;opacity:.7}
+  /* Footer */
+  footer{background:var(--navy-deep);color:rgba(249,248,245,.5);padding:80px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+  .foot-brand .brand-mark{background:var(--paper);margin-bottom:18px}
+  .foot-brand p{font-size:14px;line-height:1.7;max-width:340px;margin-top:14px}
+  .foot h4{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+  .foot ul{list-style:none}
+  .foot ul li{margin-bottom:11px;font-size:14px}
+  .foot ul li a{transition:color .2s}
+  .foot ul li a:hover{color:var(--bg)}
+  .foot-bottom{padding-top:30px;border-top:1px solid rgba(249,248,245,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-size:13px}
 
-  .whatsapp{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25d366;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.5);z-index:950;transition:.2s}
-  .whatsapp:hover{transform:scale(1.08)}
-  .whatsapp svg{width:32px;height:32px;fill:#fff}
+  /* WhatsApp button */
+  .whatsapp-float{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25D366;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.3);z-index:999;
+    transition:transform .2s}
+  .whatsapp-float:hover{transform:scale(1.05)}
+  .whatsapp-float svg{width:32px;height:32px;fill:#fff}
 
-  @media(max-width:920px){
-    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-    .area-grid{grid-template-columns:repeat(2,1fr)}
-    .process-grid{grid-template-columns:repeat(2,1fr)}
-    .foot-grid{grid-template-columns:1fr 1fr}
-    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;
-      padding:20px;gap:16px;border-top:1px solid rgba(201,162,39,.2)}
+  @media(max-width:1024px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);
+      flex-direction:column;padding:24px 28px;gap:18px;border-bottom:1px solid var(--line);
+      align-items:flex-start}
     .nav-links.open{display:flex}
     .menu-toggle{display:block}
-    .hero h1{font-size:33px}
-    .hero{padding:54px 0}
-    section{padding:54px 0}
-    .values{grid-template-columns:1fr}
+    .practice-grid,.cases-grid,.test-grid,.process-grid{grid-template-columns:1fr}
+    .practice,.case,.test,.step{border-right:none;border-bottom:1px solid var(--line)}
+    .case,.test{grid-template-columns:1fr}
+    .about-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:40px}
+    .hero-stats{grid-template-columns:repeat(2,1fr);gap:32px}
+    .field-row{grid-template-columns:1fr}
+    section{padding:80px 0}
+    .hero{padding:80px 0 60px}
   }
   @media(max-width:560px){
-    .area-grid{grid-template-columns:1fr}
-    .process-grid{grid-template-columns:1fr}
-    .foot-grid{grid-template-columns:1fr}
-    form .row{grid-template-columns:1fr}
-    .hero h1{font-size:27px}
+    .container{padding:0 20px}
+    .foot-grid{grid-template-columns:1fr;gap:36px}
+    .hero-stats{grid-template-columns:1fr 1fr;gap:20px}
+    .stat-num{font-size:36px}
+    .credentials{grid-template-columns:1fr}
+    .contact-form{padding:32px 24px}
   }
 </style>
 </head>
 <body>
 
+<!-- ===== DEMO BANNER ===== -->
 <div class="demo-banner">
   <span class="demo-badge">DEMO</span>
-  <span>Esta es una página de demostración de <a href="https://automanexus.mx" target="_blank" rel="noopener">AutomaNexus</a></span>
+  Esta es una página de demostración de <a href="https://mx.automanex.us" target="_blank">AutomaNexus</a> · La real se entrega en 5 días con tu marca
 </div>
 
+<!-- ===== HEADER ===== -->
 <header class="site">
   <div class="container nav">
     <a href="#" class="brand">
-      <span class="logo">JM</span>
-      <span class="txt">Jurídico Monterrey<small>Bufete Legal</small></span>
+      <span class="brand-mark">R</span>
+      <span class="brand-text">
+        <strong>Jurídico Monterrey</strong>
+        <span>Lic. Roberto Mendoza</span>
+      </span>
     </a>
-    <nav class="nav-links" id="nav">
-      <a href="#areas">Áreas de práctica</a>
-      <a href="#abogado">El abogado</a>
-      <a href="#proceso">Cómo trabajamos</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#areas">Áreas</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#casos">Casos</a>
       <a href="#contacto">Contacto</a>
-      <a href="#contacto" class="btn">Consulta gratuita</a>
     </nav>
-    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a href="https://wa.me/528123456789?text=Hola%20Lic.%20Mendoza%2C%20necesito%20asesor%C3%ADa%20legal.%20Vi%20su%20p%C3%A1gina%20web." class="btn btn-gold" style="padding:11px 22px;font-size:15px">Agendar Consulta</a>
+      <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    </div>
   </div>
 </header>
 
+<!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="eyebrow">Bufete Jurídico en Monterrey, N.L.</span>
-      <h1>Defendemos tus derechos con <em>integridad y resultados</em></h1>
-      <p class="lead">Más de 20 años de experiencia litigando en Nuevo León. Atención personalizada, transparencia absoluta y un compromiso firme con tu caso.</p>
-      <div class="hero-cta">
-        <a href="#contacto" class="btn">Agendar consulta</a>
-        <a href="tel:+528123456789" class="btn btn-outline">📞 81 2345 6789</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat"><strong>+20</strong><span>años de experiencia</span></div>
-        <div class="stat"><strong>+1,500</strong><span>casos resueltos</span></div>
-        <div class="stat"><strong>98%</strong><span>éxito litigioso</span></div>
-      </div>
+  <div class="container">
+    <div class="hero-eyebrow">
+      <span class="line"></span>
+      <span>Bufete en Monterrey · 18 años de experiencia</span>
     </div>
-    <div class="hero-side">
-      <h3>¿Por qué elegirnos?</h3>
-      <ul>
-        <li>Primera consulta sin costo</li>
-        <li>Atención directa del Lic. Mendoza</li>
-        <li>Honorarios transparentes y por escrito</li>
-        <li>Representación en todo el estado</li>
-        <li>Actualización constante de tu caso</li>
-      </ul>
+    <h1>Defendemos sus <em>derechos</em> con la experiencia que su caso merece.</h1>
+    <p class="hero-sub">Asesoría legal estratégica para personas y empresas en Nuevo León. Más de 2,400 casos resueltos en derecho civil, mercantil, familiar y penal.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/528123456789?text=Hola%20Lic.%20Mendoza%2C%20necesito%20asesor%C3%ADa%20legal." class="btn">Agendar Consulta Gratuita</a>
+      <a href="#areas" class="btn btn-outline">Conocer Servicios</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">2,4<span>00+</span></div><div class="stat-label">Casos resueltos</div></div>
+      <div class="stat"><div class="stat-num">18</div><div class="stat-label">Años de ejercicio</div></div>
+      <div class="stat"><div class="stat-num">96<span>%</span></div><div class="stat-label">Casos exitosos</div></div>
+      <div class="stat"><div class="stat-num">0</div><div class="stat-label">Consulta inicial sin costo</div></div>
     </div>
   </div>
 </section>
 
-<section class="areas" id="areas">
+<!-- ===== ÁREAS DE PRÁCTICA ===== -->
+<section id="areas">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Áreas de práctica</span>
-      <h2>Soluciones legales para cada situación</h2>
-      <p>Especialistas en las ramas del derecho que más impactan a personas y empresas en México.</p>
+      <p class="eyebrow">Áreas de Práctica</p>
+      <h2>Soluciones legales especializadas</h2>
+      <p>Cada área de práctica es atendida por un abogado con formación específica y experiencia comprobable.</p>
     </div>
-    <div class="area-grid">
-      <div class="area">
-        <div class="area-icon">📜</div>
-        <h3>Derecho Civil</h3>
-        <p>Contratos, obligaciones y disputas civiles.</p>
-        <ul class="area-list"><li>Redacción de contratos</li><li>Responsabilidad civil</li><li>Cobranza judicial</li></ul>
+    <div class="practice-grid">
+      <a href="#contacto" class="practice">
+        <div>
+          <span class="practice-num">01 / CIVIL</span>
+          <h3>Derecho Civil</h3>
+          <p>Contratos, propiedad, responsabilidad civil, herencias y争端 civiles de cualquier tipo. Resolución judicial y extrajudicial.</p>
+        </div>
+        <span class="practice-link">Ver más →</span>
+      </a>
+      <a href="#contacto" class="practice">
+        <div>
+          <span class="practice-num">02 / MERCANTIL</span>
+          <h3>Derecho Mercantil</h3>
+          <p>Constitución de empresas, contratos comerciales, cobranza judicial, propiedad intelectual y protección de activos.</p>
+        </div>
+        <span class="practice-link">Ver más →</span>
+      </a>
+      <a href="#contacto" class="practice">
+        <div>
+          <span class="practice-num">03 / LABORAL</span>
+          <h3>Derecho Laboral</h3>
+          <p>Despidos injustificados, indemnizaciones, negociación colectiva, accidentes laborales. Defensa del patrón o del trabajador.</p>
+        </div>
+        <span class="practice-link">Ver más →</span>
+      </a>
+      <a href="#contacto" class="practice">
+        <div>
+          <span class="practice-num">04 / FAMILIAR</span>
+          <h3>Derecho Familiar</h3>
+          <p>Divorcio express, custodia de menores, pensiones alimenticias, adopción, violencia intrafamiliar y mediación.</p>
+        </div>
+        <span class="practice-link">Ver más →</span>
+      </a>
+      <a href="#contacto" class="practice">
+        <div>
+          <span class="practice-num">05 / SUCESIONES</span>
+          <h3>Sucesiones y Testamentos</h3>
+          <p>Trámite de herencia, testamentos, partición de bienes, fideicomisos y planificación patrimonial familiar.</p>
+        </div>
+        <span class="practice-link">Ver más →</span>
+      </a>
+      <a href="#contacto" class="practice">
+        <div>
+          <span class="practice-num">06 / PENAL</span>
+          <h3>Derecho Penal</h3>
+          <p>Defensa en procesos penales, amparos, libertad provisional, recursos de apelación y asesoría a víctimas.</p>
+        </div>
+        <span class="practice-link">Ver más →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="nosotros" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo">
+        <div class="badge">
+          <strong>Lic. Roberto A. Mendoza</strong>
+          <span>Cédula Profesional 4829103</span>
+        </div>
       </div>
-      <div class="area">
-        <div class="area-icon">🏢</div>
-        <h3>Derecho Mercantil</h3>
-        <p>Asesoría para empresas y comerciantes.</p>
-        <ul class="area-list"><li>Constitución de sociedades</li><li>Conflictos societarios</li><li>Quiebras y concursos</li></ul>
-      </div>
-      <div class="area">
-        <div class="area-icon">⚖️</div>
-        <h3>Derecho Laboral</h3>
-        <p>Defensa de patrones y trabajadores.</p>
-        <ul class="area-list"><li>Despidos injustificados</li><li>Reclamo de prestaciones</li><li>Fincas laborales</li></ul>
-      </div>
-      <div class="area">
-        <div class="area-icon">👪</div>
-        <h3>Derecho Familiar</h3>
-        <p>Soluciones para la familia con sensibilidad.</p>
-        <ul class="area-list"><li>Divorcio express e incausado</li><li>Pensión alimenticia</li><li>Custodia y guardianship</li></ul>
-      </div>
-      <div class="area">
-        <div class="area-icon">🏛️</div>
-        <h3>Sucesiones</h3>
-        <p>Herencias y testamentos sin conflictos.</p>
-        <ul class="area-list"><li>Juicios sucesorios</li><li>Testamentos</li><li>Reparto de herencia</li></ul>
-      </div>
-      <div class="area">
-        <div class="area-icon">🛡️</div>
-        <h3>Amparo</h3>
-        <p>Defensa frente a actos de autoridad.</p>
-        <ul class="area-list"><li>Amparo indirecto</li><li>Defensa contra actos</li><li>Protección de garantías</li></ul>
+      <div class="about-content">
+        <p class="eyebrow">El Abogado</p>
+        <h2>Una carrera construida sobre <em>resultados verificables</em>.</h2>
+        <p>Roberto Alejandro Mendoza es abogado litigante egresado de la Facultad de Derecho de la UANL, con Maestría en Derecho Corporativo por el ITESM. Fundó Jurídico Monterrey en 2007 después de 7 años como asociado en uno de los bufetes más reconocidos del norte del país.</p>
+        <p>Su práctica combina litigio tradicional con estrategias modernas de resolución alternativa de disputas. Ha representado a particulares, PyMEs y corporativos en más de 2,400 casos, con una tasa de éxito del 96% en asuntos extrajudiciales.</p>
+        <p>Es miembro activo del Colegio de Abogados de Nuevo León y árbitro certificado por el Centro de Mediación del Estado.</p>
+        <div class="credentials">
+          <div class="cred">
+            <div class="cred-icon">⚖</div>
+            <div><strong>Cédula 4829103</strong><span>Registro federal vigente</span></div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">★</div>
+            <div><strong>ITESM · Maestría</strong><span>Derecho Corporativo, 2005</span></div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">A</div>
+            <div><strong>UANL · Licenciatura</strong><span>Derecho, mención honorífica</span></div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">⊕</div>
+            <div><strong>Colegio de Abogados NL</strong><span>Miembro numerario</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="abogado">
-  <div class="container about-grid">
-    <div class="lawyer-card">
-      <div class="lawyer-avatar">👨‍⚖️</div>
-      <h3>Lic. Roberto Alejandro Mendoza</h3>
-      <div class="role">Abogado Fundador</div>
-      <ul class="lawyer-creds">
-        <li>Licenciado en Derecho · UANL</li>
-        <li>Maestría en Derecho Civil · TecMilenio</li>
-        <li>Miembro de la Barra Mexicana</li>
-        <li>Cédula profesional 4567890</li>
-      </ul>
-    </div>
-    <div class="about-text">
-      <span class="section-head" style="display:block;text-align:left;margin:0 0 12px"><span class="eyebrow">Experiencia que importa</span></span>
-      <h2>Un abogado que vela por tus intereses</h2>
-      <p>El Lic. Mendoza fundó Jurídico Monterrey con una misión clara: ofrecer asesoría legal honesta, accesible y orientada a resultados. Cada caso es manejado personalmente, sin filas ni burocracia innecesaria.</p>
-      <div class="quote">"La justicia no debe ser un privilegio de quienes pueden pagar más, sino un derecho al alcance de todos."</div>
-      <div class="values">
-        <div class="value"><h4>Confidencialidad</h4><p>Tu información protegida con el más estricto secreto profesional.</p></div>
-        <div class="value"><h4>Transparencia</h4><p>Honorarios claros desde el inicio, sin sorpresas ni costos ocultos.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="process" id="proceso">
+<!-- ===== CASES ===== -->
+<section id="casos" class="cases">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow">Nuestro proceso</span>
-      <h2>Cómo trabajamos contigo</h2>
-      <p>Un camino claro y sin complicaciones hacia la solución de tu caso.</p>
+      <p class="eyebrow">Casos de Éxito</p>
+      <h2>Resultados que hablan por sí solos</h2>
+      <p>Algunos casos representativos. Por confidencialidad, los nombres han sido omitidos.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case">
+        <div class="case-icon">$</div>
+        <div>
+          <span class="case-tag">Derecho Mercantil</span>
+          <h3>Cobranza a empresa constructora</h3>
+          <p>Empresa cliente esperaba cobrar $4.8M de pesos por servicios de subcontratación. La constructora se negaba a pagar argumentando defectos.</p>
+          <div class="case-result">Recuperado: $4.8M + intereses moratorios</div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="case-icon">♥</div>
+        <div>
+          <span class="case-tag">Derecho Familiar</span>
+          <h3>Divorcio con custodia compartida</h3>
+          <p>Cliente requería disolver matrimonio de 14 años y obtener custodia compartida de sus dos hijos. La contraparte buscaba custodia total.</p>
+          <div class="case-result">Custodia compartida 50/50 lograda</div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="case-icon">⚙</div>
+        <div>
+          <span class="case-tag">Derecho Laboral</span>
+          <h3>Despido injustificado de directivo</h3>
+          <p>Directivo despedido después de 12 años de servicio sin liquidación. La empresa argumentaba "reestructuración".</p>
+          <div class="case-result">Laudo: 18 meses de salario + prestaciones</div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="case-icon">⚖</div>
+        <div>
+          <span class="case-tag">Derecho Penal</span>
+          <h3>Defensa en proceso por fraude</h3>
+          <p>Empresario acusado de fraude en operación inmobiliaria por $12M. La defensa demostró inexistencia de dolo.</p>
+          <div class="case-result">Sentencia absolutoria en 14 meses</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section id="proceso" class="process">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Cómo Trabajamos</p>
+      <h2>Un proceso claro, paso a paso</h2>
     </div>
     <div class="process-grid">
-      <div class="step"><div class="step-num">1</div><h4>Consulta inicial</h4><p>Analizamos tu caso sin costo y definimos la estrategia.</p></div>
-      <div class="step"><div class="step-num">2</div><h4>Plan de acción</h4><p>Te explicamos los pasos, tiempos y honorarios por escrito.</p></div>
-      <div class="step"><div class="step-num">3</div><h4>Representación</h4><p>Gestionamos tu caso con diligencia y comunicación constante.</p></div>
-      <div class="step"><div class="step-num">4</div><h4>Resultado</h4><p>Logramos la mejor resolución posible para ti.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-bar">
-  <div class="container">
-    <h2>¿Necesitas asesoría legal hoy?</h2>
-    <p>La primera consulta es gratuita y completamente confidencial.</p>
-    <a href="#contacto" class="btn">Solicitar consulta</a>
-  </div>
-</section>
-
-<section id="contacto">
-  <div class="container contact-grid">
-    <div class="contact-info">
-      <span class="eyebrow" style="color:var(--gold);font-weight:700;font-size:12.5px;letter-spacing:2px;text-transform:uppercase">Contacto</span>
-      <h2>Hablemos de tu caso</h2>
-      <p style="color:var(--muted);margin-bottom:24px">Ubícanos en el centro de Monterrey o contáctanos por el medio de tu preferencia. Atendemos con cita previa.</p>
-      <div class="info-item"><div class="ico">📍</div><div><h4>Oficina</h4><p>Av. Venustiano Carranza 1234, Centro,<br>Monterrey, NL, 64000</p></div></div>
-      <div class="info-item"><div class="ico">📞</div><div><h4>Teléfono</h4><p><a href="tel:+528123456789">+52 81 2345 6789</a></p></div></div>
-      <div class="info-item"><div class="ico">✉️</div><div><h4>Correo</h4><p>contacto@juridicomonterrey.mx</p></div></div>
-      <div class="info-item"><div class="ico">🕒</div><div><h4>Horario</h4><p>Lunes a Viernes: 9:00 – 19:00</p></div></div>
-    </div>
-    <form onsubmit="alert('Gracias, nos pondremos en contacto contigo.');return false">
-      <h3 class="serif" style="font-size:20px;margin-bottom:6px">Solicita tu consulta</h3>
-      <p style="font-size:13.5px;color:var(--muted);margin-bottom:18px">Respondemos el mismo día hábil.</p>
-      <div class="row">
-        <div><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
-        <div><label>Teléfono</label><input type="tel" placeholder="Teléfono" required></div>
+      <div class="step">
+        <span class="step-num">01</span>
+        <h3>Consulta Inicial</h3>
+        <p>30 minutos sin costo. Analizamos su caso, viabilidad y posibles estrategias. Confidencialidad total.</p>
       </div>
-      <label>Correo electrónico</label>
-      <input type="email" placeholder="tu@correo.com" required>
-      <label>Área de tu caso</label>
-      <select>
-        <option>Derecho Civil</option>
-        <option>Derecho Mercantil</option>
-        <option>Derecho Laboral</option>
-        <option>Derecho Familiar (divorcio)</option>
-        <option>Sucesiones</option>
-        <option>Otro</option>
-      </select>
-      <label>Cuéntanos tu situación</label>
-      <textarea rows="4" placeholder="Describe brevemente tu caso..."></textarea>
-      <button type="submit" class="btn">Enviar solicitud</button>
-    </form>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h3>Diagnóstico Legal</h3>
+        <p>Investigación documental, revisión de contratos y análisis jurisprudencial. Le entregamos un dictamen.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h3>Estrategia a Medida</h3>
+        <p>Definimos juntos la mejor ruta: negociación, mediación o litigio. Presupuesto cerrado por escrito.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">04</span>
+        <h3>Resolución</h3>
+        <p>Ejecución y seguimiento hasta la resolución final. Le mantenemos informado en cada paso.</p>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Testimonios</p>
+      <h2>Lo que dicen nuestros clientes</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test">
+        <div>
+          <p class="test-quote">Después de que dos abogados me dijeron que no tenía caso, el Lic. Mendoza recuperó mi casa. Vale oro.</p>
+        </div>
+        <div class="test-author">
+          <strong>María G.</strong>
+          <span>Cliente · Derecho Civil · San Pedro</span>
+        </div>
+      </div>
+      <div class="test">
+        <div>
+          <p class="test-quote">Necesitábamos un abogado que entendiera el negocio. Roberto nos resolvió tres contratos en menos de un mes.</p>
+        </div>
+        <div class="test-author">
+          <strong>Carlos R., Director General</strong>
+          <span>Empresa de logística · Apodaca</span>
+        </div>
+      </div>
+      <div class="test">
+        <div>
+          <p class="test-quote">El proceso de mi divorcio fue duro, pero el Lic. siempre me mantuvo informada. Llegamos a un acuerdo justo.</p>
+        </div>
+        <div class="test-author">
+          <strong>Ana L.</strong>
+          <span>Cliente · Derecho Familiar · Monterrey</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Preguntas Frecuentes</p>
+      <h2>Dudas comunes sobre nuestros servicios</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">¿Realmente la primera consulta es gratis? <span class="ico">+</span></button>
+        <div class="faq-a"><p>Sí. Los primeros 30 minutos son sin costo y sin compromiso. Le escuchamos, evaluamos su caso y le decimos si podemos ayudarle. Si decide no continuar, no le debemos nada.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Cuánto cuesta un caso de divorcio en Monterrey? <span class="ico">+</span></button>
+        <div class="faq-a"><p>Depende de la complejidad. Un divorcio exprés sin hijos ni bienes puede resolverse desde $18,000 MXN. Un divorcio contencioso con custodia y división de bienes puede oscilar entre $45,000 y $120,000 MXN. Le damos presupuesto cerrado por escrito antes de empezar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Atienden casos fuera de Monterrey? <span class="ico">+</span></button>
+        <div class="faq-a"><p>Nuestra sede está en Monterrey pero podemos litigar en todo Nuevo León. Para casos en otros estados trabajamos con abogados corresponsales de confianza, manteniendo el mismo nivel de calidad y seguimiento.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Cómo es la forma de pago? <span class="ico">+</span></button>
+        <div class="faq-a"><p>Aceptamos transferencia bancaria, tarjeta de crédito/débito y efectivo. Para casos extensos se puede pagar en mensualidades. Los honorarios se pactan por escrito antes de iniciar cualquier gestión.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Qué pasa si pierdo el caso? <span class="ico">+</span></button>
+        <div class="faq-a"><p>En asuntos judiciales no hay garantía de resultado. Lo que sí garantizamos es que haremos todo lo que esté a nuestro alcance con la estrategia acordada. Si el caso no prospera, los honorarios ya cubiertos corresponden al trabajo realizado.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contacto" class="contact">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Contacto</p>
+      <h2>Agende su consulta</h2>
+      <p>30 minutos sin costo. Respuesta en menos de 2 horas en horario laboral.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Jurídico Monterrey</h3>
+        <div class="item">
+          <div class="ico">⌂</div>
+          <div>
+            <strong>Dirección</strong>
+            <span>Av. Venustiano Carranza 1234, Piso 7<br>Centro, Monterrey, NL 64000</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ico">☎</div>
+          <div>
+            <strong>Teléfono</strong>
+            <span>+52 81 2345 5678</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ico">@</div>
+          <div>
+            <strong>Email</strong>
+            <span>contacto@juridicomonterrey.mx</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ico">⏱</div>
+          <div>
+            <strong>Horario</strong>
+            <span>Lun - Vie: 9:00 - 19:00<br>Sáb: 9:00 - 13:00</span>
+          </div>
+        </div>
+        <a href="https://wa.me/528123456789?text=Hola%20Lic.%20Mendoza%2C%20necesito%20asesor%C3%ADa%20legal.%20Vi%20su%20p%C3%A1gina%20web." style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 26px;font-family:var(--serif);font-size:16px;font-weight:500;margin-top:14px">
+          WhatsApp Directo →
+        </a>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('En la demo real esto envía a WhatsApp o email del abogado. Esta es una demo de AutomaNexus.');">
+        <h3>Cuéntenos su caso</h3>
+        <p>Toda la información es estrictamente confidencial.</p>
+        <div class="field-row">
+          <div class="field"><label>Nombre</label><input type="text" required></div>
+          <div class="field"><label>Teléfono</label><input type="tel" required></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" required></div>
+        <div class="field">
+          <label>Área legal</label>
+          <select required>
+            <option value="">Seleccione...</option>
+            <option>Derecho Civil</option>
+            <option>Derecho Mercantil</option>
+            <option>Derecho Laboral</option>
+            <option>Derecho Familiar</option>
+            <option>Sucesiones y Testamentos</option>
+            <option>Derecho Penal</option>
+            <option>Otro / No estoy seguro</option>
+          </select>
+        </div>
+        <div class="field"><label>Descríbanos brevemente su caso</label><textarea placeholder="Ej: necesito divorciarme, llevo 12 años casado y tenemos 2 hijos menores..."></textarea></div>
+        <button type="submit">Enviar Consulta →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
     <div class="foot-grid">
-      <div>
-        <div class="foot-brand">Jurídico Monterrey</div>
-        <p>Bufete jurídico comprometido con la defensa de tus derechos en Nuevo León y toda la república mexicana.</p>
+      <div class="foot foot-brand">
+        <div class="brand">
+          <div class="brand-mark">R</div>
+          <div class="brand-text"><strong style="color:var(--bg)">Jurídico Monterrey</strong><span style="color:var(--gold)">Lic. Roberto Mendoza</span></div>
+        </div>
+        <p style="color:rgba(249,248,245,.5);font-size:14px;line-height:1.7;margin-top:18px;max-width:340px">Bufete de abogados en Monterrey con 18 años de experiencia en litigio civil, mercantil, familiar, laboral y penal.</p>
       </div>
-      <div>
-        <h4>Áreas</h4>
-        <ul><li><a href="#areas">Derecho Civil</a></li><li><a href="#areas">Derecho Laboral</a></li><li><a href="#areas">Derecho Familiar</a></li><li><a href="#areas">Sucesiones</a></li></ul>
+      <div class="foot">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#areas">Derecho Civil</a></li>
+          <li><a href="#areas">Derecho Mercantil</a></li>
+          <li><a href="#areas">Derecho Laboral</a></li>
+          <li><a href="#areas">Derecho Familiar</a></li>
+          <li><a href="#areas">Sucesiones</a></li>
+          <li><a href="#areas">Derecho Penal</a></li>
+        </ul>
       </div>
-      <div>
+      <div class="foot">
+        <h4>Bufete</h4>
+        <ul>
+          <li><a href="#nosotros">El Abogado</a></li>
+          <li><a href="#proceso">Cómo Trabajamos</a></li>
+          <li><a href="#casos">Casos de Éxito</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="foot">
         <h4>Contacto</h4>
-        <ul><li>Av. Venustiano Carranza 1234</li><li>+52 81 2345 6789</li><li>contacto@juridicomonterrey.mx</li></ul>
+        <ul>
+          <li>+52 81 2345 5678</li>
+          <li>contacto@juridicomonterrey.mx</li>
+          <li>Av. Carranza 1234, Centro<br>Monterrey, NL</li>
+        </ul>
       </div>
     </div>
-    <div class="copyright">© 2026 Jurídico Monterrey. Todos los derechos reservados. | Página demo creada por AutomaNexus.</div>
+    <div class="foot-bottom">
+      <span>© 2026 Jurídico Monterrey. Todos los derechos reservados.</span>
+      <span>Diseño web por <a href="https://mx.automanex.us" style="color:var(--gold)">AutomaNexus</a> · Demo</span>
+    </div>
   </div>
 </footer>
 
-<a href="https://wa.me/528123456789?text=Hola,%20necesito%20una%20consulta%20legal" class="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+<a href="https://wa.me/528123456789?text=Hola%20Lic.%20Mendoza%2C%20vi%20su%20p%C3%A1gina%20web%20y%20necesito%20asesor%C3%ADa%20legal." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
+<!-- ===== JSON-LD ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  "name": "Jurídico Monterrey",
-  "image": "https://juridicomonterrey.mx/logo.png",
-  "description": "Bufete jurídico en Monterrey, NL. Derecho civil, mercantil, laboral, familiar y sucesiones. Lic. Roberto Alejandro Mendoza.",
-  "@id": "https://juridicomonterrey.mx",
+  "name": "Jurídico Monterrey - Lic. Roberto Mendoza",
+  "description": "Bufete de abogados en Monterrey, NL. Derecho civil, mercantil, laboral, familiar y penal.",
   "url": "https://juridicomonterrey.mx",
   "telephone": "+528123456789",
-  "priceRange": "$$",
+  "email": "contacto@juridicomonterrey.mx",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Av. Venustiano Carranza 1234, Centro",
+    "streetAddress": "Av. Venustiano Carranza 1234, Piso 7",
     "addressLocality": "Monterrey",
-    "addressRegion": "NL",
+    "addressRegion": "Nuevo León",
     "postalCode": "64000",
     "addressCountry": "MX"
   },
-  "geo": {"@type":"GeoCoordinates","latitude":25.6751,"longitude":-100.3166},
-  "openingHoursSpecification": [
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"}
-  ],
-  "founder": {"@type":"Person","name":"Lic. Roberto Alejandro Mendoza"},
-  "areaServed": "Nuevo León"
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 25.6714,
+    "longitude": -100.3094
+  },
+  "openingHours": "Mo-Fr 09:00-19:00, Sa 09:00-13:00",
+  "priceRange": "$$",
+  "areaServed": "MX-NLE",
+  "founder": {
+    "@type": "Person",
+    "name": "Roberto Alejandro Mendoza",
+    "jobTitle": "Abogado Litigante"
+  }
 }
 </script>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btn.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+
 </body>
 </html>

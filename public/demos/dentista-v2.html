@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonrisa Perfecta Dental | Dentista Premium en San Pedro Garza García</title>
+<meta name="description" content="Clínica dental premium en San Pedro Garza García, Monterrey. Dra. María Fernanda Ramírez, especialista en implantes, ortodoncia invisible y diseño de sonrisa. Agenda tu cita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, system-ui, sans-serif;
+    --ink: rgba(0,0,0,0.95);
+    --ink-2: rgba(0,0,0,0.6);
+    --ink-3: rgba(0,0,0,0.4);
+    --paper: #ffffff;
+    --paper-2: #f8f6f3;
+    --paper-3: #f0ede7;
+    --line: rgba(0,0,0,0.08);
+    --line-2: rgba(0,0,0,0.15);
+    --accent: #0d5c4d;          /* deep teal, premium dental */
+    --accent-2: #0a4a3d;
+    --gold: #b8956a;            /* accent for premium feel */
+    --warm: #fdf9f3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    padding-top: 36px;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  /* ============================================ */
+  /* DEMO BANNER                                  */
+  /* ============================================ */
+  .demo-banner {
+    position: fixed; top: 0; left: 0; right: 0; height: 36px;
+    background: var(--ink); color: rgba(255,255,255,0.85);
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.3px;
+    z-index: 1000; padding: 0 16px; text-align: center;
+  }
+  .demo-banner .tag {
+    background: var(--gold); color: var(--ink);
+    border-radius: 3px; padding: 1px 8px;
+    font-weight: 700; letter-spacing: 0.5px; font-size: 10px;
+  }
+  .demo-banner a { color: var(--gold); text-decoration: underline; font-weight: 600; }
+
+  /* ============================================ */
+  /* NAV                                          */
+  /* ============================================ */
+  header {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 36px; z-index: 900;
+  }
+  .nav {
+    max-width: 1240px; margin: 0 auto; padding: 0 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand .mark {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-family: var(--serif); font-size: 22px; font-weight: 600;
+  }
+  .brand .name { font-family: var(--serif); font-weight: 600; font-size: 19px; letter-spacing: -0.3px; }
+  .brand .sub { font-size: 11px; color: var(--ink-2); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { font-size: 14.5px; font-weight: 500; color: var(--ink-2); transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink); color: var(--paper);
+    padding: 11px 20px; border-radius: 999px;
+    font-size: 14px; font-weight: 500;
+    transition: all .2s;
+  }
+  .nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
+  .menu-toggle { display: none; }
+
+  /* ============================================ */
+  /* HERO                                         */
+  /* ============================================ */
+  .hero { padding: 80px 0 100px; background: var(--paper); }
+  .hero-grid {
+    max-width: 1240px; margin: 0 auto; padding: 0 32px;
+    display: grid; grid-template-columns: 1.15fr 1fr;
+    gap: 80px; align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: ""; width: 24px; height: 1px; background: var(--accent);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(40px, 5.5vw, 68px);
+    line-height: 1.02; font-weight: 400;
+    letter-spacing: -0.022em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero p.lead {
+    font-size: 19px; color: var(--ink-2);
+    line-height: 1.55; margin-bottom: 36px; max-width: 520px;
+    font-weight: 400;
+  }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--ink); color: var(--paper);
+    padding: 16px 28px; border-radius: 999px;
+    font-size: 15px; font-weight: 500;
+    transition: all .25s;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 10px;
+    color: var(--ink); padding: 16px 8px;
+    font-size: 15px; font-weight: 500;
+    border-bottom: 1px solid var(--ink-2);
+    transition: border-color .2s;
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .hero-trust { display: flex; align-items: center; gap: 24px; }
+  .hero-trust .avatars { display: flex; }
+  .hero-trust .avatars span {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, #d4b896, var(--gold));
+    border: 2px solid var(--paper);
+    margin-left: -10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: var(--paper);
+  }
+  .hero-trust .avatars span:first-child { margin-left: 0; background: linear-gradient(135deg, #c8a47c, #8b6e4e); }
+  .hero-trust .avatars span:nth-child(2) { background: linear-gradient(135deg, #d4b896, #a0855c); }
+  .hero-trust .avatars span:nth-child(3) { background: linear-gradient(135deg, #e0c8a0, #b8956a); }
+  .hero-trust .avatars span:nth-child(4) { background: linear-gradient(135deg, #c4a480, #94704a); }
+  .hero-trust p { font-size: 13px; color: var(--ink-2); line-height: 1.4; }
+  .hero-trust strong { color: var(--ink); font-weight: 600; }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #e8dfd1 0%, #d4c4a8 100%);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .hero-visual::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.4), transparent 50%),
+      radial-gradient(circle at 70% 80%, rgba(13,92,77,0.2), transparent 50%);
+  }
+  .hero-visual .photo-placeholder {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.5);
+    font-family: var(--serif); font-size: 14px; font-style: italic;
+    text-align: center; padding: 20px;
+  }
+  .hero-badge {
+    position: absolute; bottom: 24px; left: 24px; right: 24px;
+    background: var(--paper);
+    border-radius: 4px;
+    padding: 18px 22px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+    display: flex; align-items: center; gap: 16px;
+  }
+  .hero-badge .num {
+    font-family: var(--serif); font-size: 38px; font-weight: 500;
+    line-height: 1; color: var(--accent);
+  }
+  .hero-badge .label { font-size: 12.5px; color: var(--ink-2); line-height: 1.3; }
+  .hero-badge .label strong { display: block; color: var(--ink); font-size: 13.5px; font-weight: 600; }
+
+  /* ============================================ */
+  /* TRUST BAR (logos / stats)                    */
+  /* ============================================ */
+  .trust-bar {
+    background: var(--paper-2);
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .trust-grid {
+    max-width: 1240px; margin: 0 auto; padding: 0 32px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+  }
+  .trust-item { text-align: center; }
+  .trust-item .stat {
+    font-family: var(--serif); font-size: 36px; font-weight: 500;
+    color: var(--ink); line-height: 1; margin-bottom: 6px;
+  }
+  .trust-item .label { font-size: 12.5px; color: var(--ink-2); letter-spacing: 0.5px; }
+
+  /* ============================================ */
+  /* SERVICES                                     */
+  /* ============================================ */
+  section { padding: 100px 0; }
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  .section-head { margin-bottom: 64px; max-width: 720px; }
+  .section-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 1.8px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 50px);
+    line-height: 1.05; font-weight: 400;
+    letter-spacing: -0.022em; color: var(--ink);
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+  .section-sub {
+    font-size: 17px; color: var(--ink-2);
+    line-height: 1.55; margin-top: 20px; max-width: 580px;
+  }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .service-card {
+    background: var(--paper);
+    padding: 48px 36px;
+    transition: background .3s;
+    cursor: pointer;
+  }
+  .service-card:hover { background: var(--warm); }
+  .service-card .num {
+    font-family: var(--serif); font-size: 14px; font-style: italic;
+    color: var(--accent); margin-bottom: 20px;
+  }
+  .service-card h3 {
+    font-family: var(--serif);
+    font-size: 26px; font-weight: 500;
+    line-height: 1.15; letter-spacing: -0.01em;
+    color: var(--ink); margin-bottom: 14px;
+  }
+  .service-card p { font-size: 14.5px; color: var(--ink-2); line-height: 1.6; }
+  .service-card .more {
+    margin-top: 24px; font-size: 13px; font-weight: 500;
+    color: var(--accent); display: inline-flex; align-items: center; gap: 6px;
+  }
+
+  /* ============================================ */
+  /* BEFORE / AFTER                              */
+  /* ============================================ */
+  .ba-section { background: var(--warm); }
+  .ba-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center;
+  }
+  .ba-images {
+    position: relative;
+    aspect-ratio: 5/4;
+    background: var(--paper-3);
+    border-radius: 4px;
+    overflow: hidden;
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .ba-images > div {
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-style: italic;
+    font-size: 14px; color: var(--ink-3);
+    position: relative;
+  }
+  .ba-images > div:first-child { background: linear-gradient(135deg, #c4a480 0%, #a08560 100%); }
+  .ba-images > div:last-child { background: linear-gradient(135deg, #e8dfd1 0%, #d4c4a8 100%); }
+  .ba-images .label {
+    position: absolute; top: 16px; left: 16px;
+    background: rgba(255,255,255,0.9); color: var(--ink);
+    padding: 4px 10px; border-radius: 3px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .ba-features { display: flex; flex-direction: column; gap: 20px; }
+  .ba-feature {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 20px 0; border-bottom: 1px solid var(--line);
+  }
+  .ba-feature .icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--accent); color: var(--paper);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 18px;
+  }
+  .ba-feature h4 {
+    font-family: var(--serif); font-size: 18px; font-weight: 500;
+    color: var(--ink); margin-bottom: 4px;
+  }
+  .ba-feature p { font-size: 14px; color: var(--ink-2); }
+
+  /* ============================================ */
+  /* DOCTOR                                       */
+  /* ============================================ */
+  .doctor-grid {
+    display: grid; grid-template-columns: 1fr 1.3fr;
+    gap: 80px; align-items: center;
+  }
+  .doctor-photo {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #c8a47c 0%, #8b6e4e 100%);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .doctor-photo::after {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 40% 30%, rgba(255,255,255,0.3), transparent 60%);
+  }
+  .doctor-photo .ph {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-style: italic; color: rgba(255,255,255,0.5); font-size: 14px;
+  }
+  .doctor-quote {
+    font-family: var(--serif); font-size: 22px; font-style: italic;
+    line-height: 1.4; color: var(--ink); margin-bottom: 32px;
+    padding-left: 24px; border-left: 2px solid var(--gold);
+  }
+  .doctor-content h3 {
+    font-family: var(--serif); font-size: 36px; font-weight: 500;
+    line-height: 1.1; margin-bottom: 8px;
+  }
+  .doctor-content .role {
+    font-size: 14px; color: var(--accent); font-weight: 500;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px;
+  }
+  .doctor-content p { font-size: 16px; color: var(--ink-2); line-height: 1.65; margin-bottom: 16px; }
+  .doctor-credentials {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-top: 32px; padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .cred-item .label { font-size: 11px; color: var(--ink-3); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; }
+  .cred-item .val { font-family: var(--serif); font-size: 16px; color: var(--ink); font-weight: 500; }
+
+  /* ============================================ */
+  /* REVIEWS                                      */
+  /* ============================================ */
+  .reviews-section { background: var(--paper-2); }
+  .reviews-head {
+    display: flex; align-items: end; justify-content: space-between;
+    margin-bottom: 64px; flex-wrap: wrap; gap: 24px;
+  }
+  .google-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--paper); padding: 12px 20px;
+    border: 1px solid var(--line); border-radius: 8px;
+  }
+  .google-badge .g-logo {
+    font-family: var(--serif); font-size: 22px; font-weight: 600;
+    color: #4285f4;
+  }
+  .google-badge .g-logo span:nth-child(1) { color: #4285f4; }
+  .google-badge .g-logo span:nth-child(2) { color: #ea4335; }
+  .google-badge .g-logo span:nth-child(3) { color: #fbbc04; }
+  .google-badge .g-logo span:nth-child(4) { color: #4285f4; }
+  .google-badge .g-logo span:nth-child(5) { color: #34a853; }
+  .google-badge .g-logo span:nth-child(6) { color: #ea4335; }
+  .google-badge .stars { color: #fbbc04; font-size: 18px; letter-spacing: 1px; }
+  .google-badge .meta { font-size: 13px; color: var(--ink-2); }
+  .google-badge .meta strong { color: var(--ink); font-weight: 600; }
+
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .review-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px 26px;
+    position: relative;
+  }
+  .review-card .stars { color: #fbbc04; font-size: 14px; margin-bottom: 14px; letter-spacing: 1px; }
+  .review-card p {
+    font-family: var(--serif); font-size: 16.5px; line-height: 1.5;
+    color: var(--ink); margin-bottom: 20px;
+  }
+  .review-card .author {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .review-card .avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--paper-3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600; color: var(--ink-2);
+  }
+  .review-card .name { font-size: 13.5px; font-weight: 600; }
+  .review-card .date { font-size: 12px; color: var(--ink-2); }
+  .review-card .g-icon {
+    position: absolute; top: 20px; right: 22px;
+    font-size: 13px; color: var(--ink-3);
+  }
+
+  /* ============================================ */
+  /* BOOKING                                      */
+  /* ============================================ */
+  .booking-section { background: var(--ink); color: var(--paper); }
+  .booking-section .section-eyebrow { color: var(--gold); }
+  .booking-section .section-title { color: var(--paper); }
+  .booking-section .section-title em { color: var(--gold); }
+  .booking-section .section-sub { color: rgba(255,255,255,0.65); }
+
+  .booking-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start;
+  }
+  .booking-form {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 36px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .form-row.full { grid-template-columns: 1fr; }
+  .form-row label {
+    display: block; font-size: 12px; font-weight: 500;
+    color: rgba(255,255,255,0.6); margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+  .form-row input, .form-row select, .form-row textarea {
+    width: 100%; background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--paper); padding: 12px 14px;
+    border-radius: 6px; font-family: var(--sans); font-size: 14px;
+    transition: border-color .2s;
+  }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+    outline: none; border-color: var(--gold);
+  }
+  .form-row select option { color: var(--ink); }
+  .form-submit {
+    width: 100%; background: var(--gold); color: var(--ink);
+    padding: 14px; border-radius: 6px; font-weight: 600;
+    font-size: 14.5px; margin-top: 8px;
+    transition: background .2s;
+  }
+  .form-submit:hover { background: #c8a575; }
+
+  .booking-info { padding: 12px 0; }
+  .booking-info h3 {
+    font-family: var(--serif); font-size: 28px; font-weight: 500;
+    line-height: 1.2; margin-bottom: 24px;
+  }
+  .info-block {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .info-block .ic {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(184,149,106,0.15);
+    color: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 18px;
+  }
+  .info-block .label { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .info-block .val { font-size: 16px; color: var(--paper); }
+  .info-block .val a { color: var(--gold); }
+
+  /* ============================================ */
+  /* MAP                                          */
+  /* ============================================ */
+  .map-section { padding: 0; }
+  .map-embed {
+    width: 100%; height: 460px;
+    background: var(--paper-3);
+    position: relative;
+    overflow: hidden;
+  }
+  .map-embed iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.4); }
+
+  /* ============================================ */
+  /* FOOTER                                       */
+  /* ============================================ */
+  footer {
+    background: var(--paper-2);
+    padding: 60px 0 30px;
+    border-top: 1px solid var(--line);
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px; margin-bottom: 48px;
+  }
+  .footer-brand p {
+    font-size: 14px; color: var(--ink-2);
+    margin-top: 16px; line-height: 1.6; max-width: 320px;
+  }
+  .footer-col h4 {
+    font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--ink); margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { font-size: 14px; color: var(--ink-2); transition: color .2s; }
+  .footer-col a:hover { color: var(--ink); }
+  .footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--ink-2);
+  }
+
+  /* ============================================ */
+  /* WHATSAPP                                     */
+  /* ============================================ */
+  .wa-float {
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: #25D366; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+    transition: transform .2s;
+  }
+  .wa-float:hover { transform: scale(1.08); }
+  .wa-float svg { width: 32px; height: 32px; }
+
+  /* ============================================ */
+  /* MOBILE                                       */
+  /* ============================================ */
+  @media (max-width: 960px) {
+    .nav-links, .nav-cta { display: none; }
+    .menu-toggle { display: block; background: none; }
+    .hero { padding: 50px 0 60px; }
+    .hero-grid, .ba-grid, .doctor-grid, .booking-grid { grid-template-columns: 1fr; gap: 48px; }
+    section { padding: 64px 0; }
+    .services-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .trust-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .doctor-credentials { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .trust-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 38px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ DEMO BANNER ============ -->
+<div class="demo-banner">
+  <span class="tag">DEMO</span>
+  <span>Esta es una página de demostración de <a href="/">AutomaNexus</a> · Muestra de cómo quedaría tu web real</span>
+</div>
+
+<!-- ============ NAV ============ -->
+<header>
+  <div class="nav">
+    <a href="#" class="brand">
+      <div class="mark">S</div>
+      <div>
+        <div class="name">Sonrisa Perfecta</div>
+        <div class="sub">Odontología</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#servicios">Tratamientos</a>
+      <a href="#casos">Casos</a>
+      <a href="#doctora">Doctora</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="https://wa.me/528112345678?text=Hola%20Dra.%20Mar%C3%ADa%20Fernanda%2C%20quiero%20agendar%20una%20consulta" class="nav-cta">
+      Agendar cita
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="menu-toggle" aria-label="Menú">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">San Pedro Garza García · Desde 2008</div>
+      <h1>Sonrisas que <em>duran</em> toda la vida.</h1>
+      <p class="lead">Atención odontológica premium con tecnología de última generación. Diseño de sonrisa, implantes y ortodoncia invisible, realizados por la Dra. María Fernanda Ramírez y su equipo especializado.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/528112345678?text=Hola%2C%20quiero%20agendar%20mi%20primera%20consulta" class="btn-primary">
+          Agendar primera consulta
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#casos" class="btn-ghost">Ver casos reales →</a>
+      </div>
+      <div class="hero-trust">
+        <div class="avatars">
+          <span>JM</span><span>AL</span><span>RS</span><span>MC</span>
+        </div>
+        <p><strong>4.9 / 5</strong> en Google · Más de <strong>380 pacientes</strong> nos recomiendan</p>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="photo-placeholder">[ Foto de la clínica · Recepción con luz natural ]</div>
+      <div class="hero-badge">
+        <div class="num">17</div>
+        <div class="label">
+          <strong>años de experiencia</strong>
+          Certificada por el Colegio de Odontólogos de Nuevo León
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="trust-bar" style="padding: 36px 0;">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="stat">17</div>
+      <div class="label">Años de experiencia</div>
+    </div>
+    <div class="trust-item">
+      <div class="stat">2,400+</div>
+      <div class="label">Sonrisas diseñadas</div>
+    </div>
+    <div class="trust-item">
+      <div class="stat">4.9/5</div>
+      <div class="label">Calificación Google</div>
+    </div>
+    <div class="trust-item">
+      <div class="stat">98%</div>
+      <div class="label">Pacientes recurrentes</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Tratamientos</div>
+      <h2 class="section-title">Cada sonrisa, <em>única.</em></h2>
+      <p class="section-sub">Diseñamos cada plan de tratamiento a la medida. Sin paquetes genéricos, sin sorpresas en el precio. Solo lo que tu sonrisa necesita.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="num">— 01</div>
+        <h3>Diseño de Sonrisa Digital</h3>
+        <p>Vemos el resultado antes de empezar. Escaneamos tu boca, diseñamos tu sonrisa ideal en 3D, y lo apruebas antes de cualquier procedimiento.</p>
+        <span class="more">Conocer más →</span>
+      </div>
+      <div class="service-card">
+        <div class="num">— 02</div>
+        <h3>Implantes Dentales</h3>
+        <p>Reemplazo de piezas perdidas con implantes de titanio de primera línea. Resultados naturales, funcionales y para toda la vida.</p>
+        <span class="more">Conocer más →</span>
+      </div>
+      <div class="service-card">
+        <div class="num">— 03</div>
+        <h3>Ortodoncia Invisible</h3>
+        <p>Alineadores transparentes tipo Invisalign. Corrige tu sonrisa sin brackets, sin alambres, sin que nadie note que estás en tratamiento.</p>
+        <span class="more">Conocer más →</span>
+      </div>
+      <div class="service-card">
+        <div class="num">— 04</div>
+        <h3>Blanqueamiento Profesional</h3>
+        <p>Blanqueamiento clínico de alta concentración. Hasta 8 tonos más claro en una sola sesión de 90 minutos, sin sensibilidad.</p>
+        <span class="more">Conocer más →</span>
+      </div>
+      <div class="service-card">
+        <div class="num">— 05</div>
+        <h3>Endodoncia Microscópica</h3>
+        <p>Tratamiento de conductos con microscopio dental de alta precisión. Salva tu diente natural sin dolor y en una sola cita.</p>
+        <span class="more">Conocer más →</span>
+      </div>
+      <div class="service-card">
+        <div class="num">— 06</div>
+        <h3>Rehabilitación Oral</h3>
+        <p>Recuperación completa de la función y estética de tu boca. Para casos complejos, combinamos todas las especialidades.</p>
+        <span class="more">Conocer más →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="ba-section" id="casos">
+  <div class="container">
+    <div class="ba-grid">
+      <div>
+        <div class="section-eyebrow">Casos reales</div>
+        <h2 class="section-title" style="font-size: clamp(28px, 3.5vw, 44px);">Resultados que <em>hablan.</em></h2>
+        <p class="section-sub">Cada caso que mostramos es un paciente real. Sin filtros, sin retoques. La misma sonrisa que puedes esperar tú.</p>
+        <div class="ba-features" style="margin-top: 40px;">
+          <div class="ba-feature">
+            <div class="icon">✓</div>
+            <div>
+              <h4>Diagnóstico digital en 3D</h4>
+              <p>Ves tu resultado antes de empezar. Sin sorpresas.</p>
+            </div>
+          </div>
+          <div class="ba-feature">
+            <div class="icon">✓</div>
+            <div>
+              <h4>Materiales de primera línea</h4>
+              <p>Trabajamos solo con laboratorios certificados en EE.UU. y Europa.</p>
+            </div>
+          </div>
+          <div class="ba-feature">
+            <div class="icon">✓</div>
+            <div>
+              <h4>Garantía escrita</h4>
+              <p>Todos nuestros tratamientos tienen garantía de 5 años.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ba-images">
+        <div>
+          <span class="label">Antes</span>
+          <span>[ Foto real · Caso 1 ]</span>
+        </div>
+        <div>
+          <span class="label">Después</span>
+          <span>[ Foto real · Caso 1 ]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOCTOR ============ -->
+<section id="doctora">
+  <div class="container">
+    <div class="doctor-grid">
+      <div class="doctor-photo">
+        <div class="ph">[ Foto de la Dra. María Fernanda Ramírez ]</div>
+      </div>
+      <div class="doctor-content">
+        <div class="section-eyebrow">La especialista</div>
+        <h3>Dra. María Fernanda<br/>Ramírez Cedillo</h3>
+        <div class="role">Cédula Profesional 8472193 · Especialista en Rehabilitación Oral</div>
+        <div class="doctor-quote">
+          "Para mí cada paciente es único. No hay dos sonrisas iguales, y mi trabajo es entender qué quieres para tu sonrisa y hacerlo posible."
+        </div>
+        <p>Egresada de la Universidad Autónoma de Nuevo León con Maestría en Rehabilitación Oral por la Universidad de Texas. Certificada por la American Academy of Cosmetic Dentistry.</p>
+        <p>Con 17 años de experiencia, ha transformado más de 2,400 sonrisas. Su especialidad: casos complejos donde otros dentistas dicen "no se puede".</p>
+        <div class="doctor-credentials">
+          <div class="cred-item">
+            <div class="label">Formación</div>
+            <div class="val">UANL · UT Austin</div>
+          </div>
+          <div class="cred-item">
+            <div class="label">Especialidad</div>
+            <div class="val">Rehabilitación Oral</div>
+          </div>
+          <div class="cred-item">
+            <div class="label">Certificación</div>
+            <div class="val">AACD Member</div>
+          </div>
+          <div class="cred-item">
+            <div class="label">Idiomas</div>
+            <div class="val">Español · English</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews-section" id="opiniones">
+  <div class="container">
+    <div class="reviews-head">
+      <div class="section-head" style="margin-bottom: 0;">
+        <div class="section-eyebrow">Opiniones</div>
+        <h2 class="section-title">Lo que dicen <em>nuestros pacientes.</em></h2>
+      </div>
+      <div class="google-badge">
+        <div class="g-logo"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="meta"><strong>4.9</strong> · 382 reseñas</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Después de años evitando sonreír en las fotos, la Dra. María me cambió la vida. Mi diseño de sonrisa quedó perfecto. Parezco 10 años más joven."</p>
+        <div class="author">
+          <div class="avatar">JM</div>
+          <div>
+            <div class="name">Juan Manuel Treviño</div>
+            <div class="date">Hace 2 semanas · Google</div>
+          </div>
+        </div>
+        <div class="g-icon">G</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"La mejor decisión que he tomado. La ortodoncia invisible fue muy cómoda y el resultado increíble. Todo el equipo es súper profesional."</p>
+        <div class="author">
+          <div class="avatar">AL</div>
+          <div>
+            <div class="name">Ana Lucía Martínez</div>
+            <div class="date">Hace 1 mes · Google</div>
+          </div>
+        </div>
+        <div class="g-icon">G</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Me hicieron 4 implantes y quedó como si nunca hubiera perdido los dientes. Cero dolor, todo muy profesional. Los recomiendo 100%."</p>
+        <div class="author">
+          <div class="avatar">RS</div>
+          <div>
+            <div class="name">Roberto Sánchez</div>
+            <div class="date">Hace 2 meses · Google</div>
+          </div>
+        </div>
+        <div class="g-icon">G</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="booking-section" id="contacto">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Agenda tu cita</div>
+      <h2 class="section-title">Tu primera <em>consulta</em> es gratis.</h2>
+      <p class="section-sub">Evaluación completa, plan de tratamiento personalizado y sin compromiso. Te respondemos en menos de 2 horas.</p>
+    </div>
+    <div class="booking-grid">
+      <form class="booking-form" onsubmit="event.preventDefault(); alert('Demo: en la versión real esto enviaría tu cita a la clínica');">
+        <div class="form-row">
+          <div>
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" required>
+          </div>
+          <div>
+            <label>Teléfono</label>
+            <input type="tel" placeholder="+52 81 ..." required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label>Email</label>
+            <input type="email" placeholder="tu@email.com">
+          </div>
+          <div>
+            <label>Tratamiento de interés</label>
+            <select>
+              <option>Diseño de sonrisa</option>
+              <option>Implantes</option>
+              <option>Ortodoncia invisible</option>
+              <option>Blanqueamiento</option>
+              <option>Endodoncia</option>
+              <option>Otro / No estoy seguro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label>Fecha preferida</label>
+            <input type="date">
+          </div>
+          <div>
+            <label>Hora preferida</label>
+            <select>
+              <option>Mañana (9-12)</option>
+              <option>Mediodía (12-3)</option>
+              <option>Tarde (3-7)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row full">
+          <div>
+            <label>Cuéntanos brevemente</label>
+            <textarea rows="3" placeholder="¿Qué te gustaría mejorar de tu sonrisa?"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">Agendar mi consulta gratis →</button>
+      </form>
+      <div class="booking-info">
+        <h3>O si prefieres, contáctanos directo</h3>
+        <div class="info-block">
+          <div class="ic">📍</div>
+          <div>
+            <div class="label">Dirección</div>
+            <div class="val">Av. Roble 660, Valle del Campestre<br>San Pedro Garza García, NL 66265</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="ic">📞</div>
+          <div>
+            <div class="label">Teléfono</div>
+            <div class="val"><a href="tel:+528112345678">+52 81 1234 5678</a></div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="ic">🕐</div>
+          <div>
+            <div class="label">Horario</div>
+            <div class="val">Lun a Vie · 9:00 - 19:00<br>Sábados · 9:00 - 14:00</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="ic">✉</div>
+          <div>
+            <div class="label">Email</div>
+            <div class="val"><a href="mailto:citas@sonrisaperfecta.mx">citas@sonrisaperfecta.mx</a></div>
+          </div>
+        </div>
+        <div class="info-block" style="border-bottom: none;">
+          <div class="ic">💬</div>
+          <div>
+            <div class="label">WhatsApp</div>
+            <div class="val"><a href="https://wa.me/528112345678">Enviar mensaje →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAP ============ -->
+<section class="map-section">
+  <div class="map-embed">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14365.86!2d-100.401!3d25.651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDM5JzAzLjYiTiAxMDDCsDI0JzAzLjYiVw!5e0!3m2!1ses-419!2smx!4v1700000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Sonrisa Perfecta Dental"></iframe>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="brand">
+          <div class="mark">S</div>
+          <div>
+            <div class="name">Sonrisa Perfecta</div>
+            <div class="sub">Odontología</div>
+          </div>
+        </a>
+        <p>Clínica dental premium especializada en diseño de sonrisa, implantes y ortodoncia invisible. San Pedro Garza García desde 2008.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tratamientos</h4>
+        <ul>
+          <li><a href="#">Diseño de sonrisa</a></li>
+          <li><a href="#">Implantes dentales</a></li>
+          <li><a href="#">Ortodoncia invisible</a></li>
+          <li><a href="#">Blanqueamiento</a></li>
+          <li><a href="#">Endodoncia</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Clínica</h4>
+        <ul>
+          <li><a href="#">Doctora</a></li>
+          <li><a href="#">Casos</a></li>
+          <li><a href="#">Opiniones</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Agendar cita</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li>+52 81 1234 5678</li>
+          <li>citas@sonrisaperfecta.mx</li>
+          <li>Av. Roble 660, SPGG</li>
+          <li>Lun-Vie 9-19, Sáb 9-14</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sonrisa Perfecta Dental · Dra. María Fernanda Ramírez · Cédula 8472193</span>
+      <span>Demo por <a href="/" style="color: var(--accent); text-decoration: underline;">AutomaNexus</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP ============ -->
+<a href="https://wa.me/528112345678?text=Hola%2C%20quiero%20agendar%20una%20consulta%20en%20Sonrisa%20Perfecta%20Dental" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Sonrisa Perfecta Dental",
+  "image": "",
+  "telephone": "+528112345678",
+  "email": "citas@sonrisaperfecta.mx",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Roble 660, Valle del Campestre",
+    "addressLocality": "San Pedro Garza García",
+    "addressRegion": "NL",
+    "postalCode": "66265",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 25.651,
+    "longitude": -100.401
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "382"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "María Fernanda Ramírez Cedillo",
+    "jobTitle": "Directora · Especialista en Rehabilitación Oral"
+  }
+}
+</script>
+
+</body>
+</html>
