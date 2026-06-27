@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonrisa Perfecta Dental | Dentista en San Pedro Garza García, Monterrey</title>
+<meta name="description" content="Sonrisa Perfecta Dental en San Pedro Garza García, NL. Limpieza, implantes, ortodoncia invisible, blanqueamiento. Dra. María Fernanda Ramírez. Agenda tu cita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1d8fb8;
+    --teal:#2bb3a8;
+    --teal-dark:#1f8a82;
+    --ink:#1c3a4a;
+    --muted:#5d7682;
+    --bg:#f4fafc;
+    --line:#e2eef2;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;padding-top:38px}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+
+  /* Demo banner */
+  .demo-banner{position:fixed;top:0;left:0;right:0;height:38px;background:#0b2a36;color:#cdeef7;
+    display:flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;font-weight:500;
+    z-index:1000;padding:0 12px;text-align:center}
+  .demo-banner a{color:#7fe3d8;text-decoration:underline;font-weight:600}
+  .demo-badge{background:#2bb3a8;color:#06222a;border-radius:4px;padding:1px 7px;font-weight:700;letter-spacing:.5px;font-size:11px}
+
+  .container{max-width:1140px;margin:0 auto;padding:0 22px}
+
+  /* Header */
+  header.site{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:38px;z-index:900;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:20px;color:var(--ink)}
+  .brand .logo{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--teal));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:21px;font-weight:800}
+  .brand small{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.3px;margin-top:-3px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:14.5px;font-weight:500;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--teal)}
+  .btn{display:inline-block;background:var(--teal);color:#fff;padding:11px 22px;border-radius:9px;font-weight:600;font-size:14.5px;transition:.2s;cursor:pointer;border:none}
+  .btn:hover{background:var(--teal-dark);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+  .btn-ghost:hover{background:var(--teal);color:#fff}
+  .menu-toggle{display:none;background:none;border:none;font-size:24px;color:var(--ink);cursor:pointer}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,#e8f6fa 0%,#f4fafc 60%);padding:72px 0;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+  .hero h1{font-size:44px;line-height:1.12;font-weight:800;letter-spacing:-.8px;margin-bottom:18px}
+  .hero h1 span{color:var(--teal)}
+  .hero p.lead{font-size:18px;color:var(--muted);margin-bottom:28px;max-width:520px}
+  .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-trust{display:flex;gap:26px;margin-top:32px;flex-wrap:wrap}
+  .trust-item{font-size:13px;color:var(--muted)}
+  .trust-item strong{display:block;font-size:23px;color:var(--ink);font-weight:800}
+  .hero-img{position:relative}
+  .hero-img .card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 24px 60px -22px rgba(29,143,184,.32);
+    border:1px solid var(--line)}
+  .hero-img .card .rating{color:#f5a623;font-size:16px;letter-spacing:2px;margin-bottom:6px}
+  .hero-img .card h3{font-size:17px;margin-bottom:4px}
+  .hero-img .card p{font-size:13.5px;color:var(--muted)}
+  .hero-img .blob{position:absolute;width:260px;height:260px;background:linear-gradient(135deg,var(--teal),var(--blue));
+    border-radius:42% 58% 63% 37%/42% 45% 55% 58%;opacity:.16;top:-30px;right:-40px;z-index:-1}
+  .hero-emoji{font-size:64px;margin-bottom:8px}
+
+  /* Section */
+  section{padding:74px 0}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 50px}
+  .eyebrow{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;display:block}
+  .section-head h2{font-size:32px;font-weight:800;letter-spacing:-.5px;margin-bottom:12px}
+  .section-head p{color:var(--muted);font-size:16px}
+
+  /* Services */
+  .services{background:var(--white)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:30px;transition:.2s}
+  .svc-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px -18px rgba(29,143,184,.4);border-color:var(--teal)}
+  .svc-icon{width:52px;height:52px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--teal));
+    display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px}
+  .svc-card h3{font-size:19px;margin-bottom:8px}
+  .svc-card p{font-size:14.5px;color:var(--muted)}
+
+  /* About / Doctor */
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+  .doc-card{background:linear-gradient(150deg,var(--blue),var(--teal));border-radius:20px;padding:38px;color:#fff;text-align:center;position:relative;overflow:hidden}
+  .doc-avatar{width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.2);margin:0 auto 18px;
+    display:flex;align-items:center;justify-content:center;font-size:54px;border:3px solid rgba(255,255,255,.4)}
+  .doc-card h3{font-size:23px;margin-bottom:4px}
+  .doc-card .title{opacity:.85;font-size:14px;margin-bottom:14px}
+  .doc-card .creds{display:flex;gap:18px;justify-content:center;font-size:12.5px;flex-wrap:wrap;opacity:.9}
+  .about-text h2{font-size:31px;font-weight:800;margin-bottom:14px;letter-spacing:-.5px}
+  .about-text p{color:var(--muted);margin-bottom:16px;font-size:15.5px}
+  .checklist{list-style:none;display:grid;gap:11px;margin-top:8px}
+  .checklist li{display:flex;align-items:flex-start;gap:10px;font-size:14.8px}
+  .checklist li::before{content:"✓";color:var(--teal);font-weight:800;margin-top:1px}
+
+  /* Hours */
+  .hours-cta{background:linear-gradient(135deg,var(--teal),var(--blue));border-radius:20px;color:#fff;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:0;overflow:hidden}
+  .hours-info{padding:46px}
+  .hours-info h3{font-size:25px;margin-bottom:18px}
+  .hours-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:14.5px}
+  .hours-row:last-child{border-bottom:none}
+  .hours-cta-box{background:rgba(0,0,0,.12);padding:46px;display:flex;flex-direction:column;justify-content:center}
+  .hours-cta-box h3{font-size:23px;margin-bottom:8px}
+  .hours-cta-box p{opacity:.9;font-size:14.5px;margin-bottom:20px}
+  .hours-cta-box .btn{background:#fff;color:var(--teal-dark)}
+  .hours-cta-box .btn:hover{background:#eef9fa}
+
+  /* Contact */
+  .contact{background:var(--white)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+  .contact-info h2{font-size:30px;margin-bottom:16px;font-weight:800}
+  .info-item{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start}
+  .info-item .ico{width:42px;height:42px;border-radius:10px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+  .info-item h4{font-size:15px;margin-bottom:2px}
+  .info-item p{font-size:14.5px;color:var(--muted)}
+  form{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:30px}
+  form label{font-size:13px;font-weight:600;display:block;margin-bottom:6px;color:var(--ink)}
+  form input,form select,form textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;
+    font-family:inherit;font-size:14.5px;margin-bottom:16px;background:#fff;color:var(--ink)}
+  form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--teal)}
+  form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form .btn{width:100%}
+
+  /* Footer */
+  footer{background:#0b2a36;color:#a9c7d2;padding:54px 0 24px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px}
+  .foot-brand{font-size:19px;font-weight:800;color:#fff;margin-bottom:10px}
+  footer h4{color:#fff;font-size:15px;margin-bottom:14px}
+  footer ul{list-style:none;display:grid;gap:8px;font-size:14px}
+  footer a:hover{color:#fff}
+  .copyright{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;text-align:center;font-size:13px;opacity:.7}
+
+  /* WhatsApp */
+  .whatsapp{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25d366;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.5);z-index:950;transition:.2s}
+  .whatsapp:hover{transform:scale(1.08)}
+  .whatsapp svg{width:32px;height:32px;fill:#fff}
+
+  @media(max-width:900px){
+    .hero-grid,.about-grid,.contact-grid,.hours-cta{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;
+      padding:20px;gap:14px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px rgba(0,0,0,.06)}
+    .nav-links.open{display:flex}
+    .menu-toggle{display:block}
+    .hero h1{font-size:33px}
+    .hero{padding:46px 0}
+    section{padding:52px 0}
+  }
+  @media(max-width:560px){
+    .svc-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    form .row{grid-template-columns:1fr}
+    .hero h1{font-size:28px}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <span class="demo-badge">DEMO</span>
+  <span>Esta es una página de demostración de <a href="https://automanexus.mx" target="_blank" rel="noopener">AutomaNexus</a></span>
+</div>
+
+<header class="site">
+  <div class="container nav">
+    <a href="#" class="brand">
+      <span class="logo">SP</span>
+      <span>Sonrisa Perfecta<small>Dental Clinic</small></span>
+    </a>
+    <nav class="nav-links" id="nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#doctor">Nosotros</a>
+      <a href="#horarios">Horarios</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="btn">Agendar cita</a>
+    </nav>
+    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Dentista en San Pedro Garza García</span>
+      <h1>Tu <span>sonrisa perfecta</span> empieza aquí</h1>
+      <p class="lead">Atención dental de excelencia en Monterrey. Tecnología de vanguardia, trato humano y resultados que transforman tu sonrisa.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn">Agenda tu cita</a>
+        <a href="tel:+528112345678" class="btn btn-ghost">📞 81 1234 5678</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><strong>+15</strong>años de experiencia</div>
+        <div class="trust-item"><strong>+8,000</strong>pacientes felices</div>
+        <div class="trust-item"><strong>4.9★</strong>calificación Google</div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="blob"></div>
+      <div class="card">
+        <div class="hero-emoji">🦷</div>
+        <div class="rating">★★★★★</div>
+        <h3>Atención dental premium</h3>
+        <p>Odontología preventiva, estética y restauradora con los más altos estándares de higiene.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nuestros servicios</span>
+      <h2>Soluciones dentales integrales</h2>
+      <p>Desde una limpieza básica hasta tratamientos avanzados de ortodoncia y implantes.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-icon">✨</div><h3>Limpieza dental</h3><p>Profilaxis y destartraje profesional para mantener tus encías sanas y tu sonrisa radiante.</p></div>
+      <div class="svc-card"><div class="svc-icon">🔩</div><h3>Implantes dentales</h3><p>Reemplazo de piezas perdidas con implantes de titanio de alta calidad, permanentes y naturales.</p></div>
+      <div class="svc-card"><div class="svc-icon">😬</div><h3>Ortodoncia</h3><p>Brackets metálicos, estéticos y alineadores invisibles para alinear tu sonrisa.</p></div>
+      <div class="svc-card"><div class="svc-icon">💎</div><h3>Blanqueamiento</h3><p>Aclara varios tonos tu esmalte dental con tratamientos seguros y de resultados inmediatos.</p></div>
+      <div class="svc-card"><div class="svc-icon">🦷</div><h3>Endodoncia</h3><p>Tratamiento de conducto indoloro para salvar tus piezas dentales dañadas o infectadas.</p></div>
+      <div class="svc-card"><div class="svc-icon">👶</div><h3>Odontopediatría</h3><p>Cuidado dental especializado para los más pequeños en un ambiente amigable y sin miedo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="doctor">
+  <div class="container about-grid">
+    <div class="doc-card">
+      <div class="doc-avatar">👩‍⚕️</div>
+      <h3>Dra. María Fernanda Ramírez</h3>
+      <p class="title">Cirujana Dentista · Directora Médica</p>
+      <div class="creds"><span>🎓 UNAM</span><span>🏅 Especialidad Ortodoncia UANL</span><span>📚 Miembro ADM</span></div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">Conócenos</span>
+      <h2>Experiencia y calidez humana</h2>
+      <p>En Sonrisa Perfecta Dental combinamos más de 15 años de experiencia con tecnología de última generación para ofrecerte la mejor atención odontológica en San Pedro Garza García.</p>
+      <p>La Dra. Ramírez lidera un equipo comprometido con tu bienestar, explicando cada procedimiento y creando un ambiente libre de estrés.</p>
+      <ul class="checklist">
+        <li>Equipo digital de rayos X de baja radiación</li>
+        <li>Esterilización certificada con protocolos COVID</li>
+        <li>Planes de pago a meses sin intereses</li>
+        <li>Atención de emergencias el mismo día</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg)">
+  <div class="container">
+    <div class="hours-cta" id="horarios">
+      <div class="hours-info">
+        <h3>Horarios de atención</h3>
+        <div class="hours-row"><span>Lunes – Viernes</span><strong>9:00 – 19:00</strong></div>
+        <div class="hours-row"><span>Sábado</span><strong>9:00 – 14:00</strong></div>
+        <div class="hours-row"><span>Domingo</span><strong>Cerrado</strong></div>
+        <div class="hours-row"><span>Emergencias</span><strong>Disponibles</strong></div>
+      </div>
+      <div class="hours-cta-box">
+        <h3>¿Primera visita?</h3>
+        <p>Agenda una consulta de diagnóstico y plan de tratamiento sin costo.</p>
+        <a href="#contacto" class="btn">Reservar ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow">Contáctanos</span>
+      <h2>Visítanos en San Pedro</h2>
+      <div class="info-item"><div class="ico">📍</div><div><h4>Dirección</h4><p>Av. Roble 660, Valle del Campestre,<br>San Pedro Garza García, NL, 66265</p></div></div>
+      <div class="info-item"><div class="ico">📞</div><div><h4>Teléfono / WhatsApp</h4><p><a href="tel:+528112345678">+52 81 1234 5678</a></p></div></div>
+      <div class="info-item"><div class="ico">✉️</div><div><h4>Correo</h4><p>citas@sonrisaperfectadental.mx</p></div></div>
+      <div class="info-item"><div class="ico">🚗</div><div><h4>Estacionamiento</h4><p>Estacionamiento gratuito para pacientes</p></div></div>
+    </div>
+    <form onsubmit="alert('Gracias, nos pondremos en contacto contigo.');return false">
+      <h3 style="margin-bottom:6px">Solicita tu cita</h3>
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:18px">Completa el formulario y te confirmamos en menos de 2 horas.</p>
+      <div class="row">
+        <div><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
+        <div><label>Teléfono</label><input type="tel" placeholder="Teléfono" required></div>
+      </div>
+      <label>Correo electrónico</label>
+      <input type="email" placeholder="tu@correo.com" required>
+      <label>Servicio de interés</label>
+      <select>
+        <option>Limpieza dental</option>
+        <option>Implantes</option>
+        <option>Ortodoncia</option>
+        <option>Blanqueamiento</option>
+        <option>Endodoncia</option>
+        <option>Otro</option>
+      </select>
+      <label>Mensaje</label>
+      <textarea rows="3" placeholder="Cuéntanos qué necesitas..."></textarea>
+      <button type="submit" class="btn">Enviar solicitud</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Sonrisa Perfecta Dental</div>
+        <p>Tu clínica dental de confianza en San Pedro Garza García, Monterrey. Sonrisas saludables desde 2009.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul><li><a href="#servicios">Limpieza</a></li><li><a href="#servicios">Implantes</a></li><li><a href="#servicios">Ortodoncia</a></li><li><a href="#servicios">Blanqueamiento</a></li></ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul><li>Av. Roble 660, San Pedro</li><li>+52 81 1234 5678</li><li>citas@sonrisaperfectadental.mx</li></ul>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Sonrisa Perfecta Dental. Todos los derechos reservados. | Página demo creada por AutomaNexus.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/528112345678?text=Hola,%20me%20gustaría%20agendar%20una%20cita" class="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Sonrisa Perfecta Dental",
+  "image": "https://sonrisaperfectadental.mx/logo.png",
+  "description": "Clínica dental en San Pedro Garza García, Monterrey. Limpieza, implantes, ortodoncia, blanqueamiento y endodoncia.",
+  "@id": "https://sonrisaperfectadental.mx",
+  "url": "https://sonrisaperfectadental.mx",
+  "telephone": "+528112345678",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Roble 660, Valle del Campestre",
+    "addressLocality": "San Pedro Garza García",
+    "addressRegion": "NL",
+    "postalCode": "66265",
+    "addressCountry": "MX"
+  },
+  "geo": {"@type":"GeoCoordinates","latitude":25.6597,"longitude":-100.3667},
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}
+  ],
+  "founder": {"@type":"Person","name":"Dra. María Fernanda Ramírez"},
+  "medicalSpecialty": ["Dentistry","Orthodontic"]
+}
+</script>
+</body>
+</html>

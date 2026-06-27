@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belleza Integral Studio | Estética y Medicina Estética en Polanco, CDMX</title>
+<meta name="description" content="Belleza Real Integral Studio en Polanco, CDMX. Botox, rellenos faciales, radiofrecuencia, láser depilación, faciales y mesoterapia. Dra. Daniela Cortés.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose:#b76e79;
+    --rose-dark:#9a5560;
+    --gold:#d4a373;
+    --gold-light:#e6c39a;
+    --ink:#3a2a2e;
+    --muted:#8a777c;
+    --bg:#fdf8f6;
+    --cream:#faf3ef;
+    --line:#f0e2dc;
+    --white:#fff;
+    --ink-soft:#5a464c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;padding-top:38px}
+  a{text-decoration:none;color:inherit}
+  .serif{font-family:'Cormorant Garamond',Georgia,serif}
+
+  .demo-banner{position:fixed;top:0;left:0;right:0;height:38px;background:#2e1d22;color:#e8c9cf;
+    display:flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;font-weight:500;z-index:1000;padding:0 12px;text-align:center}
+  .demo-banner a{color:var(--gold-light);text-decoration:underline;font-weight:600}
+  .demo-badge{background:var(--rose);color:#fff;border-radius:4px;padding:1px 7px;font-weight:700;letter-spacing:.8px;font-size:11px;text-transform:uppercase}
+
+  .container{max-width:1160px;margin:0 auto;padding:0 22px}
+
+  header.site{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:38px;z-index:900}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:23px;letter-spacing:.3px}
+  .brand .logo{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:21px}
+  .brand small{display:block;font-size:10px;font-family:'Inter',sans-serif;font-weight:500;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;margin-top:-3px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--ink-soft);transition:color .2s;letter-spacing:.3px}
+  .nav-links a:hover{color:var(--rose)}
+  .btn{display:inline-block;background:var(--rose);color:#fff;padding:12px 26px;border-radius:40px;font-weight:600;font-size:14px;transition:.2s;cursor:pointer;border:none;letter-spacing:.5px}
+  .btn:hover{background:var(--rose-dark);transform:translateY(-1px);box-shadow:0 8px 20px rgba(183,110,121,.3)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#3a2a2e}
+  .btn-gold:hover{box-shadow:0 8px 20px rgba(212,163,115,.4)}
+  .btn-outline{background:transparent;color:var(--rose);border:1.5px solid var(--rose)}
+  .btn-outline:hover{background:var(--rose);color:#fff}
+  .menu-toggle{display:none;background:none;border:none;font-size:24px;color:var(--ink);cursor:pointer}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--cream) 0%,var(--bg) 60%);padding:86px 0;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-100px;right:-100px;width:380px;height:380px;border-radius:50%;
+    background:radial-gradient(circle,rgba(183,110,121,.12),transparent 70%)}
+  .hero::after{content:"";position:absolute;bottom:-120px;left:-100px;width:340px;height:340px;border-radius:50%;
+    background:radial-gradient(circle,rgba(212,163,115,.12),transparent 70%)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center;position:relative}
+  .hero .eyebrow{color:var(--rose);font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:14px;display:block}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-size:54px;line-height:1.08;font-weight:700;margin-bottom:20px;letter-spacing:-.5px}
+  .hero h1 em{font-style:italic;color:var(--rose)}
+  .hero p.lead{font-size:17px;color:var(--muted);margin-bottom:30px;max-width:540px;font-weight:300}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-trust{display:flex;gap:36px;margin-top:38px;flex-wrap:wrap;align-items:center}
+  .trust-item{font-size:12.5px;color:var(--muted);letter-spacing:.5px}
+  .trust-item strong{display:block;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--rose);font-weight:700;line-height:1}
+  .hero-visual{position:relative}
+  .hero-frame{background:#fff;border-radius:200px 200px 24px 24px;padding:48px 36px;text-align:center;
+    box-shadow:0 30px 70px -24px rgba(183,110,121,.4);border:1px solid var(--line)}
+  .hero-emoji{font-size:78px;margin-bottom:10px}
+  .hero-frame .rating{color:var(--gold);font-size:18px;letter-spacing:3px;margin-bottom:8px}
+  .hero-frame h3{font-family:'Cormorant Garamond',serif;font-size:22px;margin-bottom:4px;font-weight:700}
+  .hero-frame p{font-size:13.5px;color:var(--muted)}
+
+  section{padding:80px 0}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 52px}
+  .section-head .eyebrow{color:var(--rose);font-weight:600;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px;display:block}
+  .section-head h2{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;letter-spacing:-.5px;margin-bottom:14px}
+  .section-head p{color:var(--muted);font-size:16px;font-weight:300}
+
+  /* Services */
+  .services{background:var(--white)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc-card{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:32px;transition:.25s;position:relative}
+  .svc-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px -20px rgba(183,110,121,.35);background:#fff;border-color:var(--rose)}
+  .svc-icon{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));
+    display:flex;align-items:center;justify-content:center;font-size:25px;margin-bottom:18px}
+  .svc-card h3{font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:8px;font-weight:700}
+  .svc-card p{font-size:14.5px;color:var(--muted);font-weight:300}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:58px;align-items:center}
+  .spec-card{background:linear-gradient(160deg,var(--rose),var(--rose-dark));border-radius:20px;padding:40px;color:#fff;text-align:center;position:relative;overflow:hidden}
+  .spec-card::before{content:"✦";position:absolute;top:16px;right:20px;font-size:22px;opacity:.3}
+  .spec-avatar{width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.2);border:3px solid rgba(255,255,255,.5);
+    margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:58px}
+  .spec-card h3{font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:3px;font-weight:700}
+  .spec-card .title{opacity:.85;font-size:13.5px;letter-spacing:1px;margin-bottom:16px}
+  .spec-creds{display:grid;gap:9px;font-size:13px;opacity:.9;border-top:1px solid rgba(255,255,255,.2);padding-top:16px}
+  .spec-creds li{display:flex;gap:8px;align-items:center;list-style:none}
+  .spec-creds li::before{content:"✦";color:var(--gold-light)}
+  .about-text h2{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;margin-bottom:16px;letter-spacing:-.5px}
+  .about-text p{color:var(--muted);margin-bottom:16px;font-size:15.5px;font-weight:300}
+  .quote{border-left:2px solid var(--rose);padding:6px 0 6px 22px;margin:24px 0;font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-size:20px;color:var(--ink)}
+  .features{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+  .feature{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .feature h4{font-size:14.5px;margin-bottom:5px;color:var(--rose);font-weight:600;letter-spacing:.3px}
+  .feature p{font-size:13px;margin:0;font-weight:300}
+
+  /* Process / Why */
+  .why{background:var(--white)}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .why-card{text-align:center;padding:20px}
+  .why-card .pico{font-size:42px;margin-bottom:14px}
+  .why-card h4{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:700;margin-bottom:8px}
+  .why-card p{font-size:14px;color:var(--muted);font-weight:300}
+
+  /* CTA banner */
+  .cta-bar{background:linear-gradient(135deg,var(--rose),var(--rose-dark));color:#fff;text-align:center;padding:66px 0;position:relative;overflow:hidden}
+  .cta-bar::before{content:"✦";position:absolute;left:8%;top:30%;font-size:40px;opacity:.2}
+  .cta-bar::after{content:"✦";position:absolute;right:8%;bottom:25%;font-size:50px;opacity:.2}
+  .cta-bar h2{font-family:'Cormorant Garamond',serif;font-size:38px;margin-bottom:12px;font-weight:700;position:relative}
+  .cta-bar p{opacity:.95;font-size:16px;margin-bottom:28px;font-weight:300;position:relative}
+  .cta-bar .btn{position:relative;background:#fff;color:var(--rose-dark)}
+  .cta-bar .btn:hover{background:var(--cream)}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+  .contact-info h2{font-family:'Cormorant Garamond',serif;font-size:36px;margin-bottom:16px;font-weight:700}
+  .contact-info p{color:var(--muted);margin-bottom:26px;font-weight:300}
+  .info-item{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
+  .info-item .ico{width:46px;height:46px;border-radius:50%;background:var(--cream);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+  .info-item h4{font-size:15px;margin-bottom:2px;color:var(--rose);font-weight:600}
+  .info-item p{font-size:14.5px;color:var(--muted);margin:0}
+  form{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:32px}
+  form label{font-size:13px;font-weight:600;display:block;margin-bottom:6px;color:var(--ink);letter-spacing:.3px}
+  form input,form select,form textarea{width:100%;padding:12px 16px;border:1.5px solid var(--line);border-radius:30px;
+    font-family:inherit;font-size:14.5px;margin-bottom:16px;background:#fff;color:var(--ink)}
+  form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--rose)}
+  form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form .btn{width:100%}
+
+  footer{background:#2e1d22;color:#9a8389;padding:58px 0 24px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:36px}
+  .foot-brand{font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;margin-bottom:10px;font-weight:700}
+  footer h4{color:#fff;font-size:14px;margin-bottom:14px;letter-spacing:1px;text-transform:uppercase}
+  footer ul{list-style:none;display:grid;gap:8px;font-size:14px}
+  footer a:hover{color:var(--gold-light)}
+  .copyright{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;text-align:center;font-size:13px;opacity:.7}
+
+  .whatsapp{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25d366;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.5);z-index:950;transition:.2s}
+  .whatsapp:hover{transform:scale(1.08)}
+  .whatsapp svg{width:32px;height:32px;fill:#fff}
+
+  @media(max-width:920px){
+    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+    .svc-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;
+      padding:20px;gap:14px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px rgba(0,0,0,.06)}
+    .nav-links.open{display:flex}
+    .menu-toggle{display:block}
+    .hero h1{font-size:40px}
+    .hero{padding:56px 0}
+    section{padding:56px 0}
+    .features{grid-template-columns:1fr}
+  }
+  @media(max-width:560px){
+    .svc-grid,.why-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    form .row{grid-template-columns:1fr}
+    .hero h1{font-size:33px}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <span class="demo-badge">Demo</span>
+  <span>Esta es una página de demostración de <a href="https://automanexus.mx" target="_blank" rel="noopener">AutomaNexus</a></span>
+</div>
+
+<header class="site">
+  <div class="container nav">
+    <a href="#" class="brand">
+      <span class="logo">✦</span>
+      <span>Belleza Integral<small>Studio</small></span>
+    </a>
+    <nav class="nav-links" id="nav">
+      <a href="#tratamientos">Tratamientos</a>
+      <a href="#especialista">La especialista</a>
+      <a href="#porque">Por qué nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="btn">Reservar</a>
+    </nav>
+    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Estética · Polanco, CDMX</span>
+      <h1>Realza tu <em>belleza natural</em> con confianza</h1>
+      <p class="lead">Tratamientos estéticos y de medicina estética con resultados naturales y seguros. Tecnología de última generación en el corazón de Polanco.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-gold">Agenda tu valoración</a>
+        <a href="tel:+5255****8901" class="btn btn-outline">📞 55 4567 8901</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><strong>+10</strong>años de experiencia</div>
+        <div class="trust-item"><strong>+5,000</strong>clientas satisfechas</div>
+        <div class="trust-item"><strong>5.0★</strong>calificación Google</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-frame">
+        <div class="hero-emoji">💎</div>
+        <div class="rating">★★★★★</div>
+        <h3>Resultados naturales</h3>
+        <p>Técnicas avanzadas, productos certificados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="tratamientos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nuestros tratamientos</span>
+      <h2>Belleza de adentro hacia afuera</h2>
+      <p>Una experiencia personalizada para resaltar lo mejor de ti, con seguridad y resultados visibles.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-icon">💆‍♀️</div><h3>Botox</h3><p>Tratamiento de relajación muscular para líneas de expresión y rejuvenecimiento facial.</p></div>
+      <div class="svc-card"><div class="svc-icon">✨</div><h3>Rellenos faciales</h3><p>Ácido hialurónico para devolver volumen, definir el rostro y atenuar arrugas.</p></div>
+      <div class="svc-card"><div class="svc-icon">📶</div><h3>Radiofrecuencia</h3><p>Estimulación de colágeno para firmeza, tersura y rejuvenecimiento de la piel.</p></div>
+      <div class="svc-card"><div class="svc-icon">🔆</div><h3>Láser depilación</h3><p>Depilación láser definitiva, segura para todo tipo de piel, sin dolor y efectiva.</p></div>
+      <div class="svc-card"><div class="svc-icon">🧖‍♀️</div><h3>Faciales</h3><p>Faciales personalizados: limpieza profunda, hidratación, antiedad y luminosidad.</p></div>
+      <div class="svc-card"><div class="svc-icon">💉</div><h3>Mesoterapia</h3><p>Tratamientos faciales y capilares con vitaminas para revitalizar desde la raíz.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="especialista">
+  <div class="container about-grid">
+    <div class="spec-card">
+      <div class="spec-avatar">👩‍⚕️</div>
+      <h3>Dra. Daniela Cortés</h3>
+      <p class="title">Médico Cirujano · Especialista en Estética</p>
+      <ul class="spec-creds">
+        <li>UNAM · Medicina Estética</li>
+        <li>Diplomada en Medicina Antienvejecimiento</li>
+        <li>Miembro del Colegio de Estética</li>
+        <li>Cédula profesional 9876543</li>
+      </ul>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow" style="color:var(--rose);font-weight:600;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;display:block;margin-bottom:12px">La especialista</span>
+      <h2>Arte, ciencia y cuidado personalizado</h2>
+      <p>La Dra. Daniela Cortés combina su formación médica con un ojo artístico para crear resultados que realzan tu belleza natural sin exageraciones. Cada tratamiento comienza con una valoración profunda de tus necesidades y expectativas.</p>
+      <div class="quote">"La verdadera belleza es aquella que se ve natural, fresca y en armonía contigo misma."</div>
+      <div class="features">
+        <div class="feature"><h4>Productos certificados</h4><p>Solamente marcas aprobadas por COFEPRIS y FDA.</p></div>
+        <div class="feature"><h4>Protocolos seguros</h4><p>Higiene hospitalaria y atención post-tratamiento.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="porque">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Por qué elegirnos</span>
+      <h2>Una experiencia pensada en ti</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="pico">🏆</div><h4>Resultados naturales</h4><p>Técnicas que resaltan tu belleza sin perder tu esencia.</p></div>
+      <div class="why-card"><div class="pico">🛡️</div><h4>Máxima seguridad</h4><p>Protocolos médicos y productos certificados en cada tratamiento.</p></div>
+      <div class="why-card"><div class="pico">💎</div><h4>Atención VIP</h4><p>Espacio privado y exclusivo en Polanco, con trato personalizado.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-bar">
+  <div class="container">
+    <h2>Tu mejor versión te espera</h2>
+    <p>Agenda una valoración sin compromiso con la Dra. Cortés.</p>
+    <a href="#contacto" class="btn">Reservar valoración</a>
+  </div>
+</section>
+
+<section style="background:var(--cream)" id="contacto">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow" style="color:var(--rose);font-weight:600;font-size:12.5px;letter-spacing:2.5px;text-transform:uppercase;display:block;margin-bottom:12px">Contáctanos</span>
+      <h2>Visítanos en Polanco</h2>
+      <p>Agenda con cita previa para garantizar tu atención personalizada.</p>
+      <div class="info-item"><div class="ico">📍</div><div><h4>Dirección</h4><p>Av. Presidente Masaryk 123,<br>Polanco, CDMX, 11550</p></div></div>
+      <div class="info-item"><div class="ico">📞</div><div><h4>Teléfono / WhatsApp</h4><p><a href="tel:+5255****8901">+52 55 4567 8901</a></p></div></div>
+      <div class="info-item"><div class="ico">✉️</div><div><h4>Correo</h4><p>citas@bellezaintegral.mx</p></div></div>
+      <div class="info-item"><div class="ico">🕒</div><div><h4>Horario</h4><p>Lun – Vie: 10:00 – 19:00<br>Sábado: 10:00 – 16:00</p></div></div>
+    </div>
+    <form onsubmit="alert('Gracias, nos pondremos en contacto contigo.');return false">
+      <h3 class="serif" style="font-size:24px;margin-bottom:6px;font-weight:700">Reserva tu cita</h3>
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:18px;font-weight:300">Confirma tu valoración en menos de 2 horas.</p>
+      <div class="row">
+        <div><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
+        <div><label>Teléfono</label><input type="tel" placeholder="Teléfono" required></div>
+      </div>
+      <label>Correo electrónico</label>
+      <input type="email" placeholder="tu@correo.com" required>
+      <label>Tratamiento de interés</label>
+      <select>
+        <option>Botox</option>
+        <option>Rellenos faciales</option>
+        <option>Radiofrecuencia</option>
+        <option>Láser de depilación</option>
+        <option>Faciales</option>
+        <option>Mesoterapia</option>
+        <option>Valoración general</option>
+      </select>
+      <label>Mensaje</label>
+      <textarea rows="3" placeholder="¿Qué te gustaría mejorar?"></textarea>
+      <button type="submit" class="btn btn-gold">Enviar solicitud</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">✦ Belleza Integral Studio</div>
+        <p>Medicina y estética facial en Polanco. Realzamos tu belleza natural con resultados seguros y elegantes.</p>
+      </div>
+      <div>
+        <h4>Tratamientos</h4>
+        <ul><li><a href="#tratamientos">Botox</a></li><li><a href="#tratamientos">Rellenos faciales</a></li><li><a href="#tratamientos">Láser</a></li><li><a href="#tratamientos">Faciales</a></li></ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul><li>Av. Presidente Masaryk 123</li><li>+52 55 4567 8901</li><li>citas@bellezaintegral.mx</li></ul>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Belleza Integral Studio. Todos los derechos reservados. | Página demo creada por AutomaNexus.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/525545678901?text=Hola,%20me%20gustaría%20agendar%20una%20valoración" class="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Belleza Integral Studio",
+  "image": "https://bellezaintegral.mx/logo.png",
+  "description": "Estética y medicina estética en Polanco, CDMX. Botox, rellenos faciales, radiofrecuencia, láser de depilación, faciales y mesoterapia. Dra. Daniela Cortés.",
+  "@id": "https://bellezaintegral.mx",
+  "url": "https://bellezaintegral.mx",
+  "telephone": "+5255****8901",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Presidente Masaryk 123, Polanco",
+    "addressLocality": "Ciudad de México",
+    "addressRegion": "CDMX",
+    "postalCode": "11550",
+    "addressCountry": "MX"
+  },
+  "geo": {"@type":"GeoCoordinates","latitude":19.4260,"longitude":-99.1967},
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:00","closes":"19:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"16:00"}
+  ],
+  "founder": {"@type":"Person","name":"Dra. Daniela Cortés"},
+  "medicalSpecialty": "Dermatology"
+}
+</script>
+</body>
+</html>

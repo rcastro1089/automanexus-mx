@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patas Felices Veterinaria | Veterinaria en Guadalajara, Jalisco</title>
+<meta name="description" content="Patas Felices Veterinaria en Guadalajara, Jal. Consultas, vacunación, cirugía, esterilización, urgencias 24h y peluquería. Dr. Carlos Eduardo Vega.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#3a9d4e;
+    --green-dark:#2d7d3e;
+    --orange:#f58634;
+    --orange-light:#ffb877;
+    --ink:#2a3a2d;
+    --muted:#6b7d6f;
+    --bg:#f7fbf5;
+    --line:#e0ecd9;
+    --warm:#fff7ef;
+    --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;padding-top:38px}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+
+  .demo-banner{position:fixed;top:0;left:0;right:0;height:38px;background:#1f3a25;color:#cbe8c8;
+    display:flex;align-items:center;justify-content:center;gap:10px;font-size:12.5px;font-weight:600;z-index:1000;padding:0 12px;text-align:center}
+  .demo-banner a{color:var(--orange-light);text-decoration:underline;font-weight:700}
+  .demo-badge{background:var(--orange);color:#fff;border-radius:4px;padding:1px 7px;font-weight:800;letter-spacing:.5px;font-size:11px}
+
+  .container{max-width:1160px;margin:0 auto;padding:0 22px}
+
+  header.site{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:38px;z-index:900}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:20px}
+  .brand .logo{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--orange));
+    display:flex;align-items:center;justify-content:center;font-size:23px;color:#fff}
+  .brand small{display:block;font-size:11px;font-weight:600;color:var(--green);letter-spacing:.3px;margin-top:-3px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:14.5px;font-weight:600;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--green)}
+  .btn{display:inline-block;background:var(--green);color:#fff;padding:11px 22px;border-radius:30px;font-weight:700;font-size:14.5px;transition:.2s;cursor:pointer;border:none}
+  .btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+  .btn-orange{background:var(--orange)}
+  .btn-orange:hover{background:#e07628}
+  .btn-ghost{background:transparent;color:var(--green);border:2px solid var(--green)}
+  .btn-ghost:hover{background:var(--green);color:#fff}
+  .menu-toggle{display:none;background:none;border:none;font-size:24px;color:var(--ink);cursor:pointer}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,#eaf6e4 0%,#fff7ef 100%);padding:74px 0;overflow:hidden;position:relative}
+  .hero::before{content:"🐾";position:absolute;font-size:120px;opacity:.06;top:30px;right:40px}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative}
+  .hero .eyebrow{color:var(--orange);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;margin-bottom:12px;display:block}
+  .hero h1{font-size:43px;line-height:1.13;font-weight:900;margin-bottom:18px;letter-spacing:-.8px}
+  .hero h1 span{color:var(--green)}
+  .hero p.lead{font-size:17.5px;color:var(--muted);margin-bottom:26px;max-width:520px}
+  .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-trust{display:flex;gap:24px;margin-top:34px;flex-wrap:wrap}
+  .trust-item{font-size:13px;color:var(--muted);font-weight:600}
+  .trust-item strong{display:block;font-size:24px;color:var(--green);font-weight:900}
+  .hero-card{background:#fff;border-radius:22px;padding:32px;box-shadow:0 24px 60px -22px rgba(58,157,78,.35);
+    border:1px solid var(--line);text-align:center}
+  .hero-emoji{font-size:80px;margin-bottom:8px}
+  .hero-card .rating{color:var(--orange);font-size:17px;letter-spacing:2px;margin-bottom:8px}
+  .hero-card h3{font-size:18px;margin-bottom:5px}
+  .hero-card p{font-size:13.5px;color:var(--muted)}
+  .emergency-badge{display:inline-flex;align-items:center;gap:7px;background:var(--orange);color:#fff;
+    padding:7px 16px;border-radius:30px;font-size:13px;font-weight:800;margin-top:14px}
+
+  section{padding:74px 0}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 50px}
+  .section-head .eyebrow{color:var(--orange);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;display:block}
+  .section-head h2{font-size:33px;font-weight:900;letter-spacing:-.5px;margin-bottom:12px}
+  .section-head p{color:var(--muted);font-size:16px}
+
+  /* Services */
+  .services{background:var(--white)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc-card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:30px;transition:.2s;position:relative;overflow:hidden}
+  .svc-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px -18px rgba(58,157,78,.4);border-color:var(--green)}
+  .svc-card.featured{background:linear-gradient(150deg,var(--green),var(--green-dark));color:#fff;border:none}
+  .svc-card.featured p{color:#d6e9d6}
+  .svc-icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--green),var(--orange));
+    display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px}
+  .svc-card.featured .svc-icon{background:rgba(255,255,255,.2)}
+  .svc-card h3{font-size:19px;margin-bottom:8px;font-weight:800}
+  .svc-card p{font-size:14.5px;color:var(--muted)}
+
+  /* About vet */
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+  .vet-card{background:linear-gradient(150deg,var(--green),var(--green-dark));border-radius:22px;padding:36px;color:#fff;text-align:center;position:relative;overflow:hidden}
+  .vet-card::before{content:"🐾";position:absolute;top:14px;left:14px;font-size:30px;opacity:.2}
+  .vet-avatar{width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.2);border:3px solid rgba(255,255,255,.5);
+    margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:56px}
+  .vet-card h3{font-size:22px;margin-bottom:4px;font-weight:800}
+  .vet-card .title{opacity:.9;font-size:14px;margin-bottom:14px}
+  .vet-creds{display:flex;gap:16px;justify-content:center;font-size:13px;flex-wrap:wrap;opacity:.9}
+  .about-text h2{font-size:32px;font-weight:900;margin-bottom:14px;letter-spacing:-.5px}
+  .about-text p{color:var(--muted);margin-bottom:16px;font-size:15.5px}
+  .checklist{list-style:none;display:grid;gap:11px;margin-top:8px}
+  .checklist li{display:flex;align-items:flex-start;gap:10px;font-size:14.8px;font-weight:600}
+  .checklist li::before{content:"🐾";font-size:15px}
+
+  /* Emergency strip */
+  .emergency{background:linear-gradient(135deg,var(--orange),#e07628);color:#fff;text-align:center;padding:54px 0}
+  .emergency h2{font-size:30px;font-weight:900;margin-bottom:10px}
+  .emergency p{font-size:16px;opacity:.95;margin-bottom:22px}
+  .emergency .btn{background:#fff;color:var(--orange)}
+  .emergency .btn:hover{background:#fff7ef}
+
+  /* Pricing */
+  .pricing{background:var(--white)}
+  .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .price-card{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:24px;text-align:center}
+  .price-card .pico{font-size:34px;margin-bottom:8px}
+  .price-card h4{font-size:15px;margin-bottom:8px;font-weight:700}
+  .price-card .price{font-size:23px;font-weight:900;color:var(--green)}
+  .price-card .price small{font-size:12px;color:var(--muted);font-weight:600;display:block}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .contact-info h2{font-size:30px;margin-bottom:16px;font-weight:900}
+  .info-item{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start}
+  .info-item .ico{width:44px;height:44px;border-radius:12px;background:var(--warm);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+  .info-item h4{font-size:15px;margin-bottom:2px;font-weight:800}
+  .info-item p{font-size:14.5px;color:var(--muted)}
+  form{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:30px}
+  form label{font-size:13px;font-weight:700;display:block;margin-bottom:6px}
+  form input,form select,form textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:11px;
+    font-family:inherit;font-size:14.5px;margin-bottom:16px;background:#fff;color:var(--ink)}
+  form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--green)}
+  form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form .btn{width:100%}
+
+  footer{background:#1f3a25;color:#a8c4ab;padding:54px 0 24px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:36px}
+  .foot-brand{font-size:20px;font-weight:900;color:#fff;margin-bottom:10px}
+  footer h4{color:#fff;font-size:15px;margin-bottom:14px;font-weight:800}
+  footer ul{list-style:none;display:grid;gap:8px;font-size:14px}
+  footer a:hover{color:#fff}
+  .copyright{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;text-align:center;font-size:13px;opacity:.7}
+
+  .whatsapp{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25d366;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.5);z-index:950;transition:.2s}
+  .whatsapp:hover{transform:scale(1.08)}
+  .whatsapp svg{width:32px;height:32px;fill:#fff}
+
+  @media(max-width:920px){
+    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .price-grid{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;
+      padding:20px;gap:14px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px rgba(0,0,0,.06)}
+    .nav-links.open{display:flex}
+    .menu-toggle{display:block}
+    .hero h1{font-size:33px}
+    .hero{padding:50px 0}
+    section{padding:54px 0}
+  }
+  @media(max-width:560px){
+    .svc-grid{grid-template-columns:1fr}
+    .price-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    form .row{grid-template-columns:1fr}
+    .hero h1{font-size:28px}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">
+  <span class="demo-badge">DEMO</span>
+  <span>Esta es una página de demostración de <a href="https://automanexus.mx" target="_blank" rel="noopener">AutomaNexus</a></span>
+</div>
+
+<header class="site">
+  <div class="container nav">
+    <a href="#" class="brand">
+      <span class="logo">🐾</span>
+      <span>Patas Felices<small>Veterinaria</small></span>
+    </a>
+    <nav class="nav-links" id="nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#veterinario">Nosotros</a>
+      <a href="#precios">Precios</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="btn btn-orange">Agendar cita</a>
+    </nav>
+    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Veterinaria en Guadalajara, Jalisco</span>
+      <h1>El mejor cuidado para tus <span>mejores amigos</span></h1>
+      <p class="lead">En Patas Felices tratamos a tus mascotas como parte de la familia. Atención médica integral con amor, profesionalismo y servicio de urgencias 24 horas.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-orange">Agenda una cita</a>
+        <a href="tel:+5233****7890" class="btn btn-ghost">📞 33 3456 7890</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><strong>+10</strong>años cuidando mascotas</div>
+        <div class="trust-item"><strong>+15,000</strong>mascotas atendidas</div>
+        <div class="trust-item"><strong>4.9★</strong>en Google Reviews</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-emoji">🐶🐱</div>
+      <div class="rating">★★★★★</div>
+      <h3>Equipo médico especializado</h3>
+      <p>Cuidamos perros, gatos y mascotas exóticas con dedicación total.</p>
+      <span class="emergency-badge">🚨 Urgencias 24h disponibles</span>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nuestros servicios</span>
+      <h2>Todo lo que tu mascota necesita</h2>
+      <p>Atención veterinaria completa bajo un mismo techo, con equipo moderno y profesionales certificados.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-icon">🩺</div><h3>Consultas generales</h3><p>Revisiones completas de salud, diagnóstico y planes de cuidado personalizados.</p></div>
+      <div class="svc-card"><div class="svc-icon">💉</div><h3>Vacunación</h3><p>Esquemas completos de vacunas para perros, gatos y mascotas exóticas.</p></div>
+      <div class="svc-card"><div class="svc-icon">🔬</div><h3>Cirugía</h3><p>Cirugías generales y especializadas con quirófano equipado y monitoreo total.</p></div>
+      <div class="svc-card featured"><div class="svc-icon">✂️</div><h3>Esterilización</h3><p>Procedimientos seguros y a precios accesibles. Promociones todo el año.</p></div>
+      <div class="svc-card"><div class="svc-icon">🚨</div><h3>Urgencias 24h</h3><p>Servicio de emergencias las 24 horas, los 365 días del año.</p></div>
+      <div class="svc-card"><div class="svc-icon">✂️</div><h3>Peluquería</h3><p>Baño, corte y estética para que tu mascota luzca y se sienta increíble.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="emergency">
+  <div class="container">
+    <h2>🚨 ¿Emergencia con tu mascota?</h2>
+    <p>Estamos disponibles 24 horas, los 365 días del año. Llámanos ahora mismo.</p>
+    <a href="tel:+5233****7890" class="btn">📞 Llamar a urgencias: 33 3456 7890</a>
+  </div>
+</section>
+
+<section id="veterinario">
+  <div class="container about-grid">
+    <div class="vet-card">
+      <div class="vet-avatar">👨‍⚕️</div>
+      <h3>Dr. Carlos Eduardo Vega</h3>
+      <p class="title">Médico Veterinario Zootecnista · Director</p>
+      <div class="vet-creds"><span>🎓 UDG</span><span>🏅 Cirugía UNAM</span><span>📚 Miembro AMMVEE</span></div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow" style="color:var(--orange);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">Conócenos</span>
+      <h2>Una clínica hecha con amor por los animales</h2>
+      <p>Desde 2014, Patas Felices Veterinaria es el hogar médico de miles de mascotas en Guadalajara. Nuestro equipo combina experiencia médica con un trato cálido que hace sentir seguras a las mascotas y a sus familias.</p>
+      <ul class="checklist">
+        <li>Quirófano moderno con monitoreo anestésico</li>
+        <li>Laboratorio de análisis clínicos en el sitio</li>
+        <li>Hospitalización con celdas separadas perros/gatos</li>
+        <li>Rayos X y ultrasonido digital</li>
+        <li>Farmacia veterinaria completa</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="precios">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Precios transparentes</span>
+      <h2>Servicios más solicitados</h2>
+      <p>Precios de referencia. Agenda una consulta para un diagnóstico personalizado.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card"><div class="pico">🩺</div><h4>Consulta general</h4><div class="price">$350<small>desde</small></div></div>
+      <div class="price-card"><div class="pico">💉</div><h4>Vacuna (rábica)</h4><div class="price">$250<small>por dosis</small></div></div>
+      <div class="price-card"><div class="pico">✂️</div><h4>Esterilización</h4><div class="price">$1,800<small>promoción</small></div></div>
+      <div class="price-card"><div class="pico">🛁</div><h4>Baño y corte</h4><div class="price">$300<small>desde</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg)" id="contacto">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow" style="color:var(--orange);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase">Visítanos</span>
+      <h2>Estamos en Guadalajara</h2>
+      <p style="color:var(--muted);margin-bottom:24px">Te esperamos con o sin cita. Atendemos todos los días para tu comodidad.</p>
+      <div class="info-item"><div class="ico">📍</div><div><h4>Dirección</h4><p>Av. López Mateos 2345, Ladrones de Guevara,<br>Guadalajara, Jal, 44600</p></div></div>
+      <div class="info-item"><div class="ico">📞</div><div><h4>Teléfono / Urgencias</h4><p><a href="tel:+5233****7890">+52 33 3456 7890</a></p></div></div>
+      <div class="info-item"><div class="ico">🕒</div><div><h4>Horario</h4><p>Lun – Vie: 9:00 – 20:00<br>Sáb – Dom: 9:00 – 15:00<br>Urgencias: 24h</p></div></div>
+    </div>
+    <form onsubmit="alert('Gracias, nos pondremos en contacto contigo.');return false">
+      <h3 style="font-weight:800;font-size:20px;margin-bottom:6px">Agenda una cita</h3>
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:18px">Confirmamos tu cita por WhatsApp en minutos.</p>
+      <div class="row">
+        <div><label>Nombre del dueño</label><input type="text" placeholder="Tu nombre" required></div>
+        <div><label>Teléfono</label><input type="tel" placeholder="Teléfono" required></div>
+      </div>
+      <div class="row">
+        <div><label>Mascota</label><input type="text" placeholder="Nombre y especie"></div>
+        <div><label>Servicio</label>
+          <select>
+            <option>Consulta general</option>
+            <option>Vacunación</option>
+            <option>Cirugía</option>
+            <option>Esterilización</option>
+            <option>Urgencia</option>
+            <option>Peluquería</option>
+          </select>
+        </div>
+      </div>
+      <label>Mensaje</label>
+      <textarea rows="3" placeholder="Cuéntanos qué necesita tu mascota..."></textarea>
+      <button type="submit" class="btn btn-orange">Enviar solicitud</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">🐾 Patas Felices Veterinaria</div>
+        <p>Cuidando a las mascotas de Guadalajara con amor y profesionalismo desde 2014.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul><li><a href="#servicios">Consultas</a></li><li><a href="#servicios">Cirugía</a></li><li><a href="#servicios">Urgencias 24h</a></li><li><a href="#servicios">Peluquería</a></li></ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul><li>Av. López Mateos 2345, GDL</li><li>+52 33 3456 7890</li><li>urgencias@patasfelices.mx</li></ul>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Patas Felices Veterinaria. Todos los derechos reservados. | Página demo creada por AutomaNexus.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/523334567890?text=Hola,%20quiero%20agendar%20una%20cita%20para%20mi%20mascota" class="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "name": "Patas Felices Veterinaria",
+  "image": "https://patasfelices.mx/logo.png",
+  "description": "Veterinaria en Guadalajara, Jalisco. Consultas, vacunación, cirugía, esterilización, urgencias 24h y peluquería. Dr. Carlos Eduardo Vega.",
+  "@id": "https://patasfelices.mx",
+  "url": "https://patasfelices.mx",
+  "telephone": "+5233****7890",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. López Mateos 2345, Ladrones de Guevara",
+    "addressLocality": "Guadalajara",
+    "addressRegion": "Jal",
+    "postalCode": "44600",
+    "addressCountry": "MX"
+  },
+  "geo": {"@type":"GeoCoordinates","latitude":20.6767,"longitude":-103.3767},
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"20:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"09:00","closes":"15:00"}
+  ],
+  "founder": {"@type":"Person","name":"Dr. Carlos Eduardo Vega"}
+}
+</script>
+</body>
+</html>
