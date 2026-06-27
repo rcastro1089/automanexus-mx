@@ -1,0 +1,358 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobile from '../components/StickyMobile.astro';
+import CTASection from '../components/CTASection.astro';
+import { defaultConfig } from '../data/siteConfig';
+
+const waLink = `https://wa.me/${defaultConfig.whatsapp}?text=${encodeURIComponent(defaultConfig.whatsappMessage)}`;
+
+const dolores = [
+  {
+    icon: '🦷',
+    title: 'Las cadenas te aplastan en Google',
+    text: 'Dentalia, Odontocare y similares invierten fortuna en aparecer primero. Tu consultorio no aparece ni en la página 3, y cada búsqueda es un paciente que se va con ellos.',
+  },
+  {
+    icon: '📅',
+    title: 'Tu agenda tiene huecos',
+    text: 'Dependes de referidos y de pacientes que ya te conocen. Los nuevos pacientes te buscan en Google, no te encuentran, y agendan con el primero que sí aparece.',
+  },
+  {
+    icon: '📲',
+    title: 'No puedes agendar en línea',
+    text: 'Si un paciente quiere agendar a las 11 de la noche, no puede. Tiene que esperar a llamar al día siguiente — y para entonces ya agendó con otro. Te perdiste el paciente por no tener reservas online.',
+  },
+  {
+    icon: '😬',
+    title: 'Sin web pareces "de dudosa reputación"',
+    text: 'Un consultorio dental sin página web genera desconfianza. La gente piensa: ¿esto es serio? Te regatean el precio porque no transmites profesionalismo.',
+  },
+];
+
+const features = [
+  {
+    icon: '🦷',
+    title: 'Páginas por tratamiento',
+    text: 'Una página por cada servicio: limpieza, ortodoncia, endodoncia, implantes, blanqueamiento. Cada una optimizada para Google. Cuando alguien busque "ortodoncia en tu zona", apareces tú.',
+  },
+  {
+    icon: '📅',
+    title: 'Sistema de citas online',
+    text: 'Tus pacientes agendan solos desde su celular, las 24 horas. Tú recibes la notificación y solo confirmas. Se acabó el juego del "¿te queda hoy a las 4?" por teléfono.',
+  },
+  {
+    icon: '📍',
+    title: 'Google Maps integrado',
+    text: 'Apareces en Google Maps y en búsquedas locales. Cuando alguien busca "dentista cerca de mí", te encuentra a ti, no a la cadena de la esquina.',
+  },
+  {
+    icon: '💬',
+    title: 'Botón directo de WhatsApp',
+    text: 'Un botón flotante que conecta al instante con tu WhatsApp. El paciente con dolor de muelas te escribe a las 2 AM, le respondes en la mañana, y es tu paciente.',
+  },
+  {
+    icon: '📸',
+    title: 'Galería de antes y después',
+    text: 'Muestra casos reales. Una sonrisa transformada vende más que mil palabras. La gente confía cuando ve resultados, y agenda la consulta.',
+  },
+  {
+    icon: '⭐',
+    title: 'Reseñas y testimonios',
+    text: 'Integramos tus reseñas de Google directamente en la web. La prueba social funciona: a más reseñas de 5 estrellas, más pacientes nuevos te contactan.',
+  },
+];
+
+const pasos = [
+  { num: '01', title: 'Nos mandas tus servicios y fotos', desc: 'Te pedimos info sobre tus tratamientos, horarios, fotos del consultorio y casos. No necesitas nada preparado — te guiamos paso a paso.' },
+  { num: '02', title: 'Diseñamos tu web premium', desc: 'En 5 días hábiles tienes tu web lista. Diseño oscuro y elegante que se ve como un consultorio de alto nivel. Tú revisas, ajustamos, y queda perfecta.' },
+  { num: '03', title: 'Empiezas a recibir pacientes', desc: 'Publicamos, optimizamos para Google, y listo. Cada vez que alguien busque dentista en tu zona, te encuentra. Tú solo respondes los WhatsApp.' },
+];
+
+const beneficios = [
+  'Apareces cuando alguien busque "dentista en [tu zona]"',
+  'Sistema de citas que llena tu agenda solo',
+  'Te ves tan profesional como las cadenas grandes',
+  'Cero trabajo para ti — nosotros hacemos todo',
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Páginas Web para Dentistas en México',
+  'serviceType': 'Diseño web para consultorios dentales',
+  'description': 'Páginas web profesionales para dentistas y consultorios dentales en México. Incluye sistema de citas online, SEO local para aparecer en Google Maps, y botón directo de WhatsApp para captar pacientes nuevos.',
+  'provider': {
+    '@type': 'Organization',
+    'name': 'AutomaNexus',
+    'email': 'hola@automanex.us',
+    'url': 'https://mx.automanex.us',
+  },
+  'areaServed': {
+    '@type': 'Country',
+    'name': 'México',
+  },
+  'audience': {
+    '@type': 'BusinessAudience',
+    'name': 'Dentistas y consultorios dentales en México',
+  },
+  'offers': {
+    '@type': 'Offer',
+    'priceCurrency': 'USD',
+    'price': '199',
+    'description': 'Paquete Profesional: $199 USD instalación + $50/mes',
+  },
+};
+---
+
+<BaseLayout
+  title="Páginas Web para Dentistas en México | Citas Online y SEO Local"
+  description="Tu consultorio dental necesita aparecer en Google. Diseñamos webs profesionales con sistema de citas online, botón de WhatsApp y SEO local. Compites con las cadenas grandes desde $199 USD."
+  jsonLd={jsonLd}
+>
+  <Nav />
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="relative min-h-[85vh] flex items-center grid-pattern overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg-primary pointer-events-none"></div>
+      <div class="container-mx relative z-10 pt-10 pb-20">
+        <div class="max-w-4xl">
+          <div class="reveal badge mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent-success animate-pulse"></span>
+            🦷 Diseño web para dentistas · Citas online · 🇲🇽 México
+          </div>
+
+          <h1 class="reveal text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-[1.05]">
+            Páginas Web para <span class="gradient-text text-shadow-glow">Dentistas</span> en México
+          </h1>
+
+          <p class="reveal text-lg sm:text-xl text-text-secondary mt-6 max-w-2xl leading-relaxed">
+            Que te encuentren cuando alguien busque <span class="text-white font-semibold">"dentista en tu zona"</span>. Tu consultorio con web premium, sistema de citas online, y un botón de WhatsApp que llena tu agenda. Compites de tú a tú con Dentalia, sin gastar fortuna.
+          </p>
+
+          <div class="reveal flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-10">
+            <a href={waLink} data-wa-link target="_blank" rel="noopener" class="btn-primary text-base">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Quiero mi web dental
+            </a>
+            <a href="#paquete" class="btn-secondary text-base">Ver paquete recomendado</a>
+          </div>
+
+          <div class="reveal flex flex-wrap items-center gap-3 mt-8 text-sm text-text-muted">
+            <span>⏱️ Lista en 5 días</span>
+            <span class="text-text-muted/50">·</span>
+            <span>📅 Citas online</span>
+            <span class="text-text-muted/50">·</span>
+            <span>📍 Google Maps</span>
+            <span class="text-text-muted/50">·</span>
+            <span>💬 WhatsApp directo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== D O L O R E S ========== -->
+    <section class="py-20 lg:py-28">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-danger uppercase tracking-wider mb-3">El problema</p>
+          <h2 class="section-title">¿Te pasa esto con tu consultorio?</h2>
+          <p class="section-sub">Si eres dentista en México, reconoces estas situaciones. Cada una te está costando pacientes — y dinero — todos los días.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {dolores.map((d) => (
+            <div class="reveal card">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl flex-shrink-0">{d.icon}</span>
+                <div>
+                  <h3 class="text-lg font-bold mb-2">{d.title}</h3>
+                  <p class="text-text-secondary text-sm leading-relaxed">{d.text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Lo que incluye tu web</p>
+          <h2 class="section-title">Tu web dental, lista para llenar la agenda</h2>
+          <p class="section-sub">Todo lo que un consultorio moderno necesita para competir y ganar. Diseñado específicamente para dentistas — no es una plantilla genérica.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {features.map((f) => (
+            <div class="reveal card card-hover group">
+              <span class="text-3xl block mb-4">{f.icon}</span>
+              <h3 class="text-lg font-bold mb-2 group-hover:text-accent-primary transition-colors">{f.title}</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">{f.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CÓMO SE VERÍA ========== -->
+    <section class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Demo</p>
+          <h2 class="section-title">Cómo se vería tu web</h2>
+          <p class="section-sub">Diseño oscuro, premium, elegante. Se ve caro — porque tu consultorio lo es. Esto es un ejemplo del estilo que tendría tu página.</p>
+        </div>
+
+        <div class="reveal card relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/5 via-transparent to-accent-secondary/5 pointer-events-none"></div>
+          <div class="relative aspect-[16/10] rounded-xl bg-bg-tertiary border border-white/5 flex flex-col">
+            <!-- Browser bar mockup -->
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+              <div class="flex gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-accent-danger/50"></span>
+                <span class="w-3 h-3 rounded-full bg-accent-warning/50"></span>
+                <span class="w-3 h-3 rounded-full bg-accent-success/50"></span>
+              </div>
+              <div class="flex-1 mx-4 px-3 py-1 rounded-md bg-bg-secondary text-xs text-text-muted truncate">
+                tudominio.com.mx
+              </div>
+            </div>
+            <!-- Mock content -->
+            <div class="flex-1 flex flex-col items-center justify-center p-8 text-center">
+              <span class="text-5xl mb-4">🦷</span>
+              <p class="text-sm text-text-muted uppercase tracking-wider mb-2">Dental [Tu Nombre]</p>
+              <h3 class="text-2xl sm:text-3xl font-black mb-3">Tu sonrisa, <span class="gradient-text">nuestra prioridad</span></h3>
+              <p class="text-text-secondary text-sm max-w-md mb-6">Consultorio dental en [tu zona]. Agenda tu cita hoy mismo.</p>
+              <div class="flex flex-wrap items-center justify-center gap-3">
+                <span class="px-4 py-2 rounded-lg bg-gradient-to-r from-accent-primary to-accent-secondary text-white text-sm font-semibold">📅 Agendar cita</span>
+                <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm">💬 WhatsApp</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-center text-sm text-text-muted mt-6">
+            🔥 Diseño 100% personalizado a tu marca y tus servicios. Esto es solo un ejemplo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CÓMO FUNCIONA ========== -->
+    <section class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Cómo funciona</p>
+          <h2 class="section-title">De cero a pacientes en 3 pasos</h2>
+          <p class="section-sub">Tú te enfocas en tus pacientes. Nosotros nos encargamos de que tengas más.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {pasos.map((p) => (
+            <div class="reveal card relative">
+              <div class="absolute -top-3 -right-3 w-12 h-12 rounded-xl bg-bg-tertiary border border-white/5 flex items-center justify-center text-sm font-black text-text-muted">
+                {p.num}
+              </div>
+              <h3 class="text-lg font-bold mb-3 pr-10">{p.title}</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PAQUETE RECOMENDADO ========== -->
+    <section id="paquete" class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx max-w-4xl">
+        <div class="reveal mb-12 text-center">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Paquete recomendado</p>
+          <h2 class="section-title">El plan ideal para dentistas</h2>
+          <p class="section-sub">El paquete que más eligen los consultorios. Tiene todo lo que necesitas para llenar tu agenda y competir con las cadenas grandes.</p>
+        </div>
+
+        <div class="reveal card relative border-accent-primary/30 shadow-[0_0_40px_rgba(99,102,241,0.1)]">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary text-white text-xs font-bold uppercase tracking-wide">
+            ⭐ Más vendido para dentistas
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div>
+              <h3 class="text-3xl font-bold mb-1">Profesional</h3>
+              <p class="text-sm text-text-muted mb-6">Genera pacientes de verdad, con sistema de citas incluido.</p>
+              <div class="mb-6">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-black">$199</span>
+                  <span class="text-text-secondary text-sm">USD instalación</span>
+                </div>
+                <div class="flex items-baseline gap-1 mt-1">
+                  <span class="text-2xl font-bold text-accent-primary">+ $50</span>
+                  <span class="text-text-secondary text-sm">/mes</span>
+                </div>
+              </div>
+              <a href={waLink} data-wa-link target="_blank" rel="noopener" class="btn-primary w-full justify-center">
+                Quiero este paquete
+              </a>
+            </div>
+
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">8-15 páginas (una por cada tratamiento dental)</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">📅 Sistema de citas y reservas online</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">🔍 SEO local avanzado (apareces en tu zona)</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">💬 Botón directo de WhatsApp</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">📸 Galería de casos antes y después</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">📍 Google Business Profile optimizado</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">🌐 Dominio (.com o .com.mx) incluido</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal mt-10 text-center">
+          <p class="text-text-secondary mb-4">¿Quieres ver los otros paquetes y comparar?</p>
+          <a href="/precios/" class="btn-secondary">Ver todos los paquetes →</a>
+        </div>
+
+        <div class="reveal mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+          {beneficios.map((b) => (
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-accent-success/5 border border-accent-success/10">
+              <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <p class="text-text-secondary text-sm leading-relaxed">{b}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA FINAL ========== -->
+    <CTASection
+      title="¿Listo para llenar tu agenda dental?"
+      subtitle="Un solo paciente nuevo que te llegue por Google ya pagó tu web tres veces. Escríbenos por WhatsApp y te mostramos cómo se vería tu consultorio online."
+    />
+  </main>
+
+  <Footer />
+  <StickyMobile />
+</BaseLayout>

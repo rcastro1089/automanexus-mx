@@ -1,0 +1,375 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobile from '../components/StickyMobile.astro';
+import CTASection from '../components/CTASection.astro';
+import { defaultConfig } from '../data/siteConfig';
+
+const waLink = `https://wa.me/${defaultConfig.whatsapp}?text=${encodeURIComponent(defaultConfig.whatsappMessage)}`;
+
+const nichos = [
+  { href: '/dentistas/', icon: '🦷', name: 'Dentistas', desc: 'Aparece cuando alguien busque "dentista en tu zona"', tag: 'Más solicitado' },
+  { href: '/abogados/', icon: '⚖️', name: 'Abogados', desc: 'Tu web profesional te consigue los clientes de mayor valor', tag: null },
+  { href: '/veterinarias/', icon: '🐾', name: 'Veterinarias', desc: 'Los dueños de mascotas te buscan en Google antes de ir', tag: null },
+  { href: '/estetica/', icon: '💅', name: 'Clínicas de Estética', desc: 'Si no te ves profesional, no confían. La web vende por ti', tag: null },
+  { href: '/inmobiliarias/', icon: '🏠', name: 'Inmobiliarias', desc: 'Una sola venta pagó toda tu web del año. Literal.', tag: null },
+];
+
+const pasos = [
+  { num: '01', icon: '🎨', title: 'Te diseñamos tu web', desc: 'Creamos una página web profesional, única para tu negocio. No usamos plantillas genéricas. Tu web se ve como lo que sos: un profesional.' },
+  { num: '02', icon: '🔍', title: 'Apareces en Google', desc: 'Cuando alguien busque tu servicio en tu ciudad, te encuentra. Optimizamos todo para Google Maps y búsquedas locales. Te ponemos en el mapa.' },
+  { num: '03', icon: '💬', title: 'Recibes clientes', desc: 'Tu web tiene un botón directo de WhatsApp. El cliente te escribe, le respondes, y cerras la venta. Así de simple.' },
+];
+
+const dolores = [
+  { icon: '😣', text: 'Tu Facebook no te da resultados y ya no sabes cómo conseguir clientes nuevos' },
+  { icon: '📍', text: 'Tu competencia aparece en Google y tú no. Cada día que pasa es un cliente perdido' },
+  { icon: '💸', text: 'Te regatean el precio porque no pareces profesional sin una web de verdad' },
+  { icon: '🤷', text: 'Sabes que necesitas estar en internet pero no tienes tiempo ni sabes cómo' },
+];
+
+const soluciones = [
+  { icon: '🚀', title: 'Apareces en Google', desc: 'Tu web optimizada para SEO local hace que te encuentren cuando buscan tu servicio' },
+  { icon: '💎', title: 'Te ves profesional', desc: 'Diseño premium que transmite confianza y te permite cobrar lo que vales' },
+  { icon: '⚡', title: 'Cero trabajo para ti', desc: 'Nosotros hacemos todo. Tú solo recibes los mensajes por WhatsApp' },
+  { icon: '💰', title: 'Costo mínimo, ganancia real', desc: 'Menos que tu Netflix mensual. Un solo cliente nuevo y ya se pagó' },
+];
+
+const paquetes = [
+  {
+    name: 'Presencia',
+    setup: 99, monthly: 25,
+    desc: 'Para empezar a aparecer en Google',
+    features: [
+      '3-5 páginas profesionales',
+      'Diseño 100% personalizado',
+      'SEO local básico (Google + Schema)',
+      'Botón directo de WhatsApp',
+      'Diseño responsive (móvil y desktop)',
+      'Dominio incluido (.com o .com.mx)',
+      'Hosting en CDN global + SSL',
+    ],
+    highlighted: false,
+  },
+  {
+    name: 'Profesional',
+    setup: 199, monthly: 50,
+    desc: 'El más vendido. Genera leads de verdad',
+    features: [
+      'Todo lo de Presencia, más:',
+      '8-15 páginas (una por servicio)',
+      'SEO local avanzado (multi-keyword)',
+      'Blog + 3 artículos SEO iniciales',
+      'Sistema de reservas y citas',
+      'Google Business Profile optimizado',
+      'Galería de fotos y testimonios',
+      'PageSpeed 90+ garantizado',
+    ],
+    highlighted: true,
+  },
+  {
+    name: 'Premium',
+    setup: 399, monthly: 80,
+    desc: 'Máximo impacto. Estilo directorio',
+    features: [
+      'Todo lo de Profesional, más:',
+      '20+ páginas (multi-ubicación)',
+      'Enrutamiento de leads por zona',
+      'Dashboard para ver tus contactos',
+      'CRM básico integrado',
+      'Estrategia SEO a 6 meses',
+      'Email marketing configurado',
+      'Optimización Core Web Vitals premium',
+    ],
+    highlighted: false,
+  },
+];
+
+const faqs = [
+  { q: '¿Cuánto cuesta?', a: 'Tenemos 3 paquetes. Desde $99 USD de instalación + $25/mes. El más popular es el Profesional: $199 instalación + $50/mes. Menos que tu Netflix y tu Spotify juntos.' },
+  { q: '¿Hay permanencia o contrato?', a: 'Mínimo 3 meses. Después de eso, puedes cancelar cuando quieras con 30 días de aviso. Sin trucos, sin letras chiquitas.' },
+  { q: '¿El pago de instalación se devuelve?', a: 'No. La instalación cubre el desarrollo y diseño de tu web, que es trabajo real que ya se hizo. Igual que cuando pagas por pintar tu casa — no pides el dinero devuelta al pintor.' },
+  { q: '¿El dominio está incluido?', a: 'Sí. Nosotros compramos y gestionamos tu dominio (.com o .com.mx). Está incluido en el precio de instalación. Tú no te preocupas por nada.' },
+  { q: '¿En cuánto tiempo está lista?', a: 'Entre 3 y 7 días hábiles después de recibir tu información y fotos. Las webs del paquete Presencia suelen estar listas más rápido.' },
+  { q: '¿Y si no me gusta?', a: 'Antes de pagar, te mostramos una demo gratuita para que veas exactamente cómo se vería. Sin sorpresas. Si no te convence, no pagas nada.' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  'name': 'AutomaNexus',
+  'description': 'Páginas web profesionales para negocios en México con pago mensual',
+  'url': 'https://mx.automanex.us',
+  'areaServed': 'MX',
+  'email': 'hola@automanex.us',
+};
+---
+
+<BaseLayout
+  title="Páginas Web para Negocios en México | AutomaNexus"
+  description="Tu web cuesta menos que tu Netflix y te deja ganancia. Páginas web profesionales para dentistas, abogados, veterinarias y más en México. Diseño custom, SEO local, pago mensual."
+  jsonLd={jsonLd}
+>
+  <Nav />
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="relative min-h-[85vh] flex items-center grid-pattern overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg-primary pointer-events-none"></div>
+      <div class="container-mx relative z-10 pt-10 pb-20">
+        <div class="max-w-4xl">
+          <div class="reveal badge mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent-success animate-pulse"></span>
+            Diseño web profesional · Pago mensual · 🇲🇽 México
+          </div>
+
+          <h1 class="reveal text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-[1.05]">
+            Tu web cuesta <span class="gradient-text text-shadow-glow">menos que tu Netflix.</span>
+            <br />
+            Y te deja ganancia.
+          </h1>
+
+          <p class="reveal text-lg sm:text-xl text-text-secondary mt-6 max-w-2xl leading-relaxed">
+            Páginas web profesionales para tu negocio en México. Apareces en Google cuando alguien busca tu servicio. Diseño premium, SEO local, y un botón de WhatsApp que te trae clientes.
+          </p>
+
+          <div class="reveal flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-10">
+            <a href={waLink} data-wa-link target="_blank" rel="noopener" class="btn-primary text-base">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Quiero mi web
+            </a>
+            <a href="#sectores" class="btn-secondary text-base">Ver sectores</a>
+          </div>
+
+          <div class="reveal flex flex-wrap items-center gap-3 mt-8 text-sm text-text-muted">
+            <span>⏱️ Lista en 5 días</span>
+            <span class="text-text-muted/50">·</span>
+            <span>💳 Pago mensual</span>
+            <span class="text-text-muted/50">·</span>
+            <span>🌐 Dominio incluido</span>
+            <span class="text-text-muted/50">·</span>
+            <span>📱 Diseño responsive</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== NICHOS ========== -->
+    <section id="sectores" class="py-20 lg:py-28">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Sectores que atendemos</p>
+          <h2 class="section-title">Diseñamos para tu sector</h2>
+          <p class="section-sub">Cada sector es diferente. Sabemos qué necesita un dentista para llenar su agenda, qué busca un cliente en un despacho jurídico, y cómo decidir un dueño de mascota. Tu web habla el idioma de tus clientes.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {nichos.map((n, i) => (
+            <a href={n.href} class={`reveal card card-hover group block ${i === 0 ? 'lg:col-span-1' : ''}`}>
+              <div class="flex items-start justify-between mb-4">
+                <span class="text-4xl">{n.icon}</span>
+                {n.tag && <span class="badge text-xs !bg-accent-primary/10 !text-accent-primary !border-accent-primary/20">{n.tag}</span>}
+              </div>
+              <h3 class="text-xl font-bold mb-2 group-hover:text-accent-primary transition-colors">{n.name}</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">{n.desc}</p>
+              <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium text-accent-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                Ver detalles →
+              </span>
+            </a>
+          ))}
+
+          <!-- CTA card -->
+          <div class="reveal card flex flex-col items-center justify-center text-center bg-gradient-to-br from-accent-primary/5 to-accent-secondary/5 border-accent-primary/10">
+            <span class="text-4xl mb-3">🚀</span>
+            <h3 class="text-xl font-bold mb-2">¿Tu sector no está aquí?</h3>
+            <p class="text-text-secondary text-sm mb-4">Diseñamos para cualquier negocio local.</p>
+            <a href={waLink} data-wa-link target="_blank" rel="noopener" class="text-sm font-semibold text-accent-primary hover:text-accent-secondary transition-colors">
+              Pregúntanos por WhatsApp →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CÓMO FUNCIONA ========== -->
+    <section class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Cómo funciona</p>
+          <h2 class="section-title">De cero a clientes en 3 pasos</h2>
+          <p class="section-sub">Nosotros hacemos todo el trabajo. Tú solo revisas y recibes clientes. Así de simple.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {pasos.map((p, i) => (
+            <div class="reveal card relative">
+              <div class="absolute -top-3 -right-3 w-12 h-12 rounded-xl bg-bg-tertiary border border-white/5 flex items-center justify-center text-sm font-black text-text-muted">
+                {p.num}
+              </div>
+              <span class="text-4xl block mb-4">{p.icon}</span>
+              <h3 class="text-xl font-bold mb-3">{p.title}</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROBLEMA / SOLUCIÓN ========== -->
+    <section class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <!-- Problema -->
+          <div class="reveal">
+            <div class="flex items-center gap-2 mb-6">
+              <span class="w-1 h-6 rounded-full bg-accent-danger"></span>
+              <h2 class="text-2xl font-bold">¿Te suena familiar?</h2>
+            </div>
+            <div class="space-y-4">
+              {dolores.map(d => (
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-accent-danger/5 border border-accent-danger/10">
+                  <span class="text-xl">{d.icon}</span>
+                  <p class="text-text-secondary text-sm leading-relaxed">{d.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Solución -->
+          <div class="reveal">
+            <div class="flex items-center gap-2 mb-6">
+              <span class="w-1 h-6 rounded-full bg-accent-success"></span>
+              <h2 class="text-2xl font-bold">Esto lo arreglamos</h2>
+            </div>
+            <div class="space-y-4">
+              {soluciones.map(s => (
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-accent-success/5 border border-accent-success/10">
+                  <span class="text-xl">{s.icon}</span>
+                  <div>
+                    <p class="font-semibold text-sm">{s.title}</p>
+                    <p class="text-text-secondary text-sm leading-relaxed mt-1">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== NETFLIX COMPARISON ========== -->
+    <section class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx">
+        <div class="reveal card max-w-3xl mx-auto text-center relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-accent-warning/5 via-transparent to-accent-success/5 pointer-events-none"></div>
+          <div class="relative">
+            <span class="text-4xl mb-4 block">🎬</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Las cuentas claras</h2>
+            <div class="grid grid-cols-2 gap-4 my-8">
+              <div class="p-6 rounded-xl bg-bg-tertiary">
+                <p class="text-sm text-text-muted mb-2">Tu Netflix + Spotify + Prime</p>
+                <p class="text-3xl font-black text-accent-warning">~$500 MXN/mes</p>
+                <p class="text-xs text-text-muted mt-2">Te dan series, música y películas</p>
+              </div>
+              <div class="p-6 rounded-xl bg-accent-success/10 border border-accent-success/20">
+                <p class="text-sm text-text-muted mb-2">Tu web AutomaNexus</p>
+                <p class="text-3xl font-black text-accent-success">~$450 MXN/mes</p>
+                <p class="text-xs text-text-muted mt-2">Te da clientes. Clientes que pagan.</p>
+              </div>
+            </div>
+            <p class="text-text-secondary text-lg leading-relaxed">
+              Un solo cliente nuevo que te llegue por Google ya pagó tu web <span class="text-accent-success font-bold">tres veces</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PAQUETES ========== -->
+    <section id="paquetes" class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Paquetes y precios</p>
+          <h2 class="section-title">Elige tu plan</h2>
+          <p class="section-sub">Precios en USD. Mismo precio en todo México. Sin sorpresas, sin costos ocultos.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {paquetes.map((p) => (
+            <div class={`reveal card relative ${p.highlighted ? 'border-accent-primary/30 shadow-[0_0_40px_rgba(99,102,241,0.1)]' : ''}`}>
+              {p.highlighted && (
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary text-white text-xs font-bold uppercase tracking-wide">
+                  ⭐ Más vendido
+                </div>
+              )}
+              <h3 class="text-2xl font-bold mb-1">{p.name}</h3>
+              <p class="text-sm text-text-muted mb-6">{p.desc}</p>
+              <div class="mb-6">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-black">${p.setup}</span>
+                  <span class="text-text-secondary text-sm">USD instalación</span>
+                </div>
+                <div class="flex items-baseline gap-1 mt-1">
+                  <span class="text-2xl font-bold text-accent-primary">+ ${p.monthly}</span>
+                  <span class="text-text-secondary text-sm">/mes</span>
+                </div>
+              </div>
+              <ul class="space-y-3 mb-8">
+                {p.features.map(f => (
+                  <li class="flex items-start gap-2 text-sm">
+                    <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span class={f.endsWith(':') ? 'font-semibold text-white' : 'text-text-secondary'}>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href={waLink} data-wa-link target="_blank" rel="noopener"
+                 class={`w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all ${p.highlighted ? 'btn-primary' : 'btn-secondary'}`}>
+                Empezar con {p.name}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div class="reveal mt-8 flex flex-wrap items-center justify-center gap-4 text-sm text-text-muted">
+          <span>✅ Mínimo 3 meses</span>
+          <span>✅ Dominio incluido</span>
+          <span>✅ Sin permanencia después del mínimo</span>
+          <span>✅ Pago por Stripe o PayPal</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx max-w-3xl">
+        <div class="reveal mb-12 text-center">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Preguntas frecuentes</p>
+          <h2 class="section-title">Lo que todos preguntan</h2>
+        </div>
+
+        <div class="space-y-3">
+          {faqs.map((faq) => (
+            <details class="reveal card group cursor-pointer">
+              <summary class="flex items-center justify-between font-semibold text-lg list-none">
+                {faq.q}
+                <svg class="w-5 h-5 text-text-muted group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <p class="text-text-secondary text-sm leading-relaxed mt-4">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="reveal mt-8 text-center">
+          <a href="/faq/" class="text-sm text-accent-primary hover:text-accent-secondary transition-colors">Ver todas las preguntas →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA FINAL ========== -->
+    <CTASection />
+  </main>
+
+  <Footer />
+  <StickyMobile />
+</BaseLayout>

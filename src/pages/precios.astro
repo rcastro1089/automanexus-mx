@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobile from '../components/StickyMobile.astro';
+import CTASection from '../components/CTASection.astro';
+import { defaultConfig } from '../data/siteConfig';
+
+const waLink = `https://wa.me/${defaultConfig.whatsapp}?text=${encodeURIComponent(defaultConfig.whatsappMessage)}`;
+
+const paquetes = [
+  {
+    name: 'Presencia',
+    setup: 99, monthly: 25,
+    desc: 'Para empezar a aparecer en Google con una web profesional',
+    features: [
+      '3 a 5 páginas diseñadas a tu medida',
+      'Diseño 100% personalizado (no plantillas)',
+      'SEO local básico (Google + Schema markup)',
+      'Botón directo de WhatsApp en cada página',
+      'Diseño responsive (móvil, tablet, desktop)',
+      'Dominio incluido (.com o .com.mx)',
+      'Hosting en CDN global (carga rápida en todo México)',
+      'Certificado SSL (candadito verde)',
+      'Formulario de contacto',
+    ],
+    highlighted: false,
+  },
+  {
+    name: 'Profesional',
+    setup: 199, monthly: 50,
+    desc: 'Nuestro plan más vendido. Para negocios que quieren generar leads de verdad desde Google',
+    features: [
+      'Todo lo del plan Presencia, más:',
+      '8 a 15 páginas (una por cada servicio)',
+      'SEO local avanzado (múltiples keywords y ciudades)',
+      'Blog instalado + 3 artículos SEO iniciales',
+      'Sistema de reservas y citas integrado',
+      'Google Business Profile optimizado',
+      'Galería de fotos y trabajos realizados',
+      'Sección de testimonios de clientes',
+      'PageSpeed 90+ garantizado',
+      'Integración con Google Analytics',
+    ],
+    highlighted: true,
+  },
+  {
+    name: 'Premium',
+    setup: 399, monthly: 80,
+    desc: 'Máximo impacto. Para negocios que quieren dominar su mercado local',
+    features: [
+      'Todo lo del plan Profesional, más:',
+      '20+ páginas (directorio de servicios, múltiples ubicaciones)',
+      'Sistema de enrutamiento de leads por zona',
+      'Dashboard privado para ver tus contactos',
+      'CRM básico (todas las consultas se guardan)',
+      'Estrategia SEO completa a 6 meses',
+      'Email marketing configurado',
+      'Optimización Core Web Vitals premium',
+      'Soporte prioritario',
+    ],
+    highlighted: false,
+  },
+];
+
+const condiciones = [
+  { icon: '📅', title: 'Mínimo 3 meses', desc: 'Después puedes cancelar cuando quieras con 30 días de aviso' },
+  { icon: '💳', title: 'Pago por Stripe o PayPal', desc: 'Aceptamos tarjetas de crédito, débito y PayPal' },
+  { icon: '🌐', title: 'Dominio incluido', desc: 'Nosotros compramos y gestionamos tu dominio. Sin costos extra' },
+  { icon: '🚫', title: 'Sin letras chiquitas', desc: 'El precio que ves es el que pagas. Sin costos ocultos ni sorpresas' },
+  { icon: '⚡', title: 'Entrega en 3-7 días', desc: 'Desde que recibimos tu información hasta que tu web está publicada' },
+  { icon: '👀', title: 'Demo gratis primero', desc: 'Te mostramos cómo se vería antes de pagar. Si no te gusta, no pagas' },
+];
+
+const faqsPrecios = [
+  { q: '¿Por qué hay un pago de instalación?', a: 'Porque tu web se diseña desde cero, específicamente para tu negocio. No usamos plantillas genéricas. El pago de instalación cubre el trabajo real de diseño, desarrollo, configuración de dominio, y publicación.' },
+  { q: '¿Qué pasa después de los 3 meses mínimos?', a: 'Puedes seguir mes a mes mientras quieras. Si quieres cancelar, solo avísanos con 30 días de anticipación. Tu web se queda contigo si quieres migrarla.' },
+  { q: '¿El dominio es realmente gratis?', a: 'Sí. Nosotros compramos el dominio (.com o .com.mx) y lo incluimos en el precio de instalación. Mientras tengas tu plan activo con nosotros, el dominio se renueva automáticamente cada año.' },
+  { q: '¿Qué pasa si no me gusta la web?', a: 'Antes de pagar la instalación, te mostramos una demo gratuita. Si no te convence, no pagas nada. Después de pagar, hacemos los ajustes que necesites hasta que quedes contento.' },
+  { q: '¿Hay descuento si pago varios meses por adelantado?', a: 'Sí. Si pagas 6 meses por adelantado te damos 1 mes gratis. Si pagas 12 meses, 2 meses gratis. Escríbenos por WhatsApp para más detalles.' },
+  { q: '¿Qué métodos de pago aceptan?', a: 'Stripe (tarjetas de crédito y débito) y PayPal. Ambos aceptan pagos internacionales en USD.' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqsPrecios.map(f => ({
+    '@type': 'Question',
+    'name': f.q,
+    'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
+  }))
+};
+---
+
+<BaseLayout
+  title="Precios de Páginas Web en México | AutomaNexus"
+  description="Precios claros: desde $99 USD instalación + $25/mes. Tres paquetes para negocios en México. Sin costos ocultos, sin permanencia. Dominio incluido."
+  jsonLd={jsonLd}
+>
+  <Nav />
+
+  <main>
+    <!-- Hero -->
+    <section class="py-16 lg:py-24 grid-pattern">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Precios</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+            Precios <span class="gradient-text">claros y honestos</span>
+          </h1>
+          <p class="text-lg text-text-secondary mt-6">
+            Sin costos ocultos. Sin sorpresas. Tres paquetes para cada necesidad y presupuesto. Precios en USD.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paquetes -->
+    <section class="py-12 lg:py-20">
+      <div class="container-mx">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {paquetes.map((p) => (
+            <div class={`reveal card relative ${p.highlighted ? 'border-accent-primary/30 shadow-[0_0_40px_rgba(99,102,241,0.1)] md:scale-105' : ''}`}>
+              {p.highlighted && (
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary text-white text-xs font-bold uppercase tracking-wide whitespace-nowrap">
+                  ⭐ Más vendido
+                </div>
+              )}
+              <h3 class="text-2xl font-bold mb-1">{p.name}</h3>
+              <p class="text-sm text-text-muted mb-6 leading-relaxed">{p.desc}</p>
+              <div class="mb-6 pb-6 border-b border-white/5">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-black">${p.setup}</span>
+                  <span class="text-text-secondary text-sm">USD instalación</span>
+                </div>
+                <div class="flex items-baseline gap-1 mt-1">
+                  <span class="text-2xl font-bold text-accent-primary">+ ${p.monthly}</span>
+                  <span class="text-text-secondary text-sm">USD / mes</span>
+                </div>
+              </div>
+              <ul class="space-y-3 mb-8">
+                {p.features.map(f => (
+                  <li class="flex items-start gap-2 text-sm">
+                    <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    <span class={f.endsWith(':') ? 'font-semibold text-white' : 'text-text-secondary'}>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href={waLink} data-wa-link target="_blank" rel="noopener"
+                 class={`w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm transition-all ${p.highlighted ? 'btn-primary' : 'btn-secondary'}`}>
+                Empezar con {p.name}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Condiciones -->
+    <section class="py-16 lg:py-24 border-t border-white/5">
+      <div class="container-mx">
+        <div class="reveal text-center mb-12">
+          <h2 class="section-title">Sin trucos, sin sorpresas</h2>
+          <p class="section-sub mx-auto">Todo lo que necesitas saber antes de decidir.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {condiciones.map(c => (
+            <div class="reveal card card-hover">
+              <span class="text-3xl block mb-3">{c.icon}</span>
+              <h3 class="font-bold mb-1">{c.title}</h3>
+              <p class="text-text-secondary text-sm">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 lg:py-24 border-t border-white/5">
+      <div class="container-mx max-w-3xl">
+        <div class="reveal mb-12 text-center">
+          <h2 class="section-title">Preguntas sobre precios</h2>
+        </div>
+        <div class="space-y-3">
+          {faqsPrecios.map((faq) => (
+            <details class="reveal card group cursor-pointer">
+              <summary class="flex items-center justify-between font-semibold text-lg list-none">
+                {faq.q}
+                <svg class="w-5 h-5 text-text-muted group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <p class="text-text-secondary text-sm leading-relaxed mt-4">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTASection title="¿Listo para empezar?" subtitle="Escríbenos por WhatsApp. Te ayudamos a elegir el plan perfecto para tu negocio." />
+  </main>
+
+  <Footer />
+  <StickyMobile />
+</BaseLayout>

@@ -1,0 +1,356 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobile from '../components/StickyMobile.astro';
+import CTASection from '../components/CTASection.astro';
+import { defaultConfig } from '../data/siteConfig';
+
+const waLink = `https://wa.me/${defaultConfig.whatsapp}?text=${encodeURIComponent(defaultConfig.whatsappMessage)}`;
+
+const dolores = [
+  {
+    icon: '💸',
+    title: 'Si no te ves premium, no confían',
+    text: 'La estética es 100% confianza visual. Si tu web (o no tener web) no se ve premium, la gente piensa: ¿esto será seguro? Dudan de tu profesionalismo, de tu higiene, de tu técnica. Y se van con la competencia que sí se ve seria.',
+  },
+  {
+    icon: '📷',
+    title: 'Sin antes y después no convences',
+    text: 'En estética, los resultados hablan. Si no muestras casos de antes y después, testimonios reales y fotos de tu clínica, la gente no tiene cómo decidir. La indecisión los manda a buscar otra opción.',
+  },
+  {
+    icon: '📅',
+    title: 'No pueden reservar en línea',
+    text: 'Tus clientas quieren agendar cuando se acuerdan — a las 11 de la noche, en el metro, en su lunch. Si tienen que llamar en horario de oficina, se olvidan. Pierdes la cita y el ingreso por pura fricción.',
+  },
+  {
+    icon: '📱',
+    title: 'Tu Instagram no basta',
+    text: 'Instagram es bueno, pero la gente te busca en Google cuando está decidida a agendar. Sin web, no apareces en búsquedas locales como "clínica de estética en [tu zona]". Dejas clientes en la mesa cada semana.',
+  },
+];
+
+const features = [
+  {
+    icon: '💉',
+    title: 'Páginas por tratamiento',
+    text: 'Una página por cada tratamiento: botox, rellenos, faciales, láser, depilación, masajes reductores. Cada una optimizada para Google. Cuando alguien busque "botox en tu zona", apareces tú.',
+  },
+  {
+    icon: '📸',
+    title: 'Galería antes y después',
+    text: 'La prueba visual más poderosa. Mostramos casos reales (con consentimiento) que venden por ti. Una buena galería de resultados convierte al visitante indeciso en clienta que agenda ya.',
+  },
+  {
+    icon: '📅',
+    title: 'Sistema de reservas online',
+    text: 'Tus clientas agendan solas desde su celular, las 24 horas. Tú recibes la notificación y solo confirmas. Se acabaron los mensajes de "¿tienes disponible el jueves?" — todo automático.',
+  },
+  {
+    icon: '💬',
+    title: 'Botón directo de WhatsApp',
+    text: 'La consulta inicial casi siempre empieza por mensaje. Un botón flotante conecta directo con tu WhatsApp. La clienta te pregunta sus dudas, le respondes, y reserva. Sin fricción.',
+  },
+  {
+    icon: '⭐',
+    title: 'Testimonios y reseñas',
+    text: 'Integramos tus reseñas de Google y testimonios de clientas felices. La prueba social es decisiva en estética: a más mujeres satisfechas mostradas, más clientas nuevas se animan.',
+  },
+  {
+    icon: '🔒',
+    title: 'Transmite confianza y seguridad',
+    text: 'Diseño premium que muestra profesionalismo, higiene y seriedad. En estética, la confianza es todo. Tu web debe gritar "aquí estás segura" desde el primer segundo.',
+  },
+];
+
+const pasos = [
+  { num: '01', title: 'Nos mandas tus tratamientos y fotos', desc: 'Te pedimos info sobre tus tratamientos, precios, fotos de tu clínica y casos de antes y después. Te guiamos para que se vea premium sin esfuerzo de tu parte.' },
+  { num: '02', title: 'Diseñamos tu web de lujo', desc: 'En 5 días hábiles tienes tu web lista. Diseño elegante, premium, que transmite confianza y seguridad. Tú revisas, ajustamos, queda espectacular.' },
+  { num: '03', title: 'Empiezas a recibir clientas', desc: 'Publicamos, optimizamos para Google, y listo. Cada vez que alguien busque tus tratamientos en tu zona, te encuentra. Tú solo atiendes los WhatsApp.' },
+];
+
+const beneficios = [
+  'Te ves tan premium como la competencia de alto nivel',
+  'Apareces cuando alguien busque tus tratamientos en tu zona',
+  'El sistema de reservas llena tu agenda solo',
+  'La galería antes y después vende por ti',
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'name': 'Páginas Web para Clínicas de Estética en México',
+  'serviceType': 'Diseño web para clínicas de estética y belleza',
+  'description': 'Páginas web profesionales para clínicas de estética en México. Diseño premium que transmite confianza, galería de antes y después, sistema de reservas online, y SEO local para aparecer en Google.',
+  'provider': {
+    '@type': 'Organization',
+    'name': 'AutomaNexus',
+    'email': 'hola@automanex.us',
+    'url': 'https://mx.automanex.us',
+  },
+  'areaServed': {
+    '@type': 'Country',
+    'name': 'México',
+  },
+  'audience': {
+    '@type': 'BusinessAudience',
+    'name': 'Clínicas de estética y centros de belleza en México',
+  },
+  'offers': {
+    '@type': 'Offer',
+    'priceCurrency': 'USD',
+    'price': '199',
+    'description': 'Paquete Profesional: $199 USD instalación + $50/mes',
+  },
+};
+---
+
+<BaseLayout
+  title="Páginas Web para Clínicas de Estética en México | Diseño Premium y Reservas"
+  description="En estética, la confianza visual lo es todo. Diseñamos webs premium con galería de antes y después, sistema de reservas online y SEO local. Tus clientas te encuentran en Google. Desde $199 USD."
+  jsonLd={jsonLd}
+>
+  <Nav />
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="relative min-h-[85vh] flex items-center grid-pattern overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg-primary pointer-events-none"></div>
+      <div class="container-mx relative z-10 pt-10 pb-20">
+        <div class="max-w-4xl">
+          <div class="reveal badge mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent-success animate-pulse"></span>
+            💅 Diseño web para estética · Diseño premium · 🇲🇽 México
+          </div>
+
+          <h1 class="reveal text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-[1.05]">
+            Páginas Web para <span class="gradient-text text-shadow-glow">Clínicas de Estética</span>
+          </h1>
+
+          <p class="reveal text-lg sm:text-xl text-text-secondary mt-6 max-w-2xl leading-relaxed">
+            En estética, <span class="text-white font-semibold">la confianza visual lo es todo</span>. Si no te ves premium, no confían. Tu clínica con web elegante, galería de antes y después, reservas online, y SEO local. Que te encuentren — y decidan agendar contigo.
+          </p>
+
+          <div class="reveal flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-10">
+            <a href={waLink} data-wa-link target="_blank" rel="noopener" class="btn-primary text-base">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Quiero mi web premium
+            </a>
+            <a href="#paquete" class="btn-secondary text-base">Ver paquete recomendado</a>
+          </div>
+
+          <div class="reveal flex flex-wrap items-center gap-3 mt-8 text-sm text-text-muted">
+            <span>⏱️ Lista en 5 días</span>
+            <span class="text-text-muted/50">·</span>
+            <span>📅 Reservas online</span>
+            <span class="text-text-muted/50">·</span>
+            <span>📸 Antes y después</span>
+            <span class="text-text-muted/50">·</span>
+            <span>💬 WhatsApp directo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== D O L O R E S ========== -->
+    <section class="py-20 lg:py-28">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-danger uppercase tracking-wider mb-3">El problema</p>
+          <h2 class="section-title">¿Te pasa esto en tu clínica?</h2>
+          <p class="section-sub">En el mundo de la estética, la percepción es la realidad. Si tu presencia online no transmite premium, pierdes clientas. Estos son los obstáculos que te cuestan ingresos.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {dolores.map((d) => (
+            <div class="reveal card">
+              <div class="flex items-start gap-4">
+                <span class="text-3xl flex-shrink-0">{d.icon}</span>
+                <div>
+                  <h3 class="text-lg font-bold mb-2">{d.title}</h3>
+                  <p class="text-text-secondary text-sm leading-relaxed">{d.text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES ========== -->
+    <section class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Lo que incluye tu web</p>
+          <h2 class="section-title">Tu clínica, con la presencia que vende</h2>
+          <p class="section-sub">Diseñado específicamente para clínicas de estética. Elegante, premium, y enfocado en generar la confianza que tus clientas necesitan para decidir.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {features.map((f) => (
+            <div class="reveal card card-hover group">
+              <span class="text-3xl block mb-4">{f.icon}</span>
+              <h3 class="text-lg font-bold mb-2 group-hover:text-accent-primary transition-colors">{f.title}</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">{f.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CÓMO SE VERÍA ========== -->
+    <section class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Demo</p>
+          <h2 class="section-title">Cómo se vería tu web</h2>
+          <p class="section-sub">Diseño elegante, premium, sofisticado. La clase de web que grita "aquí estás en buenas manos". Esto es un ejemplo del estilo que tendría tu página.</p>
+        </div>
+
+        <div class="reveal card relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/5 via-transparent to-accent-secondary/5 pointer-events-none"></div>
+          <div class="relative aspect-[16/10] rounded-xl bg-bg-tertiary border border-white/5 flex flex-col">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+              <div class="flex gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-accent-danger/50"></span>
+                <span class="w-3 h-3 rounded-full bg-accent-warning/50"></span>
+                <span class="w-3 h-3 rounded-full bg-accent-success/50"></span>
+              </div>
+              <div class="flex-1 mx-4 px-3 py-1 rounded-md bg-bg-secondary text-xs text-text-muted truncate">
+                clinica-estetica-[tu-nombre].com.mx
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col items-center justify-center p-8 text-center">
+              <span class="text-5xl mb-4">💅</span>
+              <p class="text-sm text-text-muted uppercase tracking-wider mb-2">Clínica de Estética [Tu Nombre]</p>
+              <h3 class="text-2xl sm:text-3xl font-black mb-3">Realza tu <span class="gradient-text">belleza natural</span></h3>
+              <p class="text-text-secondary text-sm max-w-md mb-6">Tratamientos faciales y corporales en [tu zona]. Agenda tu cita.</p>
+              <div class="flex flex-wrap items-center justify-center gap-3">
+                <span class="px-4 py-2 rounded-lg bg-gradient-to-r from-accent-primary to-accent-secondary text-white text-sm font-semibold">📅 Reservar cita</span>
+                <span class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm">💬 WhatsApp</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-center text-sm text-text-muted mt-6">
+            🔥 Diseño 100% personalizado a tu marca y tus tratamientos. Esto es solo un ejemplo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CÓMO FUNCIONA ========== -->
+    <section class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl mb-12">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Cómo funciona</p>
+          <h2 class="section-title">De cero a clientas en 3 pasos</h2>
+          <p class="section-sub">Tú te enfocas en tus tratamientos. Nosotros nos encargamos de que tengas más clientas.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {pasos.map((p) => (
+            <div class="reveal card relative">
+              <div class="absolute -top-3 -right-3 w-12 h-12 rounded-xl bg-bg-tertiary border border-white/5 flex items-center justify-center text-sm font-black text-text-muted">
+                {p.num}
+              </div>
+              <h3 class="text-lg font-bold mb-3 pr-10">{p.title}</h3>
+              <p class="text-text-secondary text-sm leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PAQUETE RECOMENDADO ========== -->
+    <section id="paquete" class="py-20 lg:py-28 border-t border-white/5">
+      <div class="container-mx max-w-4xl">
+        <div class="reveal mb-12 text-center">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Paquete recomendado</p>
+          <h2 class="section-title">El plan ideal para clínicas de estética</h2>
+          <p class="section-sub">El paquete que más eligen las clínicas de estética. Tiene todo lo que necesitas para verte premium y llenar tu agenda.</p>
+        </div>
+
+        <div class="reveal card relative border-accent-primary/30 shadow-[0_0_40px_rgba(99,102,241,0.1)]">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary text-white text-xs font-bold uppercase tracking-wide">
+            ⭐ Más vendido para estética
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div>
+              <h3 class="text-3xl font-bold mb-1">Profesional</h3>
+              <p class="text-sm text-text-muted mb-6">Presencia premium, reservas automáticas, confianza que vende.</p>
+              <div class="mb-6">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-black">$199</span>
+                  <span class="text-text-secondary text-sm">USD instalación</span>
+                </div>
+                <div class="flex items-baseline gap-1 mt-1">
+                  <span class="text-2xl font-bold text-accent-primary">+ $50</span>
+                  <span class="text-text-secondary text-sm">/mes</span>
+                </div>
+              </div>
+              <a href={waLink} data-wa-link target="_blank" rel="noopener" class="btn-primary w-full justify-center">
+                Quiero este paquete
+              </a>
+            </div>
+
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">💉 8-15 páginas (una por cada tratamiento)</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">📸 Galería premium de antes y después</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">📅 Sistema de reservas online</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">🔍 SEO local avanzado (apareces en tu zona)</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">💬 Botón directo de WhatsApp</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">⭐ Testimonios y reseñas integradas</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-text-secondary">🌐 Dominio (.com o .com.mx) incluido</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reveal mt-10 text-center">
+          <p class="text-text-secondary mb-4">¿Quieres ver los otros paquetes y comparar?</p>
+          <a href="/precios/" class="btn-secondary">Ver todos los paquetes →</a>
+        </div>
+
+        <div class="reveal mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+          {beneficios.map((b) => (
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-accent-success/5 border border-accent-success/10">
+              <svg class="w-5 h-5 text-accent-success flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <p class="text-text-secondary text-sm leading-relaxed">{b}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA FINAL ========== -->
+    <CTASection
+      title="¿Lista para verte tan premium como lo eres?"
+      subtitle="Una sola clienta nueva que te llegue por Google ya pagó tu web varias veces. Escríbenos por WhatsApp y te mostramos cómo se vería tu clínica online."
+    />
+  </main>
+
+  <Footer />
+  <StickyMobile />
+</BaseLayout>

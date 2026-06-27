@@ -1,0 +1,114 @@
+---
+import '../styles/global.css';
+import { defaultConfig } from '../data/siteConfig';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  jsonLd?: object;
+}
+
+const {
+  title = 'Páginas Web para Negocios en México | AutomaNexus',
+  description = 'Tu web cuesta menos que tu Netflix y te deja ganancia. Páginas web profesionales para negocios en México con pago mensual. Diseño custom, SEO local, y botón de WhatsApp.',
+  ogImage = '/og-image.png',
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const site = Astro.site?.toString().replace(/\/$/, '') || 'https://mx.automanex.us';
+const canonical = new URL(Astro.url.pathname, site).toString();
+const waLink = `https://wa.me/${defaultConfig.whatsapp}?text=${encodeURIComponent(defaultConfig.whatsappMessage)}`;
+---
+
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="title" content={title} />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(ogImage, site).toString()} />
+  <meta property="og:locale" content="es_MX" />
+  <meta property="og:site_name" content="AutomaNexus" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={new URL(ogImage, site).toString()} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0A0A0F" />
+
+  <!-- JSON-LD Structured Data -->
+  {jsonLd && (
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  )}
+
+  <!-- Scroll reveal -->
+  <script is:inline>
+    const initReveal = () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initReveal);
+    } else {
+      initReveal();
+    }
+  </script>
+</head>
+<body class="min-h-screen overflow-x-hidden">
+  <slot />
+
+  <!-- Config override script: loads site config from localStorage -->
+  <script is:inline>
+    try {
+      const stored = localStorage.getItem('an_config');
+      if (stored) {
+        const cfg = JSON.parse(stored);
+        document.querySelectorAll('[data-wa-link]').forEach(el => {
+          const msg = encodeURIComponent(cfg.whatsappMessage || 'Hola, vi su página AutomaNexus y quiero información');
+          el.setAttribute('href', `https://wa.me/${cfg.whatsapp}?text=${msg}`);
+        });
+        document.querySelectorAll('[data-wa-number]').forEach(el => {
+          el.textContent = cfg.whatsapp || el.textContent;
+        });
+        document.querySelectorAll('[data-email]').forEach(el => {
+          el.textContent = cfg.email || el.textContent;
+          el.setAttribute('href', `mailto:${cfg.email || ''}`);
+        });
+        document.querySelectorAll('[data-brand]').forEach(el => {
+          el.textContent = cfg.brandName || 'AutomaNexus';
+        });
+      }
+    } catch(e) {}
+  </script>
+</body>
+</html>

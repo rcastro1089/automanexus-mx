@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobile from '../components/StickyMobile.astro';
+import CTASection from '../components/CTASection.astro';
+import { defaultConfig } from '../data/siteConfig';
+
+const faqs = [
+  { q: '¿Cuánto cuesta una página web?', a: 'Tenemos 3 paquetes. El plan Presencia cuesta $99 USD de instalación + $25/mes. El plan Profesional (el más vendido) cuesta $199 USD + $50/mes. El plan Premium cuesta $399 USD + $80/mes. Todos incluyen dominio y hosting.' },
+  { q: '¿Por qué hay un pago de instalación y luego mensualidad?', a: 'La instalación cubre el diseño y desarrollo de tu web desde cero — es trabajo real, no una plantilla. La mensualidad cubre hosting, dominio, SSL, mantenimiento y actualizaciones. Es como comprar un teléfono y luego pagar el plan mensual.' },
+  { q: '¿Hay permanencia o contrato anual?', a: 'El mínimo es de 3 meses. Después de eso, puedes cancelar cuando quieras dando 30 días de aviso. Sin penalizaciones ni trucos.' },
+  { q: '¿El pago de instalación se devuelve?', a: 'No. La instalación es trabajo de desarrollo que ya se realizó — diseño, programación, configuración. Igual que un pintor no devuelve el dinero después de pintar tu casa.' },
+  { q: '¿El dominio está incluido?', a: 'Sí. Nosotros compramos y gestionamos tu dominio (.com o .com.mx). Está incluido en el precio de instalación y se renueva automáticamente cada año mientras tengas tu plan activo.' },
+  { q: '¿En cuánto tiempo está lista mi web?', a: 'Entre 3 y 7 días hábiles después de recibir tu información (nombre del negocio, servicios, dirección, teléfono, fotos). El plan Presencia suele estar listo en 3 días. El Premium puede tomar hasta 10 días.' },
+  { q: '¿Usan plantillas o diseños genéricos?', a: 'No. Cada web se diseña específicamente para tu negocio. No usamos plantillas de Wix, WordPress, ni de ninguna otra plataforma. Tu web es única.' },
+  { q: '¿Mi web va a aparecer en Google?', a: 'Sí. Todas nuestras webs incluyen optimización SEO local. Cuando alguien busque tu servicio en tu ciudad, tu web aparecerá en los resultados de Google. El plan Profesional y Premium incluyen SEO avanzado para múltiples keywords.' },
+  { q: '¿Puedo ver una demo antes de pagar?', a: 'Por supuesto. Te mostramos una demo gratuita de cómo se vería tu web antes de pagar nada. Si no te convence, no pagas. Así de simple.' },
+  { q: '¿Qué pasa si quiero hacer cambios después?', a: 'Los cambios menores (texto, fotos, horarios) están incluidos en tu mensualidad. Cambios mayores (añadir páginas, rediseño) pueden tener un costo adicional dependiendo del alcance.' },
+  { q: '¿Qué métodos de pago aceptan?', a: 'Aceptamos Stripe (tarjetas de crédito y débito internacionales) y PayPal. Ambos procesan pagos en USD.' },
+  { q: '¿Y si ya tengo una página web?', a: 'Podemos rediseñarla o crear una nueva desde cero. Muchos de nuestros clientes tenían webs anticiguas, lentas o que no aparecían en Google. La migración la hacemos nosotros sin que pierdas tu dominio.' },
+  { q: '¿Trabajan con negocios de cualquier ciudad?', a: 'Sí. Trabajamos con negocios de todo México: CDMX, Monterrey, Guadalajara, Querétaro, Mérida, Puebla, Tijuana, y cualquier otra ciudad. Todo el proceso se hace por WhatsApp y email — no necesitas estar en una ciudad específica.' },
+  { q: '¿La web funciona en celular?', a: 'Sí, todas nuestras webs son responsive — se adaptan perfectamente a celular, tablet y computadora. De hecho, la mayoría de tus clientes van a ver tu web desde el celular.' },
+  { q: '¿Incluye sistema de reservas o citas?', a: 'El plan Profesional y Premium incluyen sistema de reservas y citas integrado. Los clientes pueden agendar directamente desde tu web y te llega la notificación por WhatsApp.' },
+  { q: '¿Qué pasa si cancelo?', a: 'Después del mínimo de 3 meses, puedes cancelar con 30 días de aviso. Tu web se desactiva del hosting. Si quieres conservarla, puedes solicitar los archivos para migrarla a tu propio hosting.' },
+  { q: '¿Tienen portafolio o ejemplos?', a: 'Sí, puedes ver nuestras demos en la página de inicio. Cada sector tiene su propia demo. También podemos mostrarte trabajos realizados para clientes reales por WhatsApp.' },
+  { q: '¿Hacen webs para cualquier tipo de negocio?', a: 'Nos especializamos en negocios locales de servicios: dentistas, abogados, veterinarias, clínicas de estética, inmobiliarias, restaurantes, mecánicos, y similares. Si tienes un negocio local que necesita clientes nuevos, podemos ayudarte.' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(f => ({
+    '@type': 'Question',
+    'name': f.q,
+    'acceptedAnswer': { '@type': 'Answer', 'text': f.a }
+  }))
+};
+---
+
+<BaseLayout
+  title="Preguntas Frecuentes | AutomaNexus"
+  description="Resolvemos todas tus dudas sobre precios, tiempos de entrega, dominio, hosting, SEO y más. Diseño web profesional para México."
+  jsonLd={jsonLd}
+>
+  <Nav />
+
+  <main>
+    <section class="py-16 lg:py-24 grid-pattern">
+      <div class="container-mx">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">FAQ</p>
+          <h1 class="text-4xl sm:text-5xl font-black tracking-tight">
+            Preguntas <span class="gradient-text">Frecuentes</span>
+          </h1>
+          <p class="text-lg text-text-secondary mt-6">
+            Todo lo que necesitas saber antes de decidir. ¿No encuentras tu respuesta? Escríbenos por WhatsApp.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 lg:py-20">
+      <div class="container-mx max-w-3xl">
+        <div class="space-y-3">
+          {faqs.map((faq) => (
+            <details class="reveal card group cursor-pointer">
+              <summary class="flex items-center justify-between font-semibold text-lg list-none">
+                {faq.q}
+                <svg class="w-5 h-5 text-text-muted group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </summary>
+              <p class="text-text-secondary text-sm leading-relaxed mt-4">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTASection title="¿Tienes otra pregunta?" subtitle="Escríbenos por WhatsApp y te respondemos enseguida." />
+  </main>
+
+  <Footer />
+  <StickyMobile />
+</BaseLayout>
